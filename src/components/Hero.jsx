@@ -17,7 +17,7 @@ const item = {
 }
 
 const ROTATING_WORDS = ['Designer.', 'Researcher.', 'Builder.']
-const STATS = [['4+', 'Years exp.'], ['12', 'Products'], ['3', 'Design systems']]
+const STATS = [['5+', 'Years exp.'], ['9', 'Products'], ['3', 'Design systems']]
 
 /* ---------- Letter-cascade rotating accent word ---------- */
 function RotatingAccent() {

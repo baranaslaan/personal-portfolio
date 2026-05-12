@@ -126,7 +126,7 @@ export default function About({ onHireClick }) {
             <div className="aboutp__meta">
               <span><strong>Istanbul, Türkiye</strong></span>
               <span aria-hidden="true">·</span>
-              <span>7+ years in design</span>
+              <span>5+ years in design</span>
               <span aria-hidden="true">·</span>
               <span>4 companies</span>
             </div>

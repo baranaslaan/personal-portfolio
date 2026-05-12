@@ -213,7 +213,7 @@ export default function HireModal({ open, onClose }) {
                     Hire me<span className="hire__title-dot">.</span>
                   </h2>
                   <p className="hire__lede">
-                    Tell me about your project or role and I’ll get back within 24 hours.
+                    Tell me about your project or role and I’ll get back within 6 hours.
                   </p>
                 </header>
 
