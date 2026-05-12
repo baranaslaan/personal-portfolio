@@ -1,0 +1,163 @@
+import { useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { motion, useInView } from 'framer-motion'
+import { PROJECTS } from '../data/projects'
+
+const gridVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+}
+
+function ProjectCard({ project, index }) {
+  const num = String(index + 1).padStart(2, '0')
+  const accent = project.accent
+  return (
+    <motion.div variants={cardVariants} whileHover="hover" whileTap={{ scale: 0.985 }} style={{ height: '100%' }}>
+      <Link
+        to={`/project/${project.id}`}
+        aria-label={`View ${project.title} case study`}
+        className="project-card"
+        style={{ '--card-accent': accent }}
+      >
+        <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} transition={{ duration: 0.25 }} className="project-card__bg" />
+        <motion.div
+          variants={{ hover: { opacity: 1 } }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="project-card__ring"
+        />
+        <motion.div variants={{ hover: { y: -4 } }} transition={{ type: 'spring', stiffness: 260, damping: 22 }} className="project-card__lift">
+          <motion.div
+            variants={{ hover: { opacity: 1, scaleY: 1 } }}
+            initial={{ opacity: 0, scaleY: 0.4 }}
+            transition={{ duration: 0.3 }}
+            className="project-card__shelf"
+          />
+          <motion.div
+            variants={{ hover: { opacity: 1 } }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="project-card__corner-glow"
+          />
+
+          {project.cover && (
+            <div className="project-card__cover">
+              <motion.img
+                src={project.cover}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                style={{ objectPosition: project.coverPosition || 'center' }}
+                variants={{ hover: { scale: 1.04 } }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </div>
+          )}
+
+          <div className="project-card__top">
+            <div className="project-card__top-left">
+              <span className="project-card__num">{num}</span>
+            </div>
+            <motion.div
+              variants={{ hover: { opacity: 1, x: 0 } }}
+              initial={{ opacity: 0, x: 8 }}
+              transition={{ duration: 0.25 }}
+              className="project-card__year"
+            >
+              <span>{project.year}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </motion.div>
+          </div>
+
+          <h3 className="project-card__title">{project.title}</h3>
+          <p className="project-card__desc">{project.desc}</p>
+
+          {project.metric && (
+            <div className="project-card__metric">
+              <span className="project-card__metric-value">{project.metric.value}</span>
+              <span className="project-card__metric-label">{project.metric.label}</span>
+            </div>
+          )}
+
+          <div className="project-card__tags">
+            {project.tags.map(t => <span key={t} className="tag">{t}</span>)}
+          </div>
+
+          <div className="project-card__cta">
+            <motion.span
+              variants={{ hover: { color: accent } }}
+              initial={{ color: 'var(--text-3)' }}
+              className="project-card__cta-text"
+            >
+              View case study
+            </motion.span>
+            <motion.svg
+              width="13" height="13" viewBox="0 0 24 24" fill="none"
+              strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+              variants={{ hover: { x: 6, stroke: accent } }}
+              initial={{ x: 0, stroke: 'var(--text-3)' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </motion.svg>
+          </div>
+        </motion.div>
+      </Link>
+    </motion.div>
+  )
+}
+
+export default function Projects() {
+  const ref = useRef(null)
+  const headerRef = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-60px' })
+  const headerInView = useInView(headerRef, { once: true, margin: '-60px' })
+
+  return (
+    <section id="work" className="section">
+      <motion.div
+        ref={headerRef}
+        initial={{ opacity: 0, y: 24 }}
+        animate={headerInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="projects__header"
+      >
+        <div>
+          <p className="kicker">
+            <motion.span
+              initial={{ width: 0 }}
+              animate={headerInView ? { width: 20 } : { width: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="kicker__line"
+              style={{ display: 'inline-block' }}
+            />
+            Selected Work
+          </p>
+          <h2 className="h-display projects__title">Things I've designed</h2>
+        </div>
+        <span className="projects__count">{PROJECTS.length} projects</span>
+      </motion.div>
+
+      <motion.div
+        ref={ref}
+        className="project-grid"
+        variants={gridVariants}
+        initial="hidden"
+        animate={inView ? 'show' : 'hidden'}
+      >
+        {PROJECTS.map((p, i) => (
+          <div key={p.id} className={p.wide ? 'project-wide' : ''}>
+            <ProjectCard project={p} index={i} />
+          </div>
+        ))}
+      </motion.div>
+    </section>
+  )
+}

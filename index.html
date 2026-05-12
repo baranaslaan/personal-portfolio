@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Baran Aslan — Product Designer</title>
+    <meta name="description" content="Baran Aslan — product designer focused on UI/UX, design systems, and user research. Selected case studies from SaaS, mobile, and dashboard work." />
+    <meta name="author" content="Baran Aslan" />
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#080E1A" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Baran Aslan — Product Designer" />
+    <meta property="og:description" content="Selected product design case studies — design systems, mobile UX, dashboards, and interaction design." />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Baran Aslan — Product Designer" />
+    <meta name="twitter:description" content="Selected product design case studies — design systems, mobile UX, dashboards, and interaction design." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Apply stored theme before paint to avoid FOUC -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) { /* localStorage may be blocked */ }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
