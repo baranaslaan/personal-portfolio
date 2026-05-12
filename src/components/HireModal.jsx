@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion'
  * Until a real key is set, the modal still mounts and validates, but the
  * submit will fail gracefully and show an error state.
  */
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 const ENDPOINT = 'https://api.web3forms.com/submit'
 
 const PROJECT_TYPES = [
