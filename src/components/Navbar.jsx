@@ -40,7 +40,20 @@ function ThemeToggle({ theme, toggle }) {
 }
 
 export default function Navbar({ scrolled, onHireClick }) {
-  const { theme, toggle } = useTheme()
+  const { theme, toggle } = useTheme();
+
+  // Tek bir fonksiyonla hem Work hem Contact yönlendirmesini çözüyoruz
+  const handleScroll = (e, targetId) => {
+    // Sadece anasayfadaysak (/) sayfayı kaydır, aksi halde tarayıcının normal çalışmasına izin ver
+    if (window.location.pathname === '/') {
+      e.preventDefault();
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -80 }}
@@ -53,10 +66,18 @@ export default function Navbar({ scrolled, onHireClick }) {
       </Link>
 
       <div className="nav-links">
-        <a href="/#work" className="nav-link">Work</a>
+        {/* Work linki */}
+        <Link to="/#work" className="nav-link">Work</Link>
+
+        {/* About linki zaten doğru */}
         <Link to="/about" className="nav-link">About</Link>
-        <a href="/#contact" className="nav-link">Contact</a>
+
+        {/* Contact linki */}
+        <Link to="/#contact" className="nav-link">Contact</Link>
+        
         <ThemeToggle theme={theme} toggle={toggle} />
+        
+        {/* ... (Hire me butonu ve geri kalan her şey aynı kalacak) ... */}
         <motion.button
           type="button"
           onClick={onHireClick}
@@ -70,5 +91,5 @@ export default function Navbar({ scrolled, onHireClick }) {
         </motion.button>
       </div>
     </motion.nav>
-  )
+  );
 }

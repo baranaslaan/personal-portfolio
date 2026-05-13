@@ -15,10 +15,10 @@ export default function Footer() {
       </Link>
 
       <nav className="footer-links" aria-label="Footer">
-        <Link to="/about" className="footer-link">About</Link>
-        <a href="/#work" className="footer-link">Work</a>
-        <a href="/#contact" className="footer-link">Contact</a>
-        <a
+      <Link to="/about" className="footer-link">About</Link>
+      <Link to="/#work" className="footer-link">Work</Link>
+      <Link to="/#contact" className="footer-link">Contact</Link>
+      <a
           href="/baran-aslan-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
