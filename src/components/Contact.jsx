@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { SOCIALS } from '../data/projects'
 
 const fadeUp = {
@@ -30,6 +31,7 @@ function SocialRow({ s }) {
 }
 
 export default function Contact() {
+  const { t } = useTranslation()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
@@ -59,13 +61,14 @@ export default function Contact() {
           >
             <motion.p variants={fadeUp} className="kicker">
               <span className="kicker__line" />
-              Get in Touch
+              {t('contact.kicker')}
             </motion.p>
             <motion.h2 variants={fadeUp} className="h-display contact-card__title">
-              Let's work<br />together
+              {t('contact.title')}<br />
+              {t('contact.titleBr')}
             </motion.h2>
             <motion.p variants={fadeUp} className="contact-card__body">
-              Have a product challenge or design role in mind? I'm always open to discussing new opportunities and ideas.
+              {t('contact.body')}
             </motion.p>
             <motion.a
               variants={fadeUp}
@@ -78,13 +81,13 @@ export default function Contact() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              Send an Email
+              {t('contact.emailBtn')}
             </motion.a>
           </motion.div>
 
           <div className="contact-card__side">
             <div>
-              <div className="contact-card__side-label">Find me on</div>
+              <div className="contact-card__side-label">{t('contact.findMeOn')}</div>
               <motion.div
                 variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } } }}
                 initial="hidden"
@@ -95,9 +98,9 @@ export default function Contact() {
               </motion.div>
             </div>
             <div>
-              <div className="contact-card__side-label">Response time</div>
+              <div className="contact-card__side-label">{t('contact.responseTime')}</div>
               <div className="contact-card__response">
-                Usually within <span>6 hours</span>
+                {t('contact.responseText')} <span>{t('contact.responseHours')}</span>
               </div>
             </div>
           </div>

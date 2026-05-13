@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
+  const { t } = useTranslation()
   return (
     <motion.footer
       initial={{ opacity: 0 }}
@@ -15,9 +17,9 @@ export default function Footer() {
       </Link>
 
       <nav className="footer-links" aria-label="Footer">
-      <Link to="/about" className="footer-link">About</Link>
-      <Link to="/#work" className="footer-link">Work</Link>
-      <Link to="/#contact" className="footer-link">Contact</Link>
+      <Link to="/about" className="footer-link">{t('footer.about')}</Link>
+      <Link to="/#work" className="footer-link">{t('footer.work')}</Link>
+      <Link to="/#contact" className="footer-link">{t('footer.contact')}</Link>
       <a
           href="/baran-aslan-resume.pdf"
           target="_blank"
@@ -29,12 +31,12 @@ export default function Footer() {
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          CV
+          {t('footer.cv')}
         </a>
       </nav>
 
       <span className="footer-copy">
-        © {new Date().getFullYear()} · All rights reserved
+        © {new Date().getFullYear()} · {t('footer.copyright')}
       </span>
     </motion.footer>
   )

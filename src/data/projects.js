@@ -1,142 +1,74 @@
 export const PROJECTS = [
   {
     id: 1,
-    title: 'StandardFlow Website UI Design',
-    desc: 'End-to-end website UI design — landing page, marketing flow, and conversion-focused interactions for a SaaS product. Full case study covering visual system and key screens.',
-    tags: ['Web Design', 'Landing Page', 'UI/UX', 'Figma'],
     accent: '#22C55E',
     wide: true,
-    year: '2026',
-    role: 'Product Designer',
-    metric: { value: 'Case Study', label: 'end-to-end UI' },
-    highlights: [
-      'Full landing-page flow built on a tight visual system',
-      'Hero, features, social proof and pricing sections — conversion-focused layout',
-      'Reusable patterns and components, ready for handoff',
-      'Built in Figma with attention to typography and motion craft',
-    ],
     cover: '/projects/standardflow-cover.png',
     gallery: [
-      { src: '/projects/standardflow-1.webp', caption: 'Landing page — hero & primary CTA' },
-      { src: '/projects/standardflow-2.webp', caption: 'Features and section system' },
-      { src: '/projects/standardflow-3.webp', caption: 'Detail views and supporting screens' },
+      { src: '/projects/standardflow-1.webp' },
+      { src: '/projects/standardflow-2.webp' },
+      { src: '/projects/standardflow-3.webp' }
     ],
-    links: { behance: 'https://www.behance.net/gallery/244575927/StandardFlow-Website-UI-Design' },
+    links: { behance: 'https://www.behance.net/gallery/244575927/StandardFlow-Website-UI-Design' }
   },
   {
     id: 2,
-    title: 'Accounting Software UI Design',
-    desc: 'Interface design and design-system work for an accounting SaaS — invoices, reports, and dashboard surfaces with a scalable component library underneath.',
-    tags: ['SaaS', 'Design System', 'App Design', 'Figma'],
     accent: '#818CF8',
-    year: '2022',
-    role: 'Product Designer',
-    metric: { value: 'Design System', label: 'shipped with engineering' },
-    highlights: [
-      'Interface design for invoices, reports, and dashboard surfaces',
-      'Component-library foundation supporting consistent product UI',
-      'Co-designed with a partner designer on layout and data patterns',
-      'Built in Figma; legacy XD/Illustrator artwork integrated where useful',
-    ],
+    coverPosition: 'top center',
     cover: '/projects/accounting-1.webp',
-    coverPosition: 'top center',     /* long Behance sheet — keep hero portion in frame */
     gallery: [
-      { src: '/projects/accounting-1.webp', caption: 'Interface design — primary surfaces' },
-      { src: '/projects/accounting-2.webp', caption: 'Design system documentation' },
-      { src: '/projects/accounting-3.webp', caption: 'Component patterns and states' },
+      { src: '/projects/accounting-1.webp' },
+      { src: '/projects/accounting-2.webp' },
+      { src: '/projects/accounting-3.webp' }
     ],
-    links: { behance: 'https://www.behance.net/gallery/158785939/Accounting-Software-UI-Design' },
+    links: { behance: 'https://www.behance.net/gallery/158785939/Accounting-Software-UI-Design' }
   },
   {
     id: 3,
-    title: 'Project Management App',
-    desc: 'Product design for a project management tool — landing surface and key in-app screens, focused on clarity for cross-functional teams.',
-    tags: ['Product Design', 'App Design', 'Figma', 'Web'],
     accent: '#F59E0B',
-    year: '2024',
-    role: 'UI/UX Designer',
-    metric: { value: 'Landing + App', label: 'parallel design tracks' },
-    highlights: [
-      'Marketing landing page paired with in-app product screens',
-      'Information hierarchy tuned for fast scanning across long task lists',
-      'Designed in Figma with consistent token and component usage',
-    ],
     cover: '/projects/pm-cover.png',
     gallery: [
-      { src: '/projects/pm-1.webp', caption: 'Landing page and feature highlights' },
-      { src: '/projects/pm-2.webp', caption: 'In-app screens — task & project views' },
+      { src: '/projects/pm-1.webp' },
+      { src: '/projects/pm-2.webp' }
     ],
-    links: { behance: 'https://www.behance.net/gallery/193530253/Project-Management-App' },
+    links: { behance: 'https://www.behance.net/gallery/193530253/Project-Management-App' }
   },
   {
     id: 4,
-    title: 'Pricing Page UI Design',
-    desc: 'A focused pricing-page exploration — clear plan comparison, conversion-oriented hierarchy, and a small interaction system around toggles and CTAs.',
-    tags: ['UI Design', 'Web', 'Conversion', 'Figma'],
     accent: '#EC4899',
-    year: '2022',
-    role: 'UI Designer',
-    metric: { value: 'Focused study', label: 'pricing patterns' },
-    highlights: [
-      'Plan comparison tuned for fast scanning',
-      'Toggle interactions and supporting micro-states',
-      'Conversion-led visual hierarchy on primary CTA',
-    ],
     cover: '/projects/pricing-cover.png',
     gallery: [
-      { src: '/projects/pricing-1.webp', caption: 'Pricing page — primary layout' },
-      { src: '/projects/pricing-2.webp', caption: 'Alternative treatments & states' },
+      { src: '/projects/pricing-1.webp' },
+      { src: '/projects/pricing-2.webp' }
     ],
-    links: { behance: 'https://www.behance.net/gallery/151169159/Pricing-Page-UI-Design' },
+    links: { behance: 'https://www.behance.net/gallery/151169159/Pricing-Page-UI-Design' }
   },
   {
     id: 5,
-    title: 'Routewise UI Design',
-    desc: 'This UI design focuses on making multi-vehicle tracking intuitive and effortless. It transforms complex data into a clean, user-friendly experience.',
-    tags: ['UI Design', 'Web', 'Figma', 'SaaS'],
     accent: '#06B6D4',
-    year: '2025',
-    role: 'UI Designer',
-    metric: { value: 'Marketing site', label: 'full visual language' },
-    highlights: [
-      'Restrained visual language for a high-trust category',
-      'Strong typographic hierarchy across hero and service sections',
-      'Designed in Figma with reusable section patterns',
-    ],
     cover: '/projects/routewise-cover.png',
     gallery: [
-      { src: '/projects/routewise-1.png', caption: 'Case Study — User Onboarding' },
-      { src: '/projects/routewise-login.png', caption: 'Login & Authentication' },
-      { src: '/projects/routewise-register.png', caption: 'Registration & Profile Setup' },
-      { src: '/projects/routewise-dashboard.png', caption: 'Dashboard View' },
-      { src: '/projects/routewise-cars.png', caption: 'Cars View' },
-      { src: '/projects/routewise-cars-map.png', caption: 'Cars Map View' },
-      { src: '/projects/routewise-new-car.png', caption: 'New Cars View' },
+      { src: '/projects/routewise-1.png' },
+      { src: '/projects/routewise-login.png' },
+      { src: '/projects/routewise-register.png' },
+      { src: '/projects/routewise-dashboard.png' },
+      { src: '/projects/routewise-cars.png' },
+      { src: '/projects/routewise-cars-map.png' },
+      { src: '/projects/routewise-new-car.png' }
     ],
-    links: { behance: 'https://www.behance.net/gallery/131648297/Routewise-UI-Design' },
+    links: { behance: 'https://www.behance.net/gallery/131648297/Routewise-UI-Design' }
   },
   {
     id: 6,
-    title: 'LogoType Design',
-    desc: 'A collection of logotype and brand-identity explorations — wordmarks, lockups, and typographic studies across multiple brand contexts.',
-    tags: ['Brand Identity', 'Logo', 'Typography'],
     accent: '#A78BFA',
     wide: true,
-    year: '2021',
-    role: 'Designer',
-    metric: { value: 'Brand', label: 'logotype studies' },
-    highlights: [
-      'Wordmarks and lockups across multiple brand directions',
-      'Typographic exploration and custom letterform tuning',
-      'Crafted in Illustrator with supporting Photoshop work',
-    ],
     cover: '/projects/logotype-cover.png',
     gallery: [
-      { src: '/projects/logotype-1.webp', caption: 'Logotype set — wordmarks' },
-      { src: '/projects/logotype-2.webp', caption: 'Brand context and lockups' },
+      { src: '/projects/logotype-1.webp' },
+      { src: '/projects/logotype-2.webp' }
     ],
-    links: { behance: 'https://www.behance.net/gallery/132034079/LogoType-Design' },
-  },
+    links: { behance: 'https://www.behance.net/gallery/132034079/LogoType-Design' }
+  }
 ];
 
 export const SKILLS = {

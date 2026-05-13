@@ -1,43 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
-/**
- * Hire-me modal: collects project + contact info and sends it via Web3Forms
- * (free email-forwarding API). To enable real submissions, replace
- * WEB3FORMS_ACCESS_KEY with the key generated at https://web3forms.com/.
- *
- * Until a real key is set, the modal still mounts and validates, but the
- * submit will fail gracefully and show an error state.
- */
 const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 const ENDPOINT = 'https://api.web3forms.com/submit'
-
-const PROJECT_TYPES = [
-  { value: '', label: 'Select a project type…' },
-  { value: 'full-time', label: 'Full-time role' },
-  { value: 'contract',  label: 'Contract / part-time' },
-  { value: 'freelance', label: 'Freelance project' },
-  { value: 'consulting', label: 'Consulting / advisory' },
-  { value: 'other', label: 'Other' },
-]
-
-const BUDGETS = [
-  { value: '', label: 'Select a budget range…' },
-  { value: '<5k',    label: 'Under $5k' },
-  { value: '5-15k',  label: '$5k – $15k' },
-  { value: '15-30k', label: '$15k – $30k' },
-  { value: '30k+',   label: '$30k+' },
-  { value: 'tbd',    label: 'Let’s discuss' },
-]
-
-const TIMELINES = [
-  { value: '', label: 'Select a timeline…' },
-  { value: 'asap',     label: 'ASAP' },
-  { value: '1mo',      label: 'Within 1 month' },
-  { value: '1-3mo',    label: '1 – 3 months' },
-  { value: '3mo+',     label: '3+ months' },
-  { value: 'flexible', label: 'Flexible' },
-]
 
 const emptyForm = {
   name: '',
@@ -47,12 +13,11 @@ const emptyForm = {
   budget: '',
   timeline: '',
   message: '',
-  /* honeypot — must stay empty to pass anti-bot */
   _botcheck: '',
 }
 
 const MAX_FILES = 5
-const MAX_FILE_SIZE = 25 * 1024 * 1024   /* 25 MB per Web3Forms limit */
+const MAX_FILE_SIZE = 25 * 1024 * 1024 
 const ACCEPT = '.pdf,.doc,.docx,.txt,.zip,.fig,.sketch,image/*'
 
 function formatBytes(b) {
@@ -62,27 +27,25 @@ function formatBytes(b) {
 }
 
 export default function HireModal({ open, onClose }) {
+  const { t } = useTranslation()
   const [form, setForm] = useState(emptyForm)
   const [files, setFiles] = useState([])
   const [dragging, setDragging] = useState(false)
-  const [status, setStatus] = useState('idle')   // idle | sending | success | error
+  const [status, setStatus] = useState('idle') 
   const [error, setError] = useState(null)
   const firstFieldRef = useRef(null)
   const fileInputRef = useRef(null)
 
-  /* reset whenever modal opens fresh */
   useEffect(() => {
     if (!open) return
     setForm(emptyForm)
     setFiles([])
     setStatus('idle')
     setError(null)
-    /* focus first field for keyboard users */
     const t = setTimeout(() => firstFieldRef.current?.focus(), 120)
     return () => clearTimeout(t)
   }, [open])
 
-  /* ESC closes; body scroll lock while open */
   useEffect(() => {
     if (!open) return
     const prev = document.body.style.overflow
@@ -99,7 +62,6 @@ export default function HireModal({ open, onClose }) {
 
   const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)
 
-  /* file handling */
   const addFiles = (incoming) => {
     if (!incoming || incoming.length === 0) return
     const list = Array.from(incoming)
@@ -108,7 +70,7 @@ export default function HireModal({ open, onClose }) {
     for (const f of list) {
       if (next.length >= MAX_FILES) { rejected.push(`${f.name} (limit ${MAX_FILES})`); continue }
       if (f.size > MAX_FILE_SIZE)   { rejected.push(`${f.name} (>25 MB)`); continue }
-      if (next.some(x => x.name === f.name && x.size === f.size)) continue   /* dedupe */
+      if (next.some(x => x.name === f.name && x.size === f.size)) continue 
       next.push(f)
     }
     setFiles(next)
@@ -134,13 +96,11 @@ export default function HireModal({ open, onClose }) {
     e.preventDefault()
     if (!canSubmit) return
 
-    /* honeypot — bot likely filled it; pretend success */
     if (form._botcheck) { setStatus('success'); return }
 
     setStatus('sending')
     setError(null)
 
-    /* FormData (multipart) so we can attach files in the same submission */
     const fd = new FormData()
     fd.append('access_key', WEB3FORMS_ACCESS_KEY)
     fd.append('subject',    `New hire request from ${form.name}`)
@@ -196,8 +156,8 @@ export default function HireModal({ open, onClose }) {
               type="button"
               className="hire__close"
               onClick={onClose}
-              aria-label="Close (Esc)"
-              title="Close (Esc)"
+              aria-label={t('hireModal.closeLabel')}
+              title={t('hireModal.closeLabel')}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="6" y1="6" x2="18" y2="18" />
@@ -208,17 +168,16 @@ export default function HireModal({ open, onClose }) {
             {status !== 'success' ? (
               <>
                 <header className="hire__header">
-                  <p className="kicker"><span className="kicker__line" />Get in touch</p>
+                  <p className="kicker"><span className="kicker__line" />{t('hireModal.kicker')}</p>
                   <h2 id="hire-title" className="h-display hire__title">
-                    Hire me<span className="hire__title-dot">.</span>
+                    {t('hireModal.title')}<span className="hire__title-dot">.</span>
                   </h2>
                   <p className="hire__lede">
-                    Tell me about your project or role and I’ll get back within 6 hours.
+                    {t('hireModal.lede')}
                   </p>
                 </header>
 
                 <form className="hire__form" onSubmit={onSubmit} noValidate>
-                  {/* honeypot — hidden from real users */}
                   <input
                     type="text"
                     name="_botcheck"
@@ -231,69 +190,84 @@ export default function HireModal({ open, onClose }) {
                   />
 
                   <div className="hire__grid">
-                    <Field label="Your name" required>
+                    <Field label={t('hireModal.nameLabel')} required>
                       <input
                         ref={firstFieldRef}
                         type="text"
                         value={form.name}
                         onChange={set('name')}
-                        placeholder="Jane Doe"
+                        placeholder={t('hireModal.namePlaceholder')}
                         autoComplete="name"
                         required
                       />
                     </Field>
 
-                    <Field label="Email" required>
+                    <Field label={t('hireModal.emailLabel')} required>
                       <input
                         type="email"
                         value={form.email}
                         onChange={set('email')}
-                        placeholder="jane@company.com"
+                        placeholder={t('hireModal.emailPlaceholder')}
                         autoComplete="email"
                         required
                       />
                     </Field>
 
-                    <Field label="Company / role" hint="Optional">
+                    <Field label={t('hireModal.companyLabel')} hint={t('hireModal.companyHint')}>
                       <input
                         type="text"
                         value={form.company}
                         onChange={set('company')}
-                        placeholder="Acme · Head of Product"
+                        placeholder={t('hireModal.companyPlaceholder')}
                         autoComplete="organization"
                       />
                     </Field>
 
-                    <Field label="Project type" required>
+                    <Field label={t('hireModal.projectTypeLabel')} required>
                       <select value={form.projectType} onChange={set('projectType')} required>
-                        {PROJECT_TYPES.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                        <option value="">{t('hireModal.projectTypeSelect')}</option>
+                        <option value="full-time">{t('hireModal.projectTypes.fulltime')}</option>
+                        <option value="contract">{t('hireModal.projectTypes.contract')}</option>
+                        <option value="freelance">{t('hireModal.projectTypes.freelance')}</option>
+                        <option value="consulting">{t('hireModal.projectTypes.consulting')}</option>
+                        <option value="other">{t('hireModal.projectTypes.other')}</option>
                       </select>
                     </Field>
 
-                    <Field label="Budget" hint="Optional">
+                    <Field label={t('hireModal.budgetLabel')} hint={t('hireModal.companyHint')}>
                       <select value={form.budget} onChange={set('budget')}>
-                        {BUDGETS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                        <option value="">{t('hireModal.budgetSelect')}</option>
+                        <option value="<5k">{t('hireModal.budgets.under5k')}</option>
+                        <option value="5-15k">{t('hireModal.budgets.5-15k')}</option>
+                        <option value="15-30k">{t('hireModal.budgets.15-30k')}</option>
+                        <option value="30k+">{t('hireModal.budgets.over30k')}</option>
+                        <option value="tbd">{t('hireModal.budgets.tbd')}</option>
                       </select>
                     </Field>
 
-                    <Field label="Timeline" hint="Optional">
+                    <Field label={t('hireModal.timelineLabel')} hint={t('hireModal.companyHint')}>
                       <select value={form.timeline} onChange={set('timeline')}>
-                        {TIMELINES.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                        <option value="">{t('hireModal.timelineSelect')}</option>
+                        <option value="asap">{t('hireModal.timelines.asap')}</option>
+                        <option value="1mo">{t('hireModal.timelines.1mo')}</option>
+                        <option value="1-3mo">{t('hireModal.timelines.1-3mo')}</option>
+                        <option value="3mo+">{t('hireModal.timelines.3moplus')}</option>
+                        <option value="flexible">{t('hireModal.timelines.flexible')}</option>
                       </select>
                     </Field>
                   </div>
 
-                  <Field label="Project description" required hint="What are you building, and what do you need?">
+                  <Field label={t('hireModal.descriptionLabel')} required hint={t('hireModal.descriptionHint')}>
                     <textarea
                       rows={5}
                       value={form.message}
                       onChange={set('message')}
-                      placeholder="A few sentences about the product, goals, and what kind of design help you’re looking for…"
+                      placeholder={t('hireModal.descriptionPlaceholder')}
                       required
                     />
                   </Field>
 
-                  <Field label="Attachments" hint={`Up to ${MAX_FILES} files · 25 MB each`}>
+                  <Field label={t('hireModal.attachmentsLabel')} hint={t('hireModal.attachmentsHint')}>
                     <div
                       className={`hire__dropzone ${dragging ? 'is-dragging' : ''} ${files.length ? 'has-files' : ''}`}
                       onDragOver={onDragOver}
@@ -311,10 +285,10 @@ export default function HireModal({ open, onClose }) {
                             <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
                           </svg>
                           <span className="hire__dropzone-main">
-                            <strong>Click to attach</strong> or drag files here
+                            <strong>{t('hireModal.attachText')}</strong> {t('hireModal.attachHint')}
                           </span>
                           <span className="hire__dropzone-hint">
-                            PDF · images · decks · briefs · zip
+                            {t('hireModal.attachHint')}
                           </span>
                         </button>
                       ) : (
@@ -349,7 +323,7 @@ export default function HireModal({ open, onClose }) {
                                 type="button"
                                 onClick={() => fileInputRef.current?.click()}
                               >
-                                + Add more
+                                {t('hireModal.addMore')}
                               </button>
                             </li>
                           )}
@@ -378,7 +352,7 @@ export default function HireModal({ open, onClose }) {
 
                   <div className="hire__actions">
                     <p className="hire__privacy">
-                      Your message goes straight to my inbox. No newsletters, no third parties.
+                      {t('hireModal.privacy')}
                     </p>
                     <button
                       type="submit"
@@ -388,11 +362,11 @@ export default function HireModal({ open, onClose }) {
                       {status === 'sending' ? (
                         <>
                           <span className="hire__spinner" aria-hidden="true" />
-                          Sending…
+                          {t('hireModal.sending')}
                         </>
                       ) : (
                         <>
-                          Send message
+                          {t('hireModal.send')}
                           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                           </svg>
@@ -409,12 +383,12 @@ export default function HireModal({ open, onClose }) {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h2 className="h-display hire__title">Message sent.</h2>
+                <h2 className="h-display hire__title">{t('hireModal.successTitle')}</h2>
                 <p className="hire__lede">
-                  Thanks {form.name?.split(' ')[0] || 'there'} — I’ll reply within 24 hours.
+                  {t('hireModal.successLede', { name: form.name?.split(' ')[0] || t('hireModal.successThere') })}
                 </p>
                 <button type="button" className="btn btn-secondary" onClick={onClose}>
-                  Close
+                  {t('hireModal.close')}
                 </button>
               </div>
             )}
@@ -425,7 +399,6 @@ export default function HireModal({ open, onClose }) {
   )
 }
 
-/* small label-wrapped field helper */
 function Field({ label, hint, required, children }) {
   return (
     <label className="hire__field">

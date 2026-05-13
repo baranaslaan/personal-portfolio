@@ -1,9 +1,9 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { SKILLS } from '../data/projects'
 
-/* CV-derived data */
 const EXPERIENCE = [
   {
     period: 'Jan 2025 — Present',
@@ -91,94 +91,69 @@ const item = {
 }
 
 export default function About({ onHireClick }) {
+  const { t } = useTranslation()
   return (
     <main className="aboutp">
-      {/* ambient wash */}
       <div className="aboutp__ambient" aria-hidden="true" />
-
       <div className="aboutp__container">
-        {/* back link */}
         <Link to="/" className="pdetail__back">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M19 12H5M12 5l-7 7 7 7" />
           </svg>
-          Back home
+          {t('about.backHome')}
         </Link>
 
         <motion.div variants={container} initial="hidden" animate="show">
-
-          {/* ============ HERO ============ */}
           <motion.section variants={item} className="aboutp__hero">
-            <p className="kicker"><span className="kicker__line" />About</p>
+            <p className="kicker"><span className="kicker__line" />{t('about.kicker')}</p>
             <h1 className="h-display aboutp__title">
-              Designing useful<br />digital products<br />since 2018.
+              {t('about.title1')}<br />{t('about.title2')}<br />{t('about.title3')}
             </h1>
             <p className="aboutp__lede">
-              I am a Product Designer creating user-centered digital products since 2018.
-              I independently designed the UI/UX of the RouteWise App, contributed to the
-              design team of Akaunting, and delivered design solutions for the Ticaret
-              Bakanlığı Free Zones Platform, TUSAŞ Hub, ASELSAN Hub, and EntekBir Mobile
-              projects. All are live and in active use — built around usability,
-              accessibility, and craft. Beyond UI/UX, I work in motion, branding, and
-              graphic design.
+              {t('about.lede')}
             </p>
 
             <div className="aboutp__meta">
-              <span><strong>Istanbul, Türkiye</strong></span>
+              <span><strong>{t('about.location')}</strong></span>
               <span aria-hidden="true">·</span>
-              <span>5+ years in design</span>
+              <span>{t('about.experience')}</span>
               <span aria-hidden="true">·</span>
-              <span>4 companies</span>
+              <span>{t('about.companies')}</span>
             </div>
 
             <div className="aboutp__actions">
-              <a
-                href="/baran-aslan-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
+              <a href="/baran-aslan-resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
-                Download CV
+                {t('about.downloadCV')}
               </a>
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={onHireClick}
-              >
+              <button type="button" className="btn btn-secondary" onClick={onHireClick}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
-                Get in touch
+                {t('about.getInTouch')}
               </button>
             </div>
           </motion.section>
 
-          {/* ============ CURRENTLY ============ */}
           <motion.section variants={item} className="aboutp__current">
             <div className="aboutp__current-card">
               <span className="aboutp__current-dot" aria-hidden="true" />
               <div>
-                <div className="aboutp__current-label">Currently</div>
+                <div className="aboutp__current-label">{t('about.currently')}</div>
                 <div className="aboutp__current-value">
-                  Product Designer at <strong>Beat Software Solutions</strong> · Istanbul
+                  {t('about.currentRole')} <strong>Beat Software Solutions</strong> · Istanbul
                 </div>
               </div>
             </div>
           </motion.section>
 
-          {/* ============ EXPERIENCE ============ */}
           <motion.section variants={item} className="aboutp__section">
             <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">Experience</h2>
-              <span className="aboutp__section-meta">{EXPERIENCE.length} roles</span>
+              <h2 className="aboutp__h2">{t('about.experienceTitle')}</h2>
+              <span className="aboutp__section-meta">{EXPERIENCE.length} {t('about.experienceRoles')}</span>
             </header>
-
             <ol className="aboutp__timeline">
               {EXPERIENCE.map((e, i) => (
                 <li key={i} className="aboutp__role">
@@ -201,11 +176,10 @@ export default function About({ onHireClick }) {
             </ol>
           </motion.section>
 
-          {/* ============ SHIPPED PRODUCTS ============ */}
           <motion.section variants={item} className="aboutp__section">
             <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">Shipped to production</h2>
-              <span className="aboutp__section-meta">All live, all in use</span>
+              <h2 className="aboutp__h2">{t('about.shippedTitle')}</h2>
+              <span className="aboutp__section-meta">{t('about.shippedMeta')}</span>
             </header>
             <div className="aboutp__shipped">
               {SHIPPED.map((s, i) => (
@@ -220,10 +194,9 @@ export default function About({ onHireClick }) {
             </div>
           </motion.section>
 
-          {/* ============ EDUCATION ============ */}
           <motion.section variants={item} className="aboutp__section">
             <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">Education</h2>
+              <h2 className="aboutp__h2">{t('about.educationTitle')}</h2>
             </header>
             <ol className="aboutp__timeline">
               {EDUCATION.map((e, i) => (
@@ -242,10 +215,9 @@ export default function About({ onHireClick }) {
             </ol>
           </motion.section>
 
-          {/* ============ SKILLS ============ */}
           <motion.section variants={item} className="aboutp__section">
             <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">Skills &amp; tools</h2>
+              <h2 className="aboutp__h2">{t('about.skillsTitle')}</h2>
             </header>
             <div className="aboutp__skills">
               {Object.entries(SKILLS).map(([cat, skills]) => (
@@ -259,50 +231,41 @@ export default function About({ onHireClick }) {
             </div>
           </motion.section>
 
-          {/* ============ LANGUAGES ============ */}
           <motion.section variants={item} className="aboutp__section">
             <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">Languages</h2>
+              <h2 className="aboutp__h2">{t('about.languagesTitle')}</h2>
             </header>
             <div className="aboutp__lang">
               <div className="aboutp__lang-row">
                 <span className="aboutp__lang-name">English</span>
-                <span className="aboutp__lang-level">Professional working proficiency</span>
+                <span className="aboutp__lang-level">{t('about.englishLevel')}</span>
               </div>
               <div className="aboutp__lang-row">
                 <span className="aboutp__lang-name">Turkish</span>
-                <span className="aboutp__lang-level">Native</span>
+                <span className="aboutp__lang-level">{t('about.turkishLevel')}</span>
               </div>
             </div>
           </motion.section>
 
-          {/* ============ CTA ============ */}
           <motion.section variants={item} className="aboutp__cta">
             <div className="aboutp__cta-inner">
-              <h2 className="h-display aboutp__cta-title">Let’s work together.</h2>
+              <h2 className="h-display aboutp__cta-title">{t('about.ctaTitle')}</h2>
               <p className="aboutp__cta-lede">
-                Have a product challenge or role in mind? I’m always open to discussing
-                new opportunities.
+                {t('about.ctaLede')}
               </p>
               <div className="aboutp__actions">
                 <button type="button" className="btn btn-primary" onClick={onHireClick}>
-                  Hire me
+                  {t('about.hireMe')}
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </button>
-                <a
-                  href="/baran-aslan-resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  Download CV
+                <a href="/baran-aslan-resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                  {t('about.downloadCV')}
                 </a>
               </div>
             </div>
           </motion.section>
-
         </motion.div>
       </div>
     </main>

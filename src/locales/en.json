@@ -3,18 +3,18 @@
     "work": "Work",
     "about": "About",
     "contact": "Contact",
-    "hireMe": "Hire me"
+    "hireMe": "Hire Me"
   },
   "hero": {
-    "rotatingWords": ["Designer.", "Researcher.", "Builder."],
+    "rotatingWords": ["Designer.", "Researcher.", "Developer."],
     "stats": [
-      ["5+", "Years exp."],
+      ["5+", "Years experience"],
       ["9", "Products"],
       ["3", "Design systems"]
     ],
-    "badge": "Available for new projects",
-    "headingStatic": "Product",
-    "desc": "I design intuitive digital products with a focus on user needs, visual craft, and systems thinking — from first sketch to shipped.",
+    "badge": "Open to new projects",
+    "headingStatic": "Digital Product",
+    "desc": "I design intuitive digital products focusing on user needs, visual craft, and systems thinking — from initial sketch to launch.",
     "viewWork": "View Work",
     "getInTouch": "Get in Touch"
   },
@@ -22,15 +22,246 @@
     "items": [
       {
         "title": "UI/UX Design",
-        "desc": "From early wireframes to pixel-perfect interfaces — with a focus on usability, visual hierarchy, and interaction craft."
+        "desc": "Designs focused on usability, visual hierarchy, and interaction craft; from wireframes to pixel-perfect interfaces."
       },
       {
         "title": "Design Systems",
-        "desc": "Scalable token architectures, component libraries, and design-to-code documentation that keep teams aligned at speed."
+        "desc": "Scalable token architectures, component libraries, and design-to-code documentation enabling teams to work in harmony."
       },
       {
         "title": "User Research",
-        "desc": "Interviews, usability tests, card sorts, and synthesis frameworks that ground design decisions in real user behaviour."
+        "desc": "Interviews, usability testing, card sorting, and synthesis frameworks to ground design decisions in real user behavior."
+      }
+    ]
+  },
+  "footer": {
+    "about": "About",
+    "work": "Work",
+    "contact": "Contact",
+    "cv": "CV",
+    "copyright": "All rights reserved"
+  },
+  "contact": {
+    "kicker": "Get in Touch",
+    "title": "Let's work",
+    "titleBr": "together",
+    "body": "Have a product challenge or design role in mind? I'm always open to discussing new opportunities and ideas.",
+    "emailBtn": "Send an Email",
+    "findMeOn": "Find me on",
+    "responseTime": "Response time",
+    "responseText": "Usually within",
+    "responseHours": "6 hours"
+  },
+  "about": {
+    "backHome": "Back home",
+    "kicker": "About",
+    "title1": "Designing useful",
+    "title2": "digital products",
+    "title3": "since 2018.",
+    "lede": "I am a Product Designer creating user-centered digital products since 2018. I independently designed the UI/UX of the RouteWise App, contributed to the design team of Akaunting, and delivered design solutions for the Ticaret Bakanlığı Free Zones Platform, TUSAŞ Hub, ASELSAN Hub, and EntekBir Mobile projects. All are live and in active use — built around usability, accessibility, and craft. Beyond UI/UX, I work in motion, branding, and graphic design.",
+    "location": "Istanbul, Türkiye",
+    "experience": "5+ years in design",
+    "companies": "4 companies",
+    "downloadCV": "Download CV",
+    "getInTouch": "Get in touch",
+    "currently": "Currently",
+    "currentRole": "Product Designer at",
+    "experienceTitle": "Experience",
+    "experienceRoles": "roles",
+    "shippedTitle": "Shipped to production",
+    "shippedMeta": "All live, all in use",
+    "educationTitle": "Education",
+    "skillsTitle": "Skills & tools",
+    "languagesTitle": "Languages",
+    "englishLevel": "Professional working proficiency",
+    "turkishLevel": "Native",
+    "ctaTitle": "Let's work together.",
+    "ctaLede": "Have a product challenge or role in mind? I'm always open to discussing new opportunities.",
+    "hireMe": "Hire me"
+  },
+  "hireModal": {
+    "kicker": "Get in touch",
+    "title": "Hire me",
+    "lede": "Tell me about your project or role and I'll get back within 6 hours.",
+    "nameLabel": "Your name",
+    "namePlaceholder": "Jane Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "jane@company.com",
+    "companyLabel": "Company / role",
+    "companyPlaceholder": "Acme · Head of Product",
+    "companyHint": "Optional",
+    "projectTypeLabel": "Project type",
+    "projectTypeSelect": "Select a project type…",
+    "projectTypes": {
+      "fulltime": "Full-time role",
+      "contract": "Contract / part-time",
+      "freelance": "Freelance project",
+      "consulting": "Consulting / advisory",
+      "other": "Other"
+    },
+    "budgetLabel": "Budget",
+    "budgetSelect": "Select a budget range…",
+    "budgets": {
+      "under5k": "Under $5k",
+      "5-15k": "$5k – $15k",
+      "15-30k": "$15k – $30k",
+      "over30k": "$30k+",
+      "tbd": "Let's discuss"
+    },
+    "timelineLabel": "Timeline",
+    "timelineSelect": "Select a timeline…",
+    "timelines": {
+      "asap": "ASAP",
+      "1mo": "Within 1 month",
+      "1-3mo": "1 – 3 months",
+      "3moplus": "3+ months",
+      "flexible": "Flexible"
+    },
+    "descriptionLabel": "Project description",
+    "descriptionPlaceholder": "A few sentences about the product, goals, and what kind of design help you're looking for…",
+    "descriptionHint": "What are you building, and what do you need?",
+    "attachmentsLabel": "Attachments",
+    "attachmentsHint": "Up to 5 files · 25 MB each",
+    "attachText": "Click to attach",
+    "attachHint": "PDF · images · decks · briefs · zip",
+    "addMore": "+ Add more",
+    "privacy": "Your message goes straight to my inbox. No newsletters, no third parties.",
+    "sending": "Sending…",
+    "send": "Send message",
+    "successTitle": "Message sent.",
+    "successLede": "Thanks {name} — I'll reply within 24 hours.",
+    "successThere": "there",
+    "close": "Close",
+    "closeLabel": "Close (Esc)"
+  },
+  "projectDetail": {
+    "backToWork": "Back to work",
+    "caseStudy": "Case Study",
+    "role": "Role",
+    "year": "Year",
+    "impact": "Impact",
+    "disciplines": "Disciplines",
+    "keyHighlights": "Key Highlights",
+    "selectedFrames": "Selected Frames",
+    "viewOnBehance": "View on Behance",
+    "viewPrototype": "View Prototype"
+  },
+  "projects": {
+    "kicker": "Selected Work",
+    "heading": "Things I've designed",
+    "countLabel": "projects",
+    "viewCaseStudy": "View case study",
+    "items": [
+      {
+        "title": "StandardFlow Website UI Design",
+        "desc": "End-to-end website UI design — landing page, marketing flow, and conversion-focused interactions for a SaaS product. Full case study covering visual system and key screens.",
+        "tags": ["Web Design", "Landing Page", "UI/UX", "Figma"],
+        "year": "2026",
+        "role": "Product Designer",
+        "metric": { "value": "Case Study", "label": "end-to-end UI" },
+        "highlights": [
+          "Full landing-page flow built on a tight visual system",
+          "Hero, features, social proof and pricing sections — conversion-focused layout",
+          "Reusable patterns and components, ready for handoff",
+          "Built in Figma with attention to typography and motion craft"
+        ],
+        "galleryCaptions": [
+          "Landing page — hero & primary CTA",
+          "Features and section system",
+          "Detail views and supporting screens"
+        ]
+      },
+      {
+        "title": "Accounting Software UI Design",
+        "desc": "Interface design and design-system work for an accounting SaaS — invoices, reports, and dashboard surfaces with a scalable component library underneath.",
+        "tags": ["SaaS", "Design System", "App Design", "Figma"],
+        "year": "2022",
+        "role": "Product Designer",
+        "metric": { "value": "Design System", "label": "shipped with engineering" },
+        "highlights": [
+          "Interface design for invoices, reports, and dashboard surfaces",
+          "Component-library foundation supporting consistent product UI",
+          "Co-designed with a partner designer on layout and data patterns",
+          "Built in Figma; legacy XD/Illustrator artwork integrated where useful"
+        ],
+        "galleryCaptions": [
+          "Interface design — primary surfaces",
+          "Design system documentation",
+          "Component patterns and states"
+        ]
+      },
+      {
+        "title": "Project Management App",
+        "desc": "Product design for a project management tool — landing surface and key in-app screens, focused on clarity for cross-functional teams.",
+        "tags": ["Product Design", "App Design", "Figma", "Web"],
+        "year": "2024",
+        "role": "UI/UX Designer",
+        "metric": { "value": "Landing + App", "label": "parallel design tracks" },
+        "highlights": [
+          "Marketing landing page paired with in-app product screens",
+          "Information hierarchy tuned for fast scanning across long task lists",
+          "Designed in Figma with consistent token and component usage"
+        ],
+        "galleryCaptions": [
+          "Landing page and feature highlights",
+          "In-app screens — task & project views"
+        ]
+      },
+      {
+        "title": "Pricing Page UI Design",
+        "desc": "A focused pricing-page exploration — clear plan comparison, conversion-oriented hierarchy, and a small interaction system around toggles and CTAs.",
+        "tags": ["UI Design", "Web", "Conversion", "Figma"],
+        "year": "2022",
+        "role": "UI Designer",
+        "metric": { "value": "Focused study", "label": "pricing patterns" },
+        "highlights": [
+          "Plan comparison tuned for fast scanning",
+          "Toggle interactions and supporting micro-states",
+          "Conversion-led visual hierarchy on primary CTA"
+        ],
+        "galleryCaptions": [
+          "Pricing page — primary layout",
+          "Alternative treatments & states"
+        ]
+      },
+      {
+        "title": "Routewise UI Design",
+        "desc": "This UI design focuses on making multi-vehicle tracking intuitive and effortless. It transforms complex data into a clean, user-friendly experience.",
+        "tags": ["UI Design", "Web", "Figma", "SaaS"],
+        "year": "2025",
+        "role": "UI Designer",
+        "metric": { "value": "Marketing site", "label": "full visual language" },
+        "highlights": [
+          "Restrained visual language for a high-trust category",
+          "Strong typographic hierarchy across hero and service sections",
+          "Designed in Figma with reusable section patterns"
+        ],
+        "galleryCaptions": [
+          "Case Study — User Onboarding",
+          "Login & Authentication",
+          "Registration & Profile Setup",
+          "Dashboard View",
+          "Cars View",
+          "Cars Map View",
+          "New Cars View"
+        ]
+      },
+      {
+        "title": "LogoType Design",
+        "desc": "A collection of logotype and brand-identity explorations — wordmarks, lockups, and typographic studies across multiple brand contexts.",
+        "tags": ["Brand Identity", "Logo", "Typography"],
+        "year": "2021",
+        "role": "Designer",
+        "metric": { "value": "Brand", "label": "logotype studies" },
+        "highlights": [
+          "Wordmarks and lockups across multiple brand directions",
+          "Typographic exploration and custom letterform tuning",
+          "Crafted in Illustrator with supporting Photoshop work"
+        ],
+        "galleryCaptions": [
+          "Logotype set — wordmarks",
+          "Brand context and lockups"
+        ]
       }
     ]
   }

@@ -8,6 +8,7 @@ import HireModal from './components/HireModal'
 import Home from './pages/Home'
 import About from './pages/About'
 import ProjectDetail from './pages/ProjectDetail'
+import Logo from './assets/aslan.svg'
 
 function useScrolled(threshold = 40) {
   const [scrolled, setScrolled] = useState(false)

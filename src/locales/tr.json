@@ -33,5 +33,236 @@
         "desc": "Tasarım kararlarını gerçek kullanıcı davranışlarına dayandıran mülakatlar, kullanılabilirlik testleri, kart gruplama ve sentezleme çerçeveleri."
       }
     ]
+  },
+  "footer": {
+    "about": "Hakkımda",
+    "work": "İşler",
+    "contact": "İletişim",
+    "cv": "CV",
+    "copyright": "Tüm hakları saklıdır"
+  },
+  "contact": {
+    "kicker": "İletişime Geç",
+    "title": "Beraber",
+    "titleBr": "çalışalım",
+    "body": "Bir ürün zorluğu veya tasarım rolü aklında mı? Yeni fırsatları ve fikirleri tartışmak için her zaman açığım.",
+    "emailBtn": "E-posta Gönder",
+    "findMeOn": "Beni bul",
+    "responseTime": "Yanıt süresi",
+    "responseText": "Genellikle",
+    "responseHours": "6 saat içinde"
+  },
+  "about": {
+    "backHome": "Ana sayfaya dön",
+    "kicker": "Hakkımda",
+    "title1": "Kullanışlı dijital",
+    "title2": "ürünler tasarlıyorum",
+    "title3": "2018'den beri.",
+    "lede": "2018'den beri kullanıcı odaklı dijital ürünler tasarlayan bir Ürün Tasarımcısıyım. RouteWise Uygulamasının UI/UX tasarımını bağımsız olarak yaptım, Akaunting tasarım ekibine katkıda bulundum ve Ticaret Bakanlığı Serbest Bölgeler Platformu, TUSAŞ Hub, ASELSAN Hub ve EntekBir Mobile projeleri için tasarım çözümleri sundum. Hepsi canlı ve aktif olarak kullanılıyor — kullanılabilirlik, erişilebilirlik ve işçiliğin etrafında yapılmış. UI/UX'in ötesinde, hareket, marka ve grafik tasarımda çalışıyorum.",
+    "location": "İstanbul, Türkiye",
+    "experience": "Tasarımda 5+ yıl deneyim",
+    "companies": "4 şirket",
+    "downloadCV": "CV İndir",
+    "getInTouch": "İletişime geç",
+    "currently": "Şu anda",
+    "currentRole": "Ürün Tasarımcısı at",
+    "experienceTitle": "Deneyim",
+    "experienceRoles": "pozisyon",
+    "shippedTitle": "Yayına Alındı",
+    "shippedMeta": "Hepsi canlı, hepsi kullanılıyor",
+    "educationTitle": "Eğitim",
+    "skillsTitle": "Beceriler & Araçlar",
+    "languagesTitle": "Diller",
+    "englishLevel": "Profesyonel çalışan yeterliliği",
+    "turkishLevel": "Ana dil",
+    "ctaTitle": "Beraber çalışalım.",
+    "ctaLede": "Aklında bir ürün zorluğu veya rol var mı? Yeni fırsatları tartışmak için her zaman açığım.",
+    "hireMe": "Beni işe al"
+  },
+  "hireModal": {
+    "kicker": "İletişime geç",
+    "title": "Beni işe al",
+    "lede": "Projeniz veya rolünüz hakkında bana söyleyin ve 6 saat içinde cevap vereceğim.",
+    "nameLabel": "Adınız",
+    "namePlaceholder": "Jane Doe",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "jane@şirket.com",
+    "companyLabel": "Şirket / rol",
+    "companyPlaceholder": "Acme · Ürün Müdürü",
+    "companyHint": "İsteğe bağlı",
+    "projectTypeLabel": "Proje tipi",
+    "projectTypeSelect": "Proje türü seçin…",
+    "projectTypes": {
+      "fulltime": "Tam zamanlı pozisyon",
+      "contract": "Kontrat / yarı zamanlı",
+      "freelance": "Serbest çalışma",
+      "consulting": "Danışmanlık / rehberlik",
+      "other": "Diğer"
+    },
+    "budgetLabel": "Bütçe",
+    "budgetSelect": "Bütçe aralığı seçin…",
+    "budgets": {
+      "under5k": "$5k altı",
+      "5-15k": "$5k – $15k",
+      "15-30k": "$15k – $30k",
+      "over30k": "$30k+",
+      "tbd": "Tartışalım"
+    },
+    "timelineLabel": "Zaman çizelgesi",
+    "timelineSelect": "Zaman çizelgesi seçin…",
+    "timelines": {
+      "asap": "Acil",
+      "1mo": "1 ay içinde",
+      "1-3mo": "1 – 3 ay",
+      "3moplus": "3+ ay",
+      "flexible": "Esnek"
+    },
+    "descriptionLabel": "Proje açıklaması",
+    "descriptionPlaceholder": "Ürün, hedefler ve ne tür tasarım yardımına ihtiyacınız olduğu hakkında birkaç cümle…",
+    "descriptionHint": "Ne yapıyorsunuz ve neye ihtiyacınız var?",
+    "attachmentsLabel": "Ekler",
+    "attachmentsHint": "En fazla 5 dosya · Her biri 25 MB",
+    "attachText": "Eklemek için tıklayın",
+    "attachHint": "PDF · görseller · sunumlar · dosyalar · zip",
+    "addMore": "+ Daha fazla ekle",
+    "privacy": "Mesajınız doğrudan gelen kutuma gider. Haber bülteni yok, üçüncü taraf yok.",
+    "sending": "Gönderiliyor…",
+    "send": "Mesaj gönder",
+    "successTitle": "Mesaj gönderildi.",
+    "successLede": "Teşekkürler {name} — 24 saat içinde cevap vereceğim.",
+    "successThere": "oraya",
+    "close": "Kapat",
+    "closeLabel": "Kapat (Esc)"
+  },
+  "projectDetail": {
+    "backToWork": "İşlere dön",
+    "caseStudy": "Vaka Çalışması",
+    "role": "Rol",
+    "year": "Yıl",
+    "impact": "Etki",
+    "disciplines": "Disiplinler",
+    "keyHighlights": "Ana Noktalar",
+    "selectedFrames": "Seçili Çerçeveler",
+    "viewOnBehance": "Behance'de İncele",
+    "viewPrototype": "Prototip Görüntüle"
+  },
+  "projects": {
+    "kicker": "Seçili İşler",
+    "heading": "Tasarladığım Ürünler",
+    "countLabel": "proje",
+    "viewCaseStudy": "Vaka çalışmasını incele",
+    "items": [
+      {
+        "title": "StandardFlow Web Sitesi UI Tasarımı",
+        "desc": "Bir SaaS ürünü için açılış sayfası, pazarlama akışı ve dönüşüm odaklı etkileşimleri içeren uçtan uca web sitesi arayüz tasarımı. Görsel sistemi ve temel ekranları kapsayan detaylı vaka çalışması.",
+        "tags": ["Web Tasarım", "Landing Page", "UI/UX", "Figma"],
+        "year": "2026",
+        "role": "Ürün Tasarımcısı",
+        "metric": { "value": "Vaka Çalışması", "label": "uçtan uca UI" },
+        "highlights": [
+          "Sıkı bir görsel sistem üzerine inşa edilmiş tam açılış sayfası akışı",
+          "Dönüşüm odaklı düzen: Hero, özellikler, sosyal kanıt ve fiyatlandırma",
+          "Geliştiriciye teslime (handoff) hazır, yeniden kullanılabilir desenler ve bileşenler",
+          "Tipografi ve hareket detaylarına dikkat edilerek Figma'da tasarlandı"
+        ],
+        "galleryCaptions": [
+          "Açılış sayfası — hero ve ana CTA",
+          "Özellikler ve bölüm sistemi",
+          "Detay görünümleri ve destekleyici ekranlar"
+        ]
+      },
+      {
+        "title": "Muhasebe Yazılımı UI Tasarımı",
+        "desc": "Bir muhasebe SaaS ürünü için arayüz tasarımı ve tasarım sistemi çalışması — faturalar, raporlar ve gösterge paneli (dashboard) yüzeyleri ile altında yatan ölçeklenebilir bileşen kütüphanesi.",
+        "tags": ["SaaS", "Tasarım Sistemi", "Uygulama Tasarımı", "Figma"],
+        "year": "2022",
+        "role": "Ürün Tasarımcısı",
+        "metric": { "value": "Tasarım Sistemi", "label": "geliştirme ekibiyle yayına alındı" },
+        "highlights": [
+          "Faturalar, raporlar ve dashboard yüzeyleri için arayüz tasarımı",
+          "Tutarlı ürün arayüzünü destekleyen bileşen kütüphanesi temeli",
+          "Düzen ve veri desenleri üzerinde partner bir tasarımcıyla ortaklaşa çalışıldı",
+          "Figma'da tasarlandı; eski XD/Illustrator varlıkları gerekli yerlere entegre edildi"
+        ],
+        "galleryCaptions": [
+          "Arayüz tasarımı — ana yüzeyler",
+          "Tasarım sistemi dokümantasyonu",
+          "Bileşen desenleri ve durumları (states)"
+        ]
+      },
+      {
+        "title": "Proje Yönetim Uygulaması",
+        "desc": "Çapraz fonksiyonel ekipler için netliğe odaklanan bir proje yönetim aracı ürün tasarımı — açılış yüzeyi ve temel uygulama içi ekranlar.",
+        "tags": ["Ürün Tasarımı", "Uygulama Tasarımı", "Figma", "Web"],
+        "year": "2024",
+        "role": "UI/UX Tasarımcısı",
+        "metric": { "value": "Açılış + Uygulama", "label": "paralel tasarım süreçleri" },
+        "highlights": [
+          "Uygulama içi ürün ekranlarıyla eşleştirilmiş pazarlama açılış sayfası",
+          "Uzun görev listelerinde hızlı tarama için optimize edilmiş bilgi hiyerarşisi",
+          "Tutarlı token ve bileşen kullanımıyla Figma'da tasarlandı"
+        ],
+        "galleryCaptions": [
+          "Açılış sayfası ve öne çıkan özellikler",
+          "Uygulama içi ekranlar — görev ve proje görünümleri"
+        ]
+      },
+      {
+        "title": "Fiyatlandırma Sayfası UI Tasarımı",
+        "desc": "Odaklanmış bir fiyatlandırma sayfası çalışması — net plan karşılaştırması, dönüşüm odaklı hiyerarşi ve geçişler (toggles) ile CTA'ler etrafında küçük bir etkileşim sistemi.",
+        "tags": ["UI Tasarımı", "Web", "Dönüşüm", "Figma"],
+        "year": "2022",
+        "role": "UI Tasarımcısı",
+        "metric": { "value": "Odaklı Çalışma", "label": "fiyatlandırma desenleri" },
+        "highlights": [
+          "Hızlı tarama için optimize edilmiş plan karşılaştırması",
+          "Geçiş (toggle) etkileşimleri ve destekleyici mikro durumlar",
+          "Ana CTA üzerinde dönüşüm odaklı görsel hiyerarşi"
+        ],
+        "galleryCaptions": [
+          "Fiyatlandırma sayfası — ana düzen",
+          "Alternatif yaklaşımlar ve durumlar"
+        ]
+      },
+      {
+        "title": "Routewise UI Tasarımı",
+        "desc": "Çoklu araç takibini sezgisel ve zahmetsiz hale getirmeye odaklanan UI tasarımı. Karmaşık verileri temiz, kullanıcı dostu bir deneyime dönüştürür.",
+        "tags": ["UI Tasarımı", "Web", "Figma", "SaaS"],
+        "year": "2025",
+        "role": "UI Tasarımcısı",
+        "metric": { "value": "Pazarlama Sitesi", "label": "tam görsel dil" },
+        "highlights": [
+          "Yüksek güven gerektiren bir kategori için ölçülü görsel dil",
+          "Hero ve hizmet bölümleri genelinde güçlü tipografik hiyerarşi",
+          "Yeniden kullanılabilir bölüm desenleriyle Figma'da tasarlandı"
+        ],
+        "galleryCaptions": [
+          "Vaka Çalışması — Kullanıcı Katılımı (Onboarding)",
+          "Giriş & Kimlik Doğrulama",
+          "Kayıt & Profil Oluşturma",
+          "Gösterge Paneli Görünümü",
+          "Araçlar Görünümü",
+          "Araçlar Harita Görünümü",
+          "Yeni Araçlar Görünümü"
+        ]
+      },
+      {
+        "title": "Logotype Tasarımı",
+        "desc": "Logotype ve marka kimliği çalışmaları koleksiyonu — birden fazla marka bağlamında kelime markaları (wordmarks), kilitli logolar (lockups) ve tipografik çalışmalar.",
+        "tags": ["Marka Kimliği", "Logo", "Tipografi"],
+        "year": "2021",
+        "role": "Tasarımcı",
+        "metric": { "value": "Marka", "label": "logotype çalışmaları" },
+        "highlights": [
+          "Farklı marka yönelimlerinde kelime markaları ve logo kilitleri",
+          "Tipografik keşif ve özel harf formu ayarlamaları",
+          "Destekleyici Photoshop çalışmalarıyla Illustrator'da üretildi"
+        ],
+        "galleryCaptions": [
+          "Logotype seti — kelime markaları",
+          "Marka bağlamı ve logo kilitleri"
+        ]
+      }
+    ]
   }
 }
