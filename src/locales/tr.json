@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "work": "İşler",
+    "about": "Hakkımda",
+    "contact": "İletişim",
+    "hireMe": "Birlikte Çalışalım"
+  },
+  "hero": {
+    "rotatingWords": ["Tasarımcısı.", "Araştırmacısı.", "Geliştiricisi."],
+    "stats": [
+      ["5+", "Yıl deneyim"],
+      ["9", "Ürün"],
+      ["3", "Tasarım sistemi"]
+    ],
+    "badge": "Yeni projelere açık",
+    "headingStatic": "Dijital Ürün",
+    "desc": "Kullanıcı ihtiyaçlarına, görsel işçiliğe ve sistem düşüncesine odaklanarak sezgisel dijital ürünler tasarlıyorum — ilk eskizden yayına kadar.",
+    "viewWork": "İşleri Gör",
+    "getInTouch": "İletişime Geç"
+  },
+  "caps": {
+    "items": [
+      {
+        "title": "UI/UX Tasarımı",
+        "desc": "Tel çerçevelerden (wireframe) piksel hassasiyetindeki arayüzlere; kullanılabilirlik, görsel hiyerarşi ve etkileşim zanaatına odaklanan tasarımlar."
+      },
+      {
+        "title": "Tasarım Sistemleri",
+        "desc": "Ekiplerin hızla uyum içinde çalışmasını sağlayan ölçeklenebilir token mimarileri, bileşen kütüphaneleri ve tasarımdan koda dokümantasyonlar."
+      },
+      {
+        "title": "Kullanıcı Araştırması",
+        "desc": "Tasarım kararlarını gerçek kullanıcı davranışlarına dayandıran mülakatlar, kullanılabilirlik testleri, kart gruplama ve sentezleme çerçeveleri."
+      }
+    ]
+  }
+}

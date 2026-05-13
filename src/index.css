@@ -418,7 +418,7 @@ button:focus-visible {
   font-family: 'Archivo', sans-serif;
   font-weight: 700;
   font-size: var(--text-md);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   color: var(--text-1);
 }
 .nav-logo {
@@ -659,8 +659,18 @@ button:focus-visible {
   .hero__split { grid-template-columns: 1fr; }
   .hero__visual-wrap { order: -1; max-width: 360px; margin: 0 auto; }
 }
-.hero__copy { min-width: 0; }
-.hero__visual-wrap { min-width: 0; }
+.hero__copy { 
+  min-width: 0; 
+  position: relative; /* Katman kontrolü için şart */
+  z-index: 10;        /* Yazıları en üst katmana alıyoruz */
+  width: 115%; /* Görselin biraz üstüne taşması için genişletiyoruz */
+}
+
+.hero__visual-wrap { 
+  min-width: 0; 
+  position: relative; 
+  z-index: 1;         /* Avatarı yazının bir alt katmanına bırakıyoruz */
+}
 
 .hero__badge {
   display: inline-flex;
@@ -687,7 +697,7 @@ button:focus-visible {
 
 .hero__heading {
   font-family: 'Archivo', sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   /* a touch more line-height so descenders sit naturally inside the row box */
   line-height: 1.06;
   letter-spacing: -0.04em;

@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "hireMe": "Hire me"
+  },
+  "hero": {
+    "rotatingWords": ["Designer.", "Researcher.", "Builder."],
+    "stats": [
+      ["5+", "Years exp."],
+      ["9", "Products"],
+      ["3", "Design systems"]
+    ],
+    "badge": "Available for new projects",
+    "headingStatic": "Product",
+    "desc": "I design intuitive digital products with a focus on user needs, visual craft, and systems thinking — from first sketch to shipped.",
+    "viewWork": "View Work",
+    "getInTouch": "Get in Touch"
+  },
+  "caps": {
+    "items": [
+      {
+        "title": "UI/UX Design",
+        "desc": "From early wireframes to pixel-perfect interfaces — with a focus on usability, visual hierarchy, and interaction craft."
+      },
+      {
+        "title": "Design Systems",
+        "desc": "Scalable token architectures, component libraries, and design-to-code documentation that keep teams aligned at speed."
+      },
+      {
+        "title": "User Research",
+        "desc": "Interviews, usability tests, card sorts, and synthesis frameworks that ground design decisions in real user behaviour."
+      }
+    ]
+  }
+}

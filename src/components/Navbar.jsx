@@ -1,19 +1,37 @@
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../hooks/useTheme'
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from './LanguageToggle';
+
 
 function ThemeToggle({ theme, toggle }) {
   const isLight = theme === 'light'
   return (
     <motion.button
-      type="button"
-      onClick={toggle}
-      aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
-      title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
-      whileTap={{ scale: 0.9, rotate: -20 }}
-      transition={{ type: 'spring', stiffness: 350, damping: 18 }}
-      className="theme-toggle"
-    >
+  type="button"
+  onClick={toggle}
+  whileTap={{ scale: 0.9, rotate: -20 }}
+  transition={{ type: 'spring', stiffness: 350, damping: 18 }}
+  className="theme-toggle"
+  style={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '37px',
+  height: '37px',
+  padding: '0',
+  cursor: 'pointer',
+  background: isLight ? 'rgba(0, 0, 0, 0.04)' : 'rgba(255, 255, 255, 0.03)',
+  border: isLight ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid rgba(255, 255, 255, 0.15)',
+  borderRadius: '12px',
+  color: 'inherit',
+  position: 'relative',
+  overflow: 'hidden'
+}}
+  aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+  title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+>
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={isLight ? 'moon' : 'sun'}
@@ -40,6 +58,8 @@ function ThemeToggle({ theme, toggle }) {
 }
 
 export default function Navbar({ scrolled, onHireClick }) {
+  const { t } = useTranslation();
+  
   const { theme, toggle } = useTheme();
 
   // Tek bir fonksiyonla hem Work hem Contact yönlendirmesini çözüyoruz
@@ -61,23 +81,25 @@ export default function Navbar({ scrolled, onHireClick }) {
       transition={{ type: 'spring', stiffness: 90, damping: 18, delay: 0.1 }}
       className={`nav ${scrolled ? 'is-scrolled' : ''}`}
     >
-      <Link to="/" className="nav-brand" aria-label="Home">
-        <span className="nav-brand__name">aslanbaran.com</span>
-      </Link>
+      {/* 1. SOL BÖLGE: Logo */}
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+        <Link to="/" className="nav-brand" aria-label="Home">
+          <span className="nav-brand__name">aslanbaran.com</span>
+        </Link>
+      </div>
 
-      <div className="nav-links">
-        {/* Work linki */}
-        <Link to="/#work" className="nav-link">Work</Link>
+      {/* 2. ORTA BÖLGE: Metin Linkleri */}
+      <div className="nav-menu" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+        <Link to="/#work" className="nav-link">{t('nav.work')}</Link>
+        <Link to="/about" className="nav-link">{t('nav.about')}</Link>
+        <Link to="/#contact" className="nav-link">{t('nav.contact')}</Link>
+      </div>
 
-        {/* About linki zaten doğru */}
-        <Link to="/about" className="nav-link">About</Link>
-
-        {/* Contact linki */}
-        <Link to="/#contact" className="nav-link">Contact</Link>
-        
+      {/* 3. SAĞ BÖLGE: Aksiyon Butonları (Toggles & Hire Me) */}
+      <div className="nav-actions" style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '12px' }}>
         <ThemeToggle theme={theme} toggle={toggle} />
+        <LanguageToggle theme={theme} />
         
-        {/* ... (Hire me butonu ve geri kalan her şey aynı kalacak) ... */}
         <motion.button
           type="button"
           onClick={onHireClick}
@@ -87,7 +109,7 @@ export default function Navbar({ scrolled, onHireClick }) {
           className="nav-hire"
         >
           <span className="nav-hire__dot" />
-          Hire me
+          {t('nav.hireMe')}
         </motion.button>
       </div>
     </motion.nav>

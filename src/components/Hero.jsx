@@ -5,6 +5,7 @@ import {
 } from 'framer-motion'
 import HeroVisual from './HeroVisual'
 import { useCountUp } from '../hooks/useCountUp'
+import { useTranslation } from 'react-i18next';
 
 const container = {
   hidden: {},
@@ -16,21 +17,26 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
 }
 
-const ROTATING_WORDS = ['Designer.', 'Researcher.', 'Builder.']
-const STATS = [['5+', 'Years exp.'], ['9', 'Products'], ['3', 'Design systems']]
+
 
 /* ---------- Letter-cascade rotating accent word ---------- */
 function RotatingAccent() {
-  const reduced = useReducedMotion()
-  const [i, setI] = useState(0)
+  const { t } = useTranslation();
+  // JSON'daki diziyi (array) obje olarak çekmemizi sağlayan özel parametre: returnObjects
+  const rotatingWords = t('hero.rotatingWords', { returnObjects: true });
+  
+  const reduced = useReducedMotion();
+  const [i, setI] = useState(0);
 
   useEffect(() => {
-    if (reduced) return
-    const id = setInterval(() => setI(x => (x + 1) % ROTATING_WORDS.length), 3600)
-    return () => clearInterval(id)
-  }, [reduced])
+    if (reduced) return;
+    // ROTATING_WORDS yerine artık kendi çektiğimiz rotatingWords'ü kullanıyoruz
+    const id = setInterval(() => setI(x => (x + 1) % rotatingWords.length), 3600);
+    return () => clearInterval(id);
+  }, [reduced, rotatingWords.length]); // Bağımlılık dizisine length'i ekledik
 
-  const word = ROTATING_WORDS[i]
+  // Yine kendi değişkenimiz
+  const word = rotatingWords[i];
 
   return (
     <span className="hero__heading-row">
@@ -39,7 +45,7 @@ function RotatingAccent() {
           key={word}
           className="hero__heading-accent"
           exit={{ y: '-105%', transition: { duration: 0.45, ease: [0.7, 0, 0.84, 0] } }}
-          style={{ display: 'inline-block' }}
+          style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
         >
           {word.split('').map((ch, j) => (
             <motion.span
@@ -124,20 +130,22 @@ function StatCell({ num, label, inView }) {
 
 /* ---------- Hero ---------- */
 export default function Hero() {
+  // 1. Çeviri fonksiyonunu ve istatistikleri içeri alıyoruz (HATA BURADA ÇÖZÜLDÜ)
+  const { t } = useTranslation();
+  const stats = t('hero.stats', { returnObjects: true });
+
   const reduced = useReducedMotion()
   const sectionRef = useRef(null)
   const statsRef = useRef(null)
   const statsInView = useInView(statsRef, { once: true, margin: '-80px' })
 
-  // cursor-tracked atmosphere (raw 0..1 viewport coords; blobs and spotlight read these)
+  // cursor-tracked atmosphere
   const mx = useMotionValue(0.5)
   const my = useMotionValue(0.5)
-  // cursor smoothed for spotlight
   const sx = useSpring(mx, { stiffness: 80, damping: 22, mass: 0.6 })
   const sy = useSpring(my, { stiffness: 80, damping: 22, mass: 0.6 })
   const spotlightX = useTransform(sx, v => `${v * 100}%`)
   const spotlightY = useTransform(sy, v => `${v * 100}%`)
-  // very small parallax shift for the blob composition (subtle reaction to cursor)
   const blobShiftX = useTransform(mx, v => (v - 0.5) * 40)
   const blobShiftY = useTransform(my, v => (v - 0.5) * 40)
   const blobShiftXNeg = useTransform(blobShiftX, v => -v * 0.7)
@@ -150,7 +158,6 @@ export default function Hero() {
     my.set((e.clientY - r.top) / r.height)
   }
 
-  // very slow drift loops — long durations + large keyframes so the wash feels alive but never patchy
   const driftA = reduced ? undefined : { x: [0, 80, -40, 30, 0], y: [0, -60, 40, -30, 0] }
   const driftB = reduced ? undefined : { x: [0, -70, 50, -30, 0], y: [0, 50, -60, 30, 0] }
   const driftEase = 'easeInOut'
@@ -166,7 +173,6 @@ export default function Hero() {
       <div className="hero__atmosphere" aria-hidden="true">
         <div className="hero__grid" />
 
-        {/* 2 large soft drifting accent blobs — only the diffuse middle is visible */}
         <motion.div
           className="hero__blob hero__blob--a"
           style={reduced ? undefined : { x: blobShiftX, y: blobShiftY }}
@@ -188,15 +194,12 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* cursor-tracked spotlight (off-screen until first move) */}
         {!reduced && (
           <motion.div
             className="hero__spotlight"
             style={{ left: spotlightX, top: spotlightY }}
           />
         )}
-
-        {/* fade vignette to keep edges clean */}
         <div className="hero__vignette" />
       </div>
 
@@ -206,7 +209,7 @@ export default function Hero() {
           <div className="hero__copy">
             <motion.div variants={item} className="hero__badge">
               <span className="hero__badge-dot" />
-              <span className="hero__badge-label">Available for new projects</span>
+              <span className="hero__badge-label">{t('hero.badge')}</span>
             </motion.div>
 
             <h1 className="hero__heading">
@@ -217,20 +220,19 @@ export default function Hero() {
                   transition={{ duration: 0.85, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
                   style={{ display: 'inline-block' }}
                 >
-                  Product
+                  {t('hero.headingStatic')}
                 </motion.span>
               </span>
               <RotatingAccent />
             </h1>
 
             <motion.p variants={item} className="hero__desc">
-              I design intuitive digital products with a focus on user needs,
-              visual craft, and systems thinking — from first sketch to shipped.
+              {t('hero.desc')}
             </motion.p>
 
             <motion.div variants={item} className="hero__ctas">
               <MagneticAnchor href="#work" className="btn btn-primary">
-                View Work
+                {t('hero.viewWork')}
                 <motion.svg
                   width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
@@ -241,7 +243,7 @@ export default function Hero() {
                 </motion.svg>
               </MagneticAnchor>
               <MagneticAnchor href="#contact" className="btn btn-secondary">
-                Get in Touch
+                {t('hero.getInTouch')}
               </MagneticAnchor>
             </motion.div>
           </div>
@@ -258,7 +260,8 @@ export default function Hero() {
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } } }}
           className="hero__stats-strip"
         >
-          {STATS.map(([n, l]) => (
+          {/* HATA ÇÖZÜMÜ: STATS yerine JSON'dan gelen stats değişkenini kullanıyoruz */}
+          {stats && stats.map(([n, l]) => (
             <StatCell key={l} num={n} label={l} inView={statsInView} />
           ))}
         </motion.div>
