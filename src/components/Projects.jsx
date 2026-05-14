@@ -3,23 +3,21 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { PROJECTS } from '../data/projects' // Yolun kendi projene göre doğru olduğundan emin ol
 
-const gridVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-}
-
 function ProjectCard({ project, index }) {
   const { t } = useTranslation()
   const num = String(index + 1).padStart(2, '0')
   const accent = project.accent
-  
+
   return (
-    <motion.div variants={cardVariants} whileHover="hover" whileTap={{ scale: 0.985 }} style={{ height: '100%' }}>
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.55, delay: Math.min(index * 0.06, 0.3), ease: [0.22, 1, 0.36, 1] }}
+      whileHover="hover"
+      whileTap={{ scale: 0.985 }}
+      style={{ height: '100%' }}
+    >
       <Link
         to={`/project/${project.id}`}
         aria-label={`View ${project.title} case study`}
@@ -116,13 +114,7 @@ export default function Projects() {
         <span className="projects__count">{PROJECTS.length} {t('projects.countLabel')}</span>
       </motion.div>
 
-      <motion.div
-        className="project-grid"
-        variants={gridVariants}
-        initial="show"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.05 }}
-      >
+      <div className="project-grid">
         {PROJECTS.map((p, i) => {
           // Statik görsel verisi ile JSON'dan gelen çeviri verisi burada birleşiyor:
           const tProject = translatedItems[i] || {}
@@ -134,7 +126,7 @@ export default function Projects() {
             </div>
           )
         })}
-      </motion.div>
+      </div>
     </section>
   )
 }

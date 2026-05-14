@@ -19,6 +19,16 @@ export default function IntroOverlay() {
   const reduced = useReducedMotion()
   const [open, setOpen] = useState(true)
 
+  // Disable browser scroll restoration so refresh always starts at the top.
+  // The .intro overlay is position:fixed and covers everything, so we don't
+  // need to lock body scroll — Navbar already manages overflow for its own panel.
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+  }, [])
+
   // skip immediately under reduced motion
   useEffect(() => {
     if (reduced) setOpen(false)
@@ -37,7 +47,10 @@ export default function IntroOverlay() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
-  const enter = () => setOpen(false)
+  const enter = () => {
+    window.scrollTo(0, 0)
+    setOpen(false)
+  }
 
   return (
     <AnimatePresence>
