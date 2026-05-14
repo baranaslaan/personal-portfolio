@@ -45,9 +45,23 @@ export default async function handler(request) {
       method: 'POST',
       body: incoming,
     })
-    const json = await upstream.json().catch(() => ({}))
-    return Response.json(json, { status: upstream.status })
-  } catch (err) {
+    // Read as text first so a parse failure doesn't swallow a 2xx response;
+    // some runtimes / response shapes don't decode reliably with .json().
+    const raw = await upstream.text()
+    let parsed = {}
+    try { parsed = JSON.parse(raw) } catch { /* keep parsed = {} */ }
+
+    if (upstream.ok) {
+      return Response.json(
+        { success: true, message: parsed.message || 'Submission received.' },
+        { status: 200 }
+      )
+    }
+    return Response.json(
+      { success: false, message: parsed.message || raw || 'Form submission failed.' },
+      { status: upstream.status }
+    )
+  } catch {
     return Response.json(
       { success: false, message: 'Network error reaching the form service.' },
       { status: 502 }
