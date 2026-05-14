@@ -37,13 +37,11 @@ export default function Home() {
         <Capabilities />
       </Reveal>
 
-      <Reveal>
-        <Projects />
-      </Reveal>
+      {/* Projects ve Contact kendi içlerinde whileInView yönetiyor; uzun bölüm
+          olan Projects mobilde Reveal'ın amount eşiğine takılıp görünmez kalıyordu. */}
+      <Projects />
 
-      <Reveal>
-        <Contact />
-      </Reveal>
+      <Contact />
     </>
   );
 }

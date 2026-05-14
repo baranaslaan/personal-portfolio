@@ -154,6 +154,8 @@
     "heading": "Things I've designed",
     "countLabel": "projects",
     "viewCaseStudy": "View case study",
+    "showMore": "Show more projects",
+    "showLess": "Show less",
     "items": [
       {
         "title": "StandardFlow Website UI Design",

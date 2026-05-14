@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-const ENDPOINT = 'https://api.web3forms.com/submit'
+// Submissions go through our serverless proxy (/api/contact). The Web3Forms
+// access key lives on the server only — never exposed in the client bundle.
+const ENDPOINT = '/api/contact'
 
 const emptyForm = {
   name: '',
@@ -16,8 +17,10 @@ const emptyForm = {
   _botcheck: '',
 }
 
-const MAX_FILES = 5
-const MAX_FILE_SIZE = 25 * 1024 * 1024 
+// Vercel Edge functions cap inbound request size at ~4.5 MB. Keep total
+// attachment payload comfortably under that.
+const MAX_FILES = 2
+const MAX_FILE_SIZE = 3 * 1024 * 1024
 const ACCEPT = '.pdf,.doc,.docx,.txt,.zip,.fig,.sketch,image/*'
 
 function formatBytes(b) {
@@ -69,8 +72,8 @@ export default function HireModal({ open, onClose }) {
     const next = [...files]
     for (const f of list) {
       if (next.length >= MAX_FILES) { rejected.push(`${f.name} (limit ${MAX_FILES})`); continue }
-      if (f.size > MAX_FILE_SIZE)   { rejected.push(`${f.name} (>25 MB)`); continue }
-      if (next.some(x => x.name === f.name && x.size === f.size)) continue 
+      if (f.size > MAX_FILE_SIZE)   { rejected.push(`${f.name} (>3 MB)`); continue }
+      if (next.some(x => x.name === f.name && x.size === f.size)) continue
       next.push(f)
     }
     setFiles(next)
@@ -102,7 +105,8 @@ export default function HireModal({ open, onClose }) {
     setError(null)
 
     const fd = new FormData()
-    fd.append('access_key', WEB3FORMS_ACCESS_KEY)
+    // access_key is injected by the /api/contact serverless function — do
+    // not send it from the client.
     fd.append('subject',    `New hire request from ${form.name}`)
     fd.append('from_name',  form.name)
     fd.append('replyto',    form.email)

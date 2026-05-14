@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { PROJECTS } from '../data/projects' // Yolun kendi projene göre doğru olduğundan emin ol
+
+const INITIAL_VISIBLE = 3
 
 function ProjectCard({ project, index }) {
   const { t } = useTranslation()
@@ -83,6 +86,11 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   const { t } = useTranslation()
   const translatedItems = t('projects.items', { returnObjects: true })
+  const [expanded, setExpanded] = useState(false)
+
+  const visibleProjects = expanded ? PROJECTS : PROJECTS.slice(0, INITIAL_VISIBLE)
+  const hiddenCount = PROJECTS.length - INITIAL_VISIBLE
+  const hasMore = hiddenCount > 0
 
   return (
     <section id="work" className="section">
@@ -111,18 +119,57 @@ export default function Projects() {
       </motion.div>
 
       <div className="project-grid">
-        {PROJECTS.map((p, i) => {
-          // Statik görsel verisi ile JSON'dan gelen çeviri verisi burada birleşiyor:
-          const tProject = translatedItems[i] || {}
-          const mergedProject = { ...p, ...tProject }
+        <AnimatePresence initial={false}>
+          {visibleProjects.map((p, i) => {
+            // Statik görsel verisi ile JSON'dan gelen çeviri verisi burada birleşiyor:
+            const tProject = translatedItems[i] || {}
+            const mergedProject = { ...p, ...tProject }
 
-          return (
-            <div key={mergedProject.id} className={mergedProject.wide ? 'project-wide' : ''}>
-              <ProjectCard project={mergedProject} index={i} />
-            </div>
-          )
-        })}
+            return (
+              <motion.div
+                key={mergedProject.id}
+                className={mergedProject.wide ? 'project-wide' : ''}
+                layout
+                initial={i >= INITIAL_VISIBLE ? { opacity: 0, y: 24 } : false}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 24 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <ProjectCard project={mergedProject} index={i} />
+              </motion.div>
+            )
+          })}
+        </AnimatePresence>
       </div>
+
+      {hasMore && (
+        <div className="projects__more">
+          <motion.button
+            type="button"
+            onClick={() => setExpanded(v => !v)}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+            className="projects__more-btn"
+            aria-expanded={expanded}
+          >
+            <span>
+              {expanded
+                ? t('projects.showLess', { defaultValue: 'Show less' })
+                : t('projects.showMore', { defaultValue: 'Show more', count: hiddenCount })}
+            </span>
+            <motion.svg
+              width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2.5"
+              strokeLinecap="round" strokeLinejoin="round"
+              animate={{ rotate: expanded ? 180 : 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <path d="M6 9l6 6 6-6" />
+            </motion.svg>
+          </motion.button>
+        </div>
+      )}
     </section>
   )
 }

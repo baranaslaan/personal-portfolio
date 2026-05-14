@@ -154,6 +154,8 @@
     "heading": "Tasarladığım Ürünler",
     "countLabel": "proje",
     "viewCaseStudy": "Vaka çalışmasını incele",
+    "showMore": "Daha fazla proje göster",
+    "showLess": "Daha az göster",
     "items": [
       {
         "title": "StandardFlow Web Sitesi UI Tasarımı",
