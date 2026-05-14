@@ -1,5 +1,4 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { SOCIALS } from '../data/projects'
 
@@ -32,21 +31,20 @@ function SocialRow({ s }) {
 
 export default function Contact() {
   const { t } = useTranslation()
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
     <section id="contact" className="section section--flush-top">
       <motion.div
-        ref={ref}
         initial={{ opacity: 0, y: 40, scale: 0.98 }}
-        animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="contact-card"
       >
         <motion.div
           initial={{ backgroundPosition: '-200% 0' }}
-          animate={inView ? { backgroundPosition: '200% 0' } : {}}
+          whileInView={{ backgroundPosition: '200% 0' }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 1.6, ease: 'easeOut' }}
           className="contact-card__sweep"
         />
@@ -55,8 +53,9 @@ export default function Contact() {
         <div className="contact-card__inner">
           <motion.div
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
-            initial="hidden"
-            animate={inView ? 'show' : 'hidden'}
+            initial="show"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
             className="contact-card__main"
           >
             <motion.p variants={fadeUp} className="kicker">
@@ -90,8 +89,9 @@ export default function Contact() {
               <div className="contact-card__side-label">{t('contact.findMeOn')}</div>
               <motion.div
                 variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } } }}
-                initial="hidden"
-                animate={inView ? 'show' : 'hidden'}
+                initial="show"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.05 }}
                 className="contact-card__socials"
               >
                 {SOCIALS.map(s => <SocialRow key={s.name} s={s} />)}

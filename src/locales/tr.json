@@ -3,7 +3,10 @@
     "work": "İşler",
     "about": "Hakkımda",
     "contact": "İletişim",
-    "hireMe": "Birlikte Çalışalım"
+    "hireMe": "Birlikte Çalışalım",
+    "lightMode": "Açık tema",
+    "darkMode": "Koyu tema",
+    "language": "Dil"
   },
   "hero": {
     "rotatingWords": ["Tasarımcısı.", "Araştırmacısı.", "Geliştiricisi."],

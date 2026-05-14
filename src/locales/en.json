@@ -3,7 +3,10 @@
     "work": "Work",
     "about": "About",
     "contact": "Contact",
-    "hireMe": "Hire Me"
+    "hireMe": "Hire Me",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "language": "Language"
   },
   "hero": {
     "rotatingWords": ["Designer.", "Researcher.", "Developer."],

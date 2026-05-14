@@ -1,6 +1,5 @@
-import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { PROJECTS } from '../data/projects' // Yolun kendi projene göre doğru olduğundan emin ol
 
@@ -91,17 +90,25 @@ export default function Projects() {
   const { t } = useTranslation()
   const translatedItems = t('projects.items', { returnObjects: true })
 
-  const ref = useRef(null)
-  const headerRef = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-  const headerInView = useInView(headerRef, { once: true, margin: '-60px' })
-
   return (
     <section id="work" className="section">
-      <motion.div ref={headerRef} initial={{ opacity: 0, y: 24 }} animate={headerInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="projects__header">
+      <motion.div
+        className="projects__header"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div>
           <p className="kicker">
-            <motion.span initial={{ width: 0 }} animate={headerInView ? { width: 20 } : { width: 0 }} transition={{ duration: 0.5, delay: 0.15 }} className="kicker__line" style={{ display: 'inline-block' }} />
+            <motion.span
+              className="kicker__line"
+              style={{ display: 'inline-block' }}
+              initial={{ width: 0 }}
+              whileInView={{ width: 20 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+            />
             {t('projects.kicker')}
           </p>
           <h2 className="h-display projects__title">{t('projects.heading')}</h2>
@@ -109,7 +116,13 @@ export default function Projects() {
         <span className="projects__count">{PROJECTS.length} {t('projects.countLabel')}</span>
       </motion.div>
 
-      <motion.div ref={ref} className="project-grid" variants={gridVariants} initial="hidden" animate={inView ? 'show' : 'hidden'}>
+      <motion.div
+        className="project-grid"
+        variants={gridVariants}
+        initial="show"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.05 }}
+      >
         {PROJECTS.map((p, i) => {
           // Statik görsel verisi ile JSON'dan gelen çeviri verisi burada birleşiyor:
           const tProject = translatedItems[i] || {}

@@ -12,7 +12,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
  *   - prefers-reduced-motion → bypass entirely on mount
  *   - whole panel is a button (role + onClick), Enter key also dismisses
  */
-const NAME = 'Baran Aslan.'
+const NAME = 'Baran Aslan'
 const EXIT_MS = 800
 
 export default function IntroOverlay() {

@@ -1,5 +1,4 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
 // İkonları sabit bir dizide tutuyoruz
@@ -51,8 +50,6 @@ function CapCard({ title, desc, icon }) {
 
 export default function Capabilities() {
   const { t } = useTranslation()
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
 
   // Metinleri dizi olarak çekiyoruz
   const capItems = t('caps.items', { returnObjects: true })
@@ -60,10 +57,10 @@ export default function Capabilities() {
   return (
     <section className="section section--flush-bottom">
       <motion.div
-        ref={ref}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
-        initial="hidden"
-        animate={inView ? 'show' : 'hidden'}
+        initial="show"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.05 }}
         className="caps-frame"
       >
         <div className="caps-grid">
