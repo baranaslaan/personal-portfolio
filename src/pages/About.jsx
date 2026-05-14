@@ -1,8 +1,10 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { SKILLS } from '../data/projects'
+// Reveal bileşenini import ediyoruz
+import { Reveal } from '../components/Reveal'
 
 const EXPERIENCE = [
   {
@@ -92,6 +94,7 @@ const item = {
 
 export default function About({ onHireClick }) {
   const { t } = useTranslation()
+  
   return (
     <main className="aboutp">
       <div className="aboutp__ambient" aria-hidden="true" />
@@ -104,168 +107,192 @@ export default function About({ onHireClick }) {
         </Link>
 
         <motion.div variants={container} initial="hidden" animate="show">
-          <motion.section variants={item} className="aboutp__hero">
-            <p className="kicker"><span className="kicker__line" />{t('about.kicker')}</p>
-            <h1 className="h-display aboutp__title">
-              {t('about.title1')}<br />{t('about.title2')}<br />{t('about.title3')}
-            </h1>
-            <p className="aboutp__lede">
-              {t('about.lede')}
-            </p>
-
-            <div className="aboutp__meta">
-              <span><strong>{t('about.location')}</strong></span>
-              <span aria-hidden="true">·</span>
-              <span>{t('about.experience')}</span>
-              <span aria-hidden="true">·</span>
-              <span>{t('about.companies')}</span>
-            </div>
-
-            <div className="aboutp__actions">
-              <a href="/baran-aslan-resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                {t('about.downloadCV')}
-              </a>
-              <button type="button" className="btn btn-secondary" onClick={onHireClick}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-                {t('about.getInTouch')}
-              </button>
-            </div>
-          </motion.section>
-
-          <motion.section variants={item} className="aboutp__current">
-            <div className="aboutp__current-card">
-              <span className="aboutp__current-dot" aria-hidden="true" />
-              <div>
-                <div className="aboutp__current-label">{t('about.currently')}</div>
-                <div className="aboutp__current-value">
-                  {t('about.currentRole')} <strong>Beat Software Solutions</strong> · Istanbul
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          <motion.section variants={item} className="aboutp__section">
-            <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">{t('about.experienceTitle')}</h2>
-              <span className="aboutp__section-meta">{EXPERIENCE.length} {t('about.experienceRoles')}</span>
-            </header>
-            <ol className="aboutp__timeline">
-              {EXPERIENCE.map((e, i) => (
-                <li key={i} className="aboutp__role">
-                  <div className="aboutp__role-period">{e.period}</div>
-                  <div className="aboutp__role-body">
-                    <div className="aboutp__role-head">
-                      <h3 className="aboutp__role-title">{e.role}</h3>
-                      <div className="aboutp__role-where">
-                        <span className="aboutp__role-company">{e.company}</span>
-                        <span className="aboutp__role-sep" aria-hidden="true">·</span>
-                        <span className="aboutp__role-loc">{e.location}</span>
-                      </div>
-                    </div>
-                    <ul className="aboutp__role-points">
-                      {e.points.map((p, j) => <li key={j}>{p}</li>)}
-                    </ul>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </motion.section>
-
-          <motion.section variants={item} className="aboutp__section">
-            <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">{t('about.shippedTitle')}</h2>
-              <span className="aboutp__section-meta">{t('about.shippedMeta')}</span>
-            </header>
-            <div className="aboutp__shipped">
-              {SHIPPED.map((s, i) => (
-                <div key={i} className="aboutp__shipped-item">
-                  <span className="aboutp__shipped-bullet" aria-hidden="true" />
-                  <div>
-                    <div className="aboutp__shipped-name">{s.name}</div>
-                    <div className="aboutp__shipped-note">{s.note}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.section>
-
-          <motion.section variants={item} className="aboutp__section">
-            <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">{t('about.educationTitle')}</h2>
-            </header>
-            <ol className="aboutp__timeline">
-              {EDUCATION.map((e, i) => (
-                <li key={i} className="aboutp__role">
-                  <div className="aboutp__role-period">{e.period}</div>
-                  <div className="aboutp__role-body">
-                    <div className="aboutp__role-head">
-                      <h3 className="aboutp__role-title">{e.school}</h3>
-                      <div className="aboutp__role-where">
-                        <span className="aboutp__role-company">{e.field}</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </motion.section>
-
-          <motion.section variants={item} className="aboutp__section">
-            <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">{t('about.skillsTitle')}</h2>
-            </header>
-            <div className="aboutp__skills">
-              {Object.entries(SKILLS).map(([cat, skills]) => (
-                <div key={cat} className="aboutp__skill-group">
-                  <div className="aboutp__skill-cat">{cat}</div>
-                  <div className="aboutp__skill-chips">
-                    {skills.map(s => <span key={s} className="chip">{s}</span>)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.section>
-
-          <motion.section variants={item} className="aboutp__section">
-            <header className="aboutp__section-head">
-              <h2 className="aboutp__h2">{t('about.languagesTitle')}</h2>
-            </header>
-            <div className="aboutp__lang">
-              <div className="aboutp__lang-row">
-                <span className="aboutp__lang-name">English</span>
-                <span className="aboutp__lang-level">{t('about.englishLevel')}</span>
-              </div>
-              <div className="aboutp__lang-row">
-                <span className="aboutp__lang-name">Turkish</span>
-                <span className="aboutp__lang-level">{t('about.turkishLevel')}</span>
-              </div>
-            </div>
-          </motion.section>
-
-          <motion.section variants={item} className="aboutp__cta">
-            <div className="aboutp__cta-inner">
-              <h2 className="h-display aboutp__cta-title">{t('about.ctaTitle')}</h2>
-              <p className="aboutp__cta-lede">
-                {t('about.ctaLede')}
+          {/* HERO */}
+          <Reveal delay={0.1}>
+            <motion.section variants={item} className="aboutp__hero">
+              <p className="kicker"><span className="kicker__line" />{t('about.kicker')}</p>
+              <h1 className="h-display aboutp__title">
+                {t('about.title1')}<br />{t('about.title2')}<br />{t('about.title3')}
+              </h1>
+              <p className="aboutp__lede">
+                {t('about.lede')}
               </p>
+
+              <div className="aboutp__meta">
+                <span><strong>{t('about.location')}</strong></span>
+                <span aria-hidden="true">·</span>
+                <span>{t('about.experience')}</span>
+                <span aria-hidden="true">·</span>
+                <span>{t('about.companies')}</span>
+              </div>
+
               <div className="aboutp__actions">
-                <button type="button" className="btn btn-primary" onClick={onHireClick}>
-                  {t('about.hireMe')}
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
+                <a href="/baran-aslan-resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
-                </button>
-                <a href="/baran-aslan-resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                   {t('about.downloadCV')}
                 </a>
+                <button type="button" className="btn btn-secondary" onClick={onHireClick}>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                  {t('about.getInTouch')}
+                </button>
               </div>
-            </div>
-          </motion.section>
+            </motion.section>
+          </Reveal>
+
+          {/* CURRENT STATUS */}
+          <Reveal>
+            <motion.section variants={item} className="aboutp__current">
+              <div className="aboutp__current-card">
+                <span className="aboutp__current-dot" aria-hidden="true" />
+                <div>
+                  <div className="aboutp__current-label">{t('about.currently')}</div>
+                  <div className="aboutp__current-value">
+                    {t('about.currentRole')} <strong>Beat Software Solutions</strong> · Istanbul
+                  </div>
+                </div>
+              </div>
+            </motion.section>
+          </Reveal>
+
+          {/* EXPERIENCE */}
+          <Reveal>
+            <motion.section variants={item} className="aboutp__section">
+              <header className="aboutp__section-head">
+                <h2 className="aboutp__h2">{t('about.experienceTitle')}</h2>
+                <span className="aboutp__section-meta">{EXPERIENCE.length} {t('about.experienceRoles')}</span>
+              </header>
+              <ol className="aboutp__timeline">
+                {EXPERIENCE.map((e, i) => (
+                  <li key={i} className="aboutp__role">
+                    <div className="aboutp__role-period">{e.period}</div>
+                    <div className="aboutp__role-body">
+                      <div className="aboutp__role-head">
+                        <h3 className="aboutp__role-title">{e.role}</h3>
+                        <div className="aboutp__role-where">
+                          <span className="aboutp__role-company">{e.company}</span>
+                          <span className="aboutp__role-sep" aria-hidden="true">·</span>
+                          <span className="aboutp__role-loc">{e.location}</span>
+                        </div>
+                      </div>
+                      <ul className="aboutp__role-points">
+                        {e.points.map((p, j) => <li key={j}>{p}</li>)}
+                      </ul>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </motion.section>
+          </Reveal>
+
+          {/* SHIPPED PROJECTS */}
+          <Reveal>
+            <motion.section variants={item} className="aboutp__section">
+              <header className="aboutp__section-head">
+                <h2 className="aboutp__h2">{t('about.shippedTitle')}</h2>
+                <span className="aboutp__section-meta">{t('about.shippedMeta')}</span>
+              </header>
+              <div className="aboutp__shipped">
+                {SHIPPED.map((s, i) => (
+                  <div key={i} className="aboutp__shipped-item">
+                    <span className="aboutp__shipped-bullet" aria-hidden="true" />
+                    <div>
+                      <div className="aboutp__shipped-name">{s.name}</div>
+                      <div className="aboutp__shipped-note">{s.note}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          </Reveal>
+
+          {/* EDUCATION */}
+          <Reveal>
+            <motion.section variants={item} className="aboutp__section">
+              <header className="aboutp__section-head">
+                <h2 className="aboutp__h2">{t('about.educationTitle')}</h2>
+              </header>
+              <ol className="aboutp__timeline">
+                {EDUCATION.map((e, i) => (
+                  <li key={i} className="aboutp__role">
+                    <div className="aboutp__role-period">{e.period}</div>
+                    <div className="aboutp__role-body">
+                      <div className="aboutp__role-head">
+                        <h3 className="aboutp__role-title">{e.school}</h3>
+                        <div className="aboutp__role-where">
+                          <span className="aboutp__role-company">{e.field}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </motion.section>
+          </Reveal>
+
+          {/* SKILLS */}
+          <Reveal>
+            <motion.section variants={item} className="aboutp__section">
+              <header className="aboutp__section-head">
+                <h2 className="aboutp__h2">{t('about.skillsTitle')}</h2>
+              </header>
+              <div className="aboutp__skills">
+                {Object.entries(SKILLS).map(([cat, skills]) => (
+                  <div key={cat} className="aboutp__skill-group">
+                    <div className="aboutp__skill-cat">{cat}</div>
+                    <div className="aboutp__skill-chips">
+                      {skills.map(s => <span key={s} className="chip">{s}</span>)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          </Reveal>
+
+          {/* LANGUAGES */}
+          <Reveal>
+            <motion.section variants={item} className="aboutp__section">
+              <header className="aboutp__section-head">
+                <h2 className="aboutp__h2">{t('about.languagesTitle')}</h2>
+              </header>
+              <div className="aboutp__lang">
+                <div className="aboutp__lang-row">
+                  <span className="aboutp__lang-name">English</span>
+                  <span className="aboutp__lang-level">{t('about.englishLevel')}</span>
+                </div>
+                <div className="aboutp__lang-row">
+                  <span className="aboutp__lang-name">Turkish</span>
+                  <span className="aboutp__lang-level">{t('about.turkishLevel')}</span>
+                </div>
+              </div>
+            </motion.section>
+          </Reveal>
+
+          {/* CTA */}
+          <Reveal>
+            <motion.section variants={item} className="aboutp__cta">
+              <div className="aboutp__cta-inner">
+                <h2 className="h-display aboutp__cta-title">{t('about.ctaTitle')}</h2>
+                <p className="aboutp__cta-lede">
+                  {t('about.ctaLede')}
+                </p>
+                <div className="aboutp__actions">
+                  <button type="button" className="btn btn-primary" onClick={onHireClick}>
+                    {t('about.hireMe')}
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <a href="/baran-aslan-resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                    {t('about.downloadCV')}
+                  </a>
+                </div>
+              </div>
+            </motion.section>
+          </Reveal>
         </motion.div>
       </div>
     </main>
