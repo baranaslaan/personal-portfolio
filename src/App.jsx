@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import ProjectDetail from './pages/ProjectDetail'
 import Logo from './assets/aslan.svg'
+import { Analytics } from '@vercel/analytics/react'
 
 function useScrolled(threshold = 40) {
   const [scrolled, setScrolled] = useState(false)
@@ -44,6 +45,7 @@ export default function App() {
       </AnimatePresence>
       <Footer />
       <HireModal open={hireOpen} onClose={() => setHireOpen(false)} />
+      <Analytics />
     </>
   )
 }
