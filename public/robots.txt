@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Vercel preview deployments are public by default — discourage indexing.
+# Production (aslanbaran.com) is the canonical version.
+
+Sitemap: https://aslanbaran.com/sitemap.xml

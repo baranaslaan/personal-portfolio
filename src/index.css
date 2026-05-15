@@ -485,7 +485,10 @@ section[id] { scroll-margin-top: 90px; }
 
 /* Layout zones (added for predictable mobile shrink) */
 .nav-left {
-  flex: 1 1 auto;
+  /* basis: 0 so left and right zones share extra space evenly, keeping
+     .nav-menu centered relative to the page rather than between the two
+     content boxes. */
+  flex: 1 1 0;
   display: flex;
   justify-content: flex-start;
   min-width: 0;
@@ -501,7 +504,7 @@ section[id] { scroll-margin-top: 90px; }
   gap: 32px;
 }
 .nav-actions {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
