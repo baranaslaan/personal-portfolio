@@ -472,6 +472,11 @@ section[id] { scroll-margin-top: 90px; }
   color: var(--accent);
   font-weight: 600;
   font-size: 13px;
+  /* Never wrap to a second line — prevents the navbar from growing taller
+     if a translated label happens to be long (e.g. Turkish "Çalışalım"
+     fits, but defense in depth for future locales). */
+  white-space: nowrap;
+  flex-shrink: 0;
   border: 1px solid rgba(var(--accent-rgb), .2);
   transition: background-color var(--dur-base);
 }
