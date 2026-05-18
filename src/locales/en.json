@@ -253,7 +253,55 @@
           "Interface design — primary surfaces",
           "Design system documentation",
           "Component patterns and states"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "The client had a working accounting SaaS, but years of feature additions had left the interface fragmented — inconsistent components, no shared visual language, and a codebase that made every new screen a negotiation. They needed a full redesign of the core surfaces and a design system underneath that engineering could actually build from.",
+          "context": [
+            { "label": "Role",     "value": "Product Designer (duo)" },
+            { "label": "Timeline", "value": "2022" },
+            { "label": "Scope",    "value": "Redesign + Design System" },
+            { "label": "Tools",    "value": "Figma · XD · Illustrator" }
+          ],
+          "process": [
+            {
+              "heading": "Auditing the existing interface",
+              "body": "Before designing anything new, we mapped the existing surface area — every screen variant, every inconsistency. The audit revealed that the visual drift wasn't random; it traced back to a missing token layer. There was no shared source for color, spacing, or type, so each screen had made its own decisions over time."
+            },
+            {
+              "heading": "Token layer before screens",
+              "body": "We established the foundation first: color roles (not raw hex values), a spacing scale, type ramp, and radius tokens. With both designers writing to the same token set, every downstream decision compounded — we didn't need to re-agree on what 'medium padding' meant each time."
+            },
+            {
+              "heading": "Surface ownership with a shared foundation",
+              "body": "With the system grounded, we split surface ownership. One designer led invoices and reports; the other took dashboards and data tables. Daily syncs caught divergence before it hardened. The shared token layer kept both tracks looking like one product even when designed in parallel."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Foundation before features",
+              "rationale": "We could have started with the most visible screens to show client progress fast. Instead we locked down the token layer first. Felt slow for the first two weeks, but eliminated rework — every screen decision traced back to the same source.",
+              "impact": "Zero rework on foundations"
+            },
+            {
+              "title": "Data density as a design constraint",
+              "rationale": "Accounting UIs are inherently dense — invoices, line items, totals, dates. Rather than fight the density, we leaned into generous row height and tight typographic contrast so tables were scannable without being sparse. Sparse felt wrong for the domain.",
+              "impact": "Readable at full density"
+            },
+            {
+              "title": "Shared tokens, split surfaces",
+              "rationale": "In a two-designer setup, the risk is subtle drift — same intent, different execution. Explicit surface ownership (who owns what) combined with a shared token set was the arrangement that prevented the classic 'designed it differently' problem without requiring constant coordination.",
+              "impact": "Consistent system, parallel velocity"
+            }
+          ],
+          "outcome": {
+            "narrative": "The redesign and component library shipped together — engineering took the Figma hand-off and built directly from the design system. All core surfaces (invoices, reports, dashboard) were covered in a single delivery. The client's team had a foundation they could extend without renegotiating the base decisions each time."
+          },
+          "learnings": [
+            "Token layer first felt slow but proved to be the only path — every screen decision compounded on a shared foundation instead of diverging.",
+            "Two designers on one product is a coordination problem as much as a design problem. Surface ownership + shared tokens was the structure that made it work.",
+            "Dense data handled well is its own form of craft — accounting interfaces deserve as much design attention as landing pages."
+          ]
+        }
       },
       {
         "title": "Project Management App",

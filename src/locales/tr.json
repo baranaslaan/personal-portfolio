@@ -253,7 +253,55 @@
           "Arayüz tasarımı — ana yüzeyler",
           "Tasarım sistemi dokümantasyonu",
           "Bileşen desenleri ve durumları (states)"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "Müşterinin çalışan bir muhasebe SaaS ürünü vardı; ancak yıllar içinde eklenen özellikler arayüzü parçalı hâle getirmişti — tutarsız bileşenler, ortak bir görsel dil yok, her yeni ekranda tekrar karar vermek gerekiyordu. Temel yüzeylerin (faturalar, raporlar, dashboard) baştan tasarlanması ve geliştirme ekibinin doğrudan inşa edebileceği bir tasarım sisteminin oluşturulması gerekiyordu.",
+          "context": [
+            { "label": "Rol",      "value": "Ürün Tasarımcısı (ikili)" },
+            { "label": "Tarih",    "value": "2022" },
+            { "label": "Kapsam",   "value": "Redesign + Tasarım Sistemi" },
+            { "label": "Araçlar",  "value": "Figma · XD · Illustrator" }
+          ],
+          "process": [
+            {
+              "heading": "Mevcut arayüzü haritalamak",
+              "body": "Yeni bir şey tasarlamadan önce mevcut yüzey alanını inceledik: tüm ekran varyantları, her tutarsızlık. Denetim, görsel kaymanın rastlantısal olmadığını ortaya koydu — eksik bir token katmanına dayanıyordu. Renk, boşluk veya tipografi için paylaşılan tek bir kaynak yoktu; her ekran zamanla kendi kararlarını almıştı."
+            },
+            {
+              "heading": "Ekranlardan önce token katmanı",
+              "body": "Temeli önce oturttuk: renk rolleri (ham hex değerleri değil), boşluk skalası, tip rampası ve köşe yarıçapı (radius) tokenleri. Her iki tasarımcı da aynı token setine yazdığı için sonraki her karar üste eklendi — 'orta padding' ne anlama gelir sorusunu her seferinde yeniden cevaplamak zorunda kalmadık."
+            },
+            {
+              "heading": "Paylaşılan temel, ayrık yüzey sahipliği",
+              "body": "Sistem oturduktan sonra yüzey sahipliğini böldük. Biri faturalar ve raporları üstlendi; diğeri dashboard ve veri tablolarını. Günlük senkronlar, tutarsızlıkları katılaşmadan yakaladı. Paylaşılan token katmanı sayesinde paralel yürütülen iki süreç tek bir ürün gibi görünüyordu."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Özelliklerden önce temeli kurmak",
+              "rationale": "Müşteriye hızlı ilerleme göstermek için en görünür ekranlarla başlayabilirdik. Bunun yerine token katmanını önce kilitledik. İlk iki hafta yavaş hissettirdi ama tekrar çalışmayı tamamen ortadan kaldırdı — her ekran kararı aynı kaynağa izlenebildi.",
+              "impact": "Temel üzerinde sıfır tekrar"
+            },
+            {
+              "title": "Veri yoğunluğunu tasarım kısıtı olarak kullanmak",
+              "rationale": "Muhasebe arayüzleri doğası gereği yoğundur — faturalar, kalem kalemleri, toplamlar, tarihler. Yoğunlukla savaşmak yerine, tablo satırları seyrek hissettirmeden taranabilir olacak şekilde cömert satır yüksekliği ve güçlü tipografik kontrast uyguladık.",
+              "impact": "Tam yoğunlukta okunabilir"
+            },
+            {
+              "title": "Paylaşılan tokenler, ayrık yüzeyler",
+              "rationale": "İki tasarımcılı bir yapıda risk ince bir kaymadır — aynı niyet, farklı uygulama. Açık yüzey sahipliği ve paylaşılan token seti, sürekli koordinasyon gerektirmeden 'farklı tasarlanmış' sorununu önleyen düzenekti.",
+              "impact": "Tutarlı sistem, paralel hız"
+            }
+          ],
+          "outcome": {
+            "narrative": "Redesign ve bileşen kütüphanesi birlikte teslim edildi — geliştirme ekibi Figma hand-off'u alarak tasarım sistemini doğrudan üretime aktardı. Tüm temel yüzeyler (faturalar, raporlar, dashboard) tek bir teslimatta tamamlandı. Müşteri ekibi artık temel kararları her seferinde yeniden müzakere etmeden genişletebilecekleri bir temele sahip oldu."
+          },
+          "learnings": [
+            "Token katmanını önce kurmak yavaş hissettirdi ama tek doğru yoldu — her ekran kararı ayrışmak yerine paylaşılan bir temelde birikti.",
+            "İki tasarımcıyla tek bir ürün, tasarım kadar koordinasyon sorunudur. Yüzey sahipliği ve paylaşılan tokenler bu yapıyı işler hâle getiren düzenekti.",
+            "Yoğun veriyi iyi tasarlamak kendi başına bir zanaattir — muhasebe arayüzleri açılış sayfaları kadar özen hak eder."
+          ]
+        }
       },
       {
         "title": "Proje Yönetim Uygulaması",
