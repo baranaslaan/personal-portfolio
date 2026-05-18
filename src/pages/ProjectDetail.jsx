@@ -6,6 +6,7 @@ import { PROJECTS } from '../data/projects'
 import Lightbox from '../components/Lightbox'
 // Animasyon bileşenini ekliyoruz
 import { Reveal } from '../components/Reveal'
+import { useMeta } from '../hooks/useMeta'
 
 const container = {
   hidden: {},
@@ -24,11 +25,26 @@ export default function ProjectDetail() {
   const staticProject = PROJECTS.find(p => p.id === Number(id))
   const [activeFrame, setActiveFrame] = useState(null)
 
-  if (!staticProject) return <Navigate to="/" replace />
-
   const translatedProjects = t('projects.items', { returnObjects: true })
-  const tProject = translatedProjects[staticProject.id - 1] || {}
-  const project = { ...staticProject, ...tProject }
+  const tProject = staticProject ? translatedProjects[staticProject.id - 1] || {} : {}
+  const project = staticProject ? { ...staticProject, ...tProject } : null
+
+  const metaTitle = project ? `${project.title} — Baran Aslan` : ''
+  const metaDesc = project ? (project.caseStudy?.problem?.slice(0, 160) || project.desc) : ''
+  const metaImage = project?.cover ? `https://aslanbaran.com${project.cover}` : 'https://aslanbaran.com/og-image.png'
+  const canonicalUrl = project ? `https://aslanbaran.com/project/${project.id}` : ''
+
+  // Hooks must come before any conditional return.
+  useMeta({
+    title: metaTitle,
+    description: metaDesc,
+    canonical: canonicalUrl,
+    ogType: 'article',
+    ogUrl: canonicalUrl,
+    ogImage: metaImage,
+  })
+
+  if (!project) return <Navigate to="/" replace />
 
   const accent = project.accent
   const hasLinks = project.links?.behance || project.links?.prototype || project.links?.figma
@@ -69,6 +85,8 @@ export default function ProjectDetail() {
                 layoutId={`project-img-${project.id}`}
                 src={project.image || project.cover}
                 alt={project.title}
+                fetchPriority="high"
+                decoding="async"
                 transition={{ type: "spring", stiffness: 260, damping: 30 }}
               />
             </motion.div>
@@ -239,7 +257,7 @@ export default function ProjectDetail() {
                           className="pdetail__gallery-trigger"
                           onClick={() => setActiveFrame({ ...g, caption: captionText })}
                         >
-                          <img src={g.src} alt={captionText} loading="lazy" />
+                          <img src={g.src} alt={captionText} loading="lazy" decoding="async" />
                           <span className="pdetail__gallery-zoom">
                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                           </span>

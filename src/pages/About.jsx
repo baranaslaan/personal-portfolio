@@ -1,10 +1,10 @@
-import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { SKILLS } from '../data/projects'
 // Reveal bileşenini import ediyoruz
 import { Reveal } from '../components/Reveal'
+import { useMeta } from '../hooks/useMeta'
 
 const EXPERIENCE = [
   {
@@ -94,7 +94,15 @@ const item = {
 
 export default function About({ onHireClick }) {
   const { t } = useTranslation()
-  
+
+  useMeta({
+    title: 'About — Baran Aslan',
+    description: 'Product designer based in Istanbul. 5+ years across SaaS, dashboards, and design systems — shipped at Beat Solutions, RouteWise, and earlier teams.',
+    canonical: 'https://aslanbaran.com/about',
+    ogType: 'profile',
+    ogUrl: 'https://aslanbaran.com/about',
+  })
+
   return (
     <main className="aboutp">
       <div className="aboutp__ambient" aria-hidden="true" />
