@@ -318,7 +318,55 @@
         "galleryCaptions": [
           "Landing page and feature highlights",
           "In-app screens — task & project views"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "The client came with a familiar complaint: every project management tool they'd tried — Jira, Asana, ClickUp — felt heavier than the work it was supposed to organize. They wanted an alternative that earned its space on the screen: simpler defaults, clearer hierarchy, and a marketing page that promised the same thing the product delivered.",
+          "context": [
+            { "label": "Role",     "value": "UI/UX Designer (solo)" },
+            { "label": "Timeline", "value": "2024" },
+            { "label": "Scope",    "value": "Landing + In-app" },
+            { "label": "Tools",    "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Mapping where complexity actually lives",
+              "body": "Before designing screens, I traced where existing tools lose users — not in the feature count, but in the moment-to-moment scanning of long task lists. Status, priority, assignee, due date, project tag, comment count — every row carries six pieces of information competing for attention. That's the real problem to solve."
+            },
+            {
+              "heading": "Designing for scannability first",
+              "body": "Built the task list around a clear primary axis: task title gets the typographic weight, everything else recedes into a calm secondary layer. Status uses color as hierarchy (not decoration), so a glance down the list reveals what needs attention without reading every row. Density tuned to fit the list on screen without packing it."
+            },
+            {
+              "heading": "Landing as a product extension, not a separate site",
+              "body": "The marketing page was designed with the same components, type ramp, and spacing as the in-app surfaces. When a visitor clicks through to the product, there's no visual rupture — the promise on the landing page is literally the same surface they're about to use."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Breathable over packed",
+              "rationale": "PM tools default to packing as much information per row as possible. I went the other way — generous row height, calm dividers, content given room to breathe. Loses a few rows per viewport, gains massively in scannability. The whole point was 'lighter than the work.'",
+              "impact": "Faster visual scanning"
+            },
+            {
+              "title": "Status as color hierarchy, not decoration",
+              "rationale": "Color in PM tools is usually applied per-tag, ending up rainbow-ish and noisy. I used color exclusively for status — overdue, in progress, done — so the color layer becomes a meaningful signal rather than visual decoration.",
+              "impact": "Status legible at a glance"
+            },
+            {
+              "title": "Single visual system across landing and app",
+              "rationale": "Many products have a 'marketing brand' and a 'product brand' that read as two different companies. Designing both surfaces from the same component set made the transition from visitor to user feel like continuation, not arrival in a new place.",
+              "impact": "Seamless visitor-to-user transition"
+            }
+          ],
+          "outcome": {
+            "narrative": "The product shipped with a marketing surface that visitors described as 'finally calm' compared to incumbents. The task list pattern — title-first, status-as-color, breathable density — became the anchor pattern that future product screens extended from without renegotiating the base."
+          },
+          "learnings": [
+            "PM tool complaints aren't really about feature count — they're about scanning load. Solving the right problem started with naming it correctly.",
+            "Using color as hierarchy (one job, one signal) instead of decoration is one of the highest-leverage moves in dense UI.",
+            "Treating landing and product as one surface — not two — eliminates a category of brand-coherence problems before they appear."
+          ]
+        }
       },
       {
         "title": "Pricing Page UI Design",
@@ -335,7 +383,55 @@
         "galleryCaptions": [
           "Pricing page — primary layout",
           "Alternative treatments & states"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "The existing pricing page wasn't converting. Visitors were landing, scanning the plan grid, and leaving without choosing. The plans themselves were fine — the page wasn't doing its job: helping a visitor decide. The brief was specific: keep the plans, fix the decision.",
+          "context": [
+            { "label": "Role",     "value": "UI Designer (solo)" },
+            { "label": "Timeline", "value": "2022" },
+            { "label": "Scope",    "value": "Pricing page redesign" },
+            { "label": "Tools",    "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Reading the original page as a decision tool",
+              "body": "Audited the existing page not as a layout but as a decision flow. Three plans presented with equal visual weight, dense feature lists below each, a toggle for monthly/yearly. Every plan asked for the same level of attention — which meant none of them got it. The page was a comparison grid, not a recommendation."
+            },
+            {
+              "heading": "Picking the recommended plan and committing to it",
+              "body": "The single biggest decision was visual: which plan should the page steer toward? Once the recommended plan was chosen with the client, the entire layout reorganized around making that plan visually inevitable — slightly taller, accent border, badge above the title, primary CTA color reserved only for it. The other two plans became context, not competition."
+            },
+            {
+              "heading": "Compressing the feature comparison",
+              "body": "Long per-plan feature lists were collapsed into a single comparison table below the main cards. The cards above show only the 3-4 features that actually differ between plans; the table is there for visitors who want to verify, not the first decision moment. Decision first, verification second."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "One plan visually inevitable",
+              "rationale": "Equal visual weight across plans is technically 'fair' but practically paralyzing. By making the recommended plan visibly the answer — height, accent, badge, sole primary CTA color — the page started doing the decision work for the visitor instead of asking them to do it.",
+              "impact": "Clear primary action"
+            },
+            {
+              "title": "Card content stripped to differentiators",
+              "rationale": "Each plan card showed only the 3-4 features that actually differed between tiers, not the full feature list. The 'everything else is the same' part lives in the comparison table below — accessible but not in the way during the decision moment.",
+              "impact": "Cards stay scannable"
+            },
+            {
+              "title": "Toggle as price-clarity, not delight",
+              "rationale": "Monthly/yearly toggle was kept deliberately understated — no animation flourish, just a clean state change and an explicit 'save 20%' anchored to the yearly position. The toggle's job is to remove a price question, not to be a moment.",
+              "impact": "Pricing clarity preserved"
+            }
+          ],
+          "outcome": {
+            "narrative": "The redesign reframed the page from comparison-grid to decision-tool. Post-launch, the recommended plan saw a meaningful lift in selection — exactly the outcome the brief asked for. The patterns from this study (recommended plan emphasis, differentiator-only cards, restrained toggle) carried into adjacent product pages later."
+          },
+          "learnings": [
+            "Equal visual weight across options is a default that quietly transfers decision burden to the visitor. Picking a recommendation and committing to it visually is doing real work, not playing favorites.",
+            "Pricing pages have two jobs — decision and verification — and they need different design treatments. Cards for decision, table for verification.",
+            "Restraint on toggles and micro-interactions reads as confidence on pricing pages. Decoration here signals salesmanship; calm signals trust."
+          ]
+        }
       },
       {
         "title": "Routewise UI Design",
@@ -357,7 +453,55 @@
           "Cars View",
           "Cars Map View",
           "New Cars View"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "Routewise was a brand-new fleet-tracking SaaS being built from the ground up. There was no existing UI to inherit and no design history to extend — just a domain (multi-vehicle tracking) that's inherently dense: live positions, status per vehicle, alerts, history, drivers, routes. The brief was to ship an MVP that read as trustworthy and modern, not as another technical-looking fleet tool.",
+          "context": [
+            { "label": "Role",     "value": "UI Designer (in-team)" },
+            { "label": "Timeline", "value": "2025" },
+            { "label": "Scope",    "value": "MVP — marketing + product" },
+            { "label": "Tools",    "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Naming what 'calm' means in a dense product",
+              "body": "Fleet-tracking UIs default to information overload — every pixel earning its keep with data. The first decision was philosophical: we'd treat calm as a feature, not a luxury. The dashboard would carry the same information density as competitors, but it would feel quieter. The 'how' followed from that 'what'."
+            },
+            {
+              "heading": "Building the visual ground",
+              "body": "Set up the foundation with restrained color (status colors reserved, never decorative), generous spacing on the dashboard grid (each card given room to land), and a single accent that doesn't compete with status signals. The map and table surfaces share the same component vocabulary so switching between them feels like one product, not two views."
+            },
+            {
+              "heading": "Designing the dashboard as a glanceable surface",
+              "body": "The dashboard's job isn't to show everything — it's to surface what needs attention. Critical alerts get a primary visual lane; everything else lives in calm secondary blocks. An operator scanning the screen at 8am should know in two seconds whether the fleet is fine or whether something needs them. That shape drove every subsequent layout decision."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Calm as a feature, not a luxury",
+              "rationale": "Every fleet-tracking competitor screams data. Choosing calm was a positioning decision as much as a design decision — it signals 'we don't need to overwhelm you to be powerful.' Risk: looking less capable at first glance. Tradeoff worth it for the kind of users we wanted.",
+              "impact": "Distinct visual positioning"
+            },
+            {
+              "title": "Status colors reserved, never decorative",
+              "rationale": "Color was kept exclusively for vehicle/route status (active, idle, alert). Categorical tags, navigation, and chrome stay neutral. This makes the color layer informational, so a glance at the screen actually tells you something rather than just looking colorful.",
+              "impact": "Color carries signal, not noise"
+            },
+            {
+              "title": "Map and table share one component vocabulary",
+              "rationale": "Many fleet products treat the map view and the table view as separate UIs with different visual styles. We built them from the same component set — the status pill in the table looks the same on a map pin tooltip — so the user's mental model carries cleanly across views.",
+              "impact": "Consistent across views"
+            }
+          ],
+          "outcome": {
+            "narrative": "The MVP shipped with marketing surfaces and product screens reading as a single product. The visual language — restrained color, generous spacing, status-as-signal — became the anchor for subsequent feature work without each new screen renegotiating the base decisions. The 'calm fleet tool' positioning gave the product a distinct read among loud competitors."
+          },
+          "learnings": [
+            "Density and calm aren't opposites. A dense product can still feel quiet if color and spacing are doing meaningful work, not decorative work.",
+            "In data-heavy products, the dashboard's most important job is triage — surfacing what needs attention. That's a design problem, not a data problem.",
+            "Shipping marketing and product from a single component set early eliminates a category of late-stage brand-coherence problems."
+          ]
+        }
       },
       {
         "title": "LogoType Design",
@@ -374,7 +518,55 @@
         "galleryCaptions": [
           "Logotype set — wordmarks",
           "Brand context and lockups"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "A logotype designed for a specific brand engagement — not a generic identity exercise. The brief asked for a mark that read as serious without leaning on the default toolbox of contemporary branding: no decorative icon, no over-styled gradient, no trend signal. The challenge was to make restraint feel intentional rather than empty.",
+          "context": [
+            { "label": "Role",     "value": "Designer (solo)" },
+            { "label": "Timeline", "value": "2021" },
+            { "label": "Scope",    "value": "Logotype + lockups" },
+            { "label": "Tools",    "value": "Illustrator · Photoshop" }
+          ],
+          "process": [
+            {
+              "heading": "Choosing restraint over symbol",
+              "body": "The instinct in 2021 branding was to add a symbol — a clever mark, a stylized monogram, something for a favicon. I went the other way: the wordmark alone, no icon, no flourish. If the letterforms couldn't carry the brand, no symbol would rescue them. That choice set the scope of the rest of the work."
+            },
+            {
+              "heading": "Treating typography as the entire identity",
+              "body": "With no symbol to hide behind, every typographic detail had to earn its place. Spent the bulk of the time inside the letterforms themselves — adjusting terminals, tuning x-height for optical balance, hand-correcting kerning pair-by-pair. The whole 'design' lived at the scale of millimeters across the mark."
+            },
+            {
+              "heading": "Designing lockups as a small system",
+              "body": "Even a single wordmark needs to behave across contexts — horizontal, stacked, single-color, on dark, in tiny favicon sizes. Designed the lockup variants as a small system with shared proportions, so the mark stayed recognisably itself regardless of where it appeared."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "No symbol, no decoration",
+              "rationale": "Adding a symbol is the default move and the easiest way to make a logo feel 'complete.' Resisting it forced the wordmark to actually do the work. Easier to look generic this way; harder to look generic when the typography is genuinely tuned.",
+              "impact": "Letterforms carry the brand"
+            },
+            {
+              "title": "Detail at millimeter scale",
+              "rationale": "Kerning, terminal shape, x-height ratio, optical balance — these usually live in the background of identity work. Here they were the work. Most viewers won't consciously notice them; the difference between a tuned logotype and an untuned one is felt, not seen.",
+              "impact": "Craft-level precision"
+            },
+            {
+              "title": "Lockups as a small system",
+              "rationale": "A logotype that only works at one size and one orientation isn't an identity, it's a sketch. Designing lockup variants from the start ensured the mark could survive the contexts it would actually live in — including the unkind ones (small favicons, single-color print).",
+              "impact": "Survives real contexts"
+            }
+          ],
+          "outcome": {
+            "narrative": "The final mark relies entirely on its letterforms — no symbol, no flourish, no trend signal. It reads as quietly confident across the contexts it was designed for, and the lockup system gives it room to extend without losing the core proportions. Restraint, properly executed, became the identity."
+          },
+          "learnings": [
+            "Skipping the symbol is a constraint that forces typography to be genuinely good. It's a discipline more than a style.",
+            "Most of identity work happens at scales no one consciously sees — but the cumulative effect is felt immediately.",
+            "Designing the lockup variants alongside the primary mark — not afterwards — prevents the 'works in the case study, fails in real use' problem."
+          ]
+        }
       }
     ]
   },

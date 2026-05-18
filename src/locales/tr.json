@@ -318,7 +318,55 @@
         "galleryCaptions": [
           "Açılış sayfası ve öne çıkan özellikler",
           "Uygulama içi ekranlar — görev ve proje görünümleri"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "Müşteri tanıdık bir şikâyetle geldi: denedikleri tüm proje yönetim araçları — Jira, Asana, ClickUp — düzenlemesi gereken işten daha ağır hissettiriyordu. Ekranda yer almayı hak eden bir alternatif istiyorlardı: daha sade varsayılanlar, daha net hiyerarşi ve ürünün vaat ettiği şeyi gerçekten teslim eden bir açılış sayfası.",
+          "context": [
+            { "label": "Rol",     "value": "UI/UX Tasarımcısı (solo)" },
+            { "label": "Tarih",   "value": "2024" },
+            { "label": "Kapsam",  "value": "Açılış + Uygulama içi" },
+            { "label": "Araçlar", "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Karmaşıklığın gerçekte nerede olduğunu haritalamak",
+              "body": "Ekran tasarlamaya başlamadan önce mevcut araçların kullanıcıyı nerede kaybettiğini izledim — özellik sayısında değil, uzun görev listelerinde anlık tarama anında. Durum, öncelik, atanan kişi, son tarih, proje etiketi, yorum sayısı — her satır dikkat için yarışan altı bilgi taşıyor. Çözülmesi gereken gerçek problem buydu."
+            },
+            {
+              "heading": "Önce taranabilirlik için tasarlamak",
+              "body": "Görev listesini net bir birincil eksen etrafında kurguladım: görev başlığı tipografik ağırlığı alıyor, geri kalanı sakin bir ikincil katmana çekiliyor. Durum (status) bir hiyerarşi olarak renk kullanıyor (dekorasyon değil), böylece listede aşağı doğru tek bir bakış neyin dikkat gerektirdiğini açığa çıkarıyor."
+            },
+            {
+              "heading": "Açılış sayfası, ayrı bir site değil ürünün uzantısı",
+              "body": "Pazarlama sayfası aynı bileşenler, aynı tip rampası ve aynı boşluk skalasıyla — yani uygulama içi yüzeylerin tam ikizi olarak — tasarlandı. Ziyaretçi ürüne tıkladığında görsel bir kopukluk yaşamıyor; açılışta vaat edilen yüzey, birazdan kullanacağı yüzeyin ta kendisi."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Sıkıştırılmış değil nefes alan",
+              "rationale": "PM araçlarının varsayılanı satır başına olabildiğince çok bilgi sıkıştırmaktır. Ben tersine gittim — cömert satır yüksekliği, sakin ayraçlar, içeriğe nefes alma alanı. Görüntü başına birkaç satır kaybediliyor; taranabilirlikte büyük kazanım var. Bütün mesele 'işten daha hafif hissettirmek' idi.",
+              "impact": "Daha hızlı görsel tarama"
+            },
+            {
+              "title": "Renk: hiyerarşi için, dekorasyon için değil",
+              "rationale": "PM araçlarında renk genellikle her etikete uygulanır — sonuç gökkuşağı gibi gürültülü olur. Ben rengi yalnızca duruma (gecikti, devam ediyor, tamamlandı) sakladım; böylece renk katmanı görsel süs değil anlamlı bir sinyal hâline geldi.",
+              "impact": "Durum anlık olarak okunabilir"
+            },
+            {
+              "title": "Landing ve uygulama için tek görsel sistem",
+              "rationale": "Birçok üründe 'pazarlama markası' ve 'ürün markası' iki farklı şirket gibi okunur. İki yüzeyi de aynı bileşen setinden tasarlamak, ziyaretçiden kullanıcıya geçişi yeni bir yere varış değil bir devam hissi yaptı.",
+              "impact": "Kesintisiz ziyaretçi-kullanıcı geçişi"
+            }
+          ],
+          "outcome": {
+            "narrative": "Ürün, ziyaretçilerin rakipleriyle karşılaştırarak 'nihayet sakin' diye tanımladığı bir pazarlama yüzeyi ile yayına alındı. Görev listesi deseni — başlık-önce, durum-renk-olarak, nefes alan yoğunluk — gelecek ürün ekranlarının taban kararları yeniden müzakere etmeden üzerine inşa ettiği temel desen oldu."
+          },
+          "learnings": [
+            "PM araçlarına yönelik şikâyetler aslında özellik sayısıyla ilgili değil — tarama yüküyle ilgili. Doğru problemi çözmek, onu doğru adlandırmakla başlıyor.",
+            "Renk'i hiyerarşi olarak kullanmak (tek görev, tek sinyal) — dekorasyon olarak değil — yoğun arayüzlerde en etkili hamlelerden biri.",
+            "Açılış ve ürünü tek yüzey olarak ele almak — iki ayrı şey olarak değil — bir kategori marka tutarlılığı sorununu daha ortaya çıkmadan eler."
+          ]
+        }
       },
       {
         "title": "Fiyatlandırma Sayfası UI Tasarımı",
@@ -335,7 +383,55 @@
         "galleryCaptions": [
           "Fiyatlandırma sayfası — ana düzen",
           "Alternatif yaklaşımlar ve durumlar"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "Mevcut fiyatlandırma sayfası dönüştürmüyordu. Ziyaretçiler geliyor, plan tablosunu tarıyor ve seçim yapmadan ayrılıyordu. Planların kendisi sorun değildi — sayfa işini yapmıyordu: ziyaretçinin karar vermesine yardımcı olmuyordu. Brief netti: planları koru, kararı düzelt.",
+          "context": [
+            { "label": "Rol",     "value": "UI Tasarımcısı (solo)" },
+            { "label": "Tarih",   "value": "2022" },
+            { "label": "Kapsam",  "value": "Fiyatlandırma sayfası redesign" },
+            { "label": "Araçlar", "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Mevcut sayfayı bir karar aracı olarak okumak",
+              "body": "Sayfayı bir düzen olarak değil, bir karar akışı olarak inceledim. Eşit görsel ağırlıkla sunulan üç plan, her birinin altında yoğun özellik listeleri, aylık/yıllık toggle. Her plan aynı düzeyde dikkat istiyordu — bu da hiçbirinin gerçekten dikkat çekmediği anlamına geliyordu. Sayfa bir karşılaştırma tablosuydu; bir öneri değil."
+            },
+            {
+              "heading": "Önerilen planı seçmek ve buna sadık kalmak",
+              "body": "En büyük karar görseldi: sayfa hangi plana yönlendirmeliydi? Önerilen plan müşteriyle birlikte belirlendikten sonra tüm düzen, o planı görsel olarak kaçınılmaz kılmak için yeniden örgütlendi — biraz daha uzun, vurgu kenarı, başlığın üstünde rozet, birincil CTA rengi yalnızca onun için ayrıldı. Diğer iki plan rekabet değil bağlam hâline geldi."
+            },
+            {
+              "heading": "Özellik karşılaştırmasını sıkıştırmak",
+              "body": "Her plana özel uzun özellik listeleri, ana kartların altındaki tek bir karşılaştırma tablosuna toplandı. Üstteki kartlar yalnızca planlar arasında gerçekten farklı olan 3-4 özelliği gösteriyor; tablo, doğrulamak isteyen ziyaretçi için, ilk karar anı için değil. Önce karar, sonra doğrulama."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Bir plan görsel olarak kaçınılmaz",
+              "rationale": "Planlar arasında eşit görsel ağırlık teknik olarak 'adil' ama pratikte felç edicidir. Önerilen planı görünür biçimde 'cevap' yapmak — yükseklik, vurgu, rozet, tek başına birincil CTA rengi — sayfayı, ziyaretçi yerine karar veren bir araca dönüştürdü.",
+              "impact": "Net birincil eylem"
+            },
+            {
+              "title": "Kart içeriği yalnızca farklılaştırıcılarla",
+              "rationale": "Her kart yalnızca tier'lar arasında gerçekten farklı olan 3-4 özelliği gösterdi, tüm liste değil. 'Diğer her şey aynı' kısmı, alttaki karşılaştırma tablosunda yaşıyor — karar anında yolu kapatmadan erişilebilir.",
+              "impact": "Kartlar taranabilir kaldı"
+            },
+            {
+              "title": "Toggle: süs değil, fiyat netliği",
+              "rationale": "Aylık/yıllık toggle bilinçli olarak sakin tutuldu — animasyon süsü yok, sadece temiz bir durum değişikliği ve yıllık seçeneğe sabitlenmiş net bir '%20 tasarruf'. Toggle'ın görevi bir fiyat sorusunu kaldırmak, bir 'an' olmak değil.",
+              "impact": "Fiyat netliği korundu"
+            }
+          ],
+          "outcome": {
+            "narrative": "Redesign, sayfayı karşılaştırma-tablosundan karar-aracına dönüştürdü. Yayına alındıktan sonra önerilen plan, seçimde anlamlı bir artış gördü — brief'in istediği sonuç tam buydu. Bu çalışmadan çıkan desenler (önerilen plan vurgusu, yalnız-farklılaştırıcı kartlar, dizginli toggle) daha sonra komşu ürün sayfalarına da taşındı."
+          },
+          "learnings": [
+            "Seçenekler arasında eşit görsel ağırlık, karar yükünü sessizce ziyaretçiye devreden bir varsayılan. Bir öneri seçip görsel olarak ona bağlı kalmak gerçek iş yapmaktır, kayırma değil.",
+            "Fiyatlandırma sayfalarının iki işi vardır — karar ve doğrulama — ve farklı tasarım yaklaşımlarına ihtiyaç duyarlar. Karar için kartlar, doğrulama için tablo.",
+            "Toggle ve mikro-etkileşimlerde dizginli durmak, fiyatlandırma sayfalarında güven olarak okunur. Buradaki süs satıcılık sinyali verir; sakinlik güven sinyali verir."
+          ]
+        }
       },
       {
         "title": "Routewise UI Tasarımı",
@@ -357,7 +453,55 @@
           "Araçlar Görünümü",
           "Araçlar Harita Görünümü",
           "Yeni Araçlar Görünümü"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "Routewise sıfırdan inşa edilen yeni bir filo takip SaaS ürünüydü. Devralınacak bir UI yoktu, üzerine eklenecek tasarım geçmişi yoktu — sadece doğası gereği yoğun bir alan (çoklu araç takibi): canlı konumlar, her araç için durum, uyarılar, geçmiş, sürücüler, rotalar. Brief netti: güven veren ve modern okunan bir MVP yayına alın — bir başka 'teknik görünen' filo aracı değil.",
+          "context": [
+            { "label": "Rol",     "value": "UI Tasarımcısı (ekip içinde)" },
+            { "label": "Tarih",   "value": "2025" },
+            { "label": "Kapsam",  "value": "MVP — pazarlama + ürün" },
+            { "label": "Araçlar", "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Yoğun bir üründe 'sakin'in ne anlama geldiğini adlandırmak",
+              "body": "Filo takip arayüzlerinin varsayılanı bilgi yığma — her piksel verisiyle yerini hak etmeye çalışıyor. İlk karar felsefiydi: sakinliği bir lüks değil, bir özellik olarak ele alacaktık. Dashboard rakiplerle aynı bilgi yoğunluğunu taşıyacak ama daha sessiz hissedecekti. 'Nasıl' kısmı bu 'ne'den çıktı."
+            },
+            {
+              "heading": "Görsel zemini kurmak",
+              "body": "Temeli ölçülü renk (durum renkleri saklı, asla dekoratif değil), dashboard ızgarasında cömert boşluk (her kart yer alma alanı bulsun) ve durum sinyalleriyle yarışmayan tek bir vurgu rengiyle kurduk. Harita ve tablo yüzeyleri aynı bileşen sözlüğünü paylaştığı için aralarında geçiş yapmak iki ayrı görünüm değil tek bir ürün gibi hissediyor."
+            },
+            {
+              "heading": "Dashboard'ı bir bakışta okunabilir bir yüzey olarak tasarlamak",
+              "body": "Dashboard'ın işi her şeyi göstermek değil — dikkat gerektireni öne çıkarmaktır. Kritik uyarılar birincil görsel şeritte; geri kalan her şey sakin ikincil bloklarda. Sabah 08:00'da ekranı tarayan bir operatör iki saniye içinde filonun iyi olup olmadığını ya da bir şeyin onu çağırıp çağırmadığını bilebilmeli. Bu şekil, sonraki tüm yerleşim kararlarını sürükledi."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Sakinlik: lüks değil, özellik",
+              "rationale": "Her filo takip rakibi veriyle bağırıyor. Sakinliği seçmek tasarım kararı kadar bir konumlandırma kararıydı — 'güçlü olmak için seni boğmamıza gerek yok' sinyali. Risk: ilk bakışta daha az 'yetenekli' görünmek. İstediğimiz kullanıcı türü için bu tradeoff'a değdi.",
+              "impact": "Belirgin görsel konumlandırma"
+            },
+            {
+              "title": "Durum renkleri saklı, dekoratif değil",
+              "rationale": "Renk yalnızca araç/rota durumuna (aktif, boşta, uyarı) saklandı. Kategorik etiketler, navigasyon ve chrome nötr kaldı. Bu, renk katmanını bilgilendirici hâle getirdi; ekrana atılan bir bakış renkli görünmek yerine gerçekten bir şey söylüyor.",
+              "impact": "Renk sinyal taşır, gürültü değil"
+            },
+            {
+              "title": "Harita ve tablo aynı bileşen sözlüğünü paylaşıyor",
+              "rationale": "Birçok filo ürünü harita görünümü ile tablo görünümünü farklı görsel stillere sahip iki ayrı UI gibi ele alır. Biz ikisini de aynı bileşen setinden kurduk — tablodaki durum pill'i, harita pin tooltip'inde de aynı görünüyor — böylece kullanıcının zihinsel modeli görünümler arasında temiz biçimde taşınıyor.",
+              "impact": "Görünümler arasında tutarlılık"
+            }
+          ],
+          "outcome": {
+            "narrative": "MVP, pazarlama yüzeyleri ve ürün ekranları tek bir ürün olarak okunan biçimde yayına alındı. Görsel dil — ölçülü renk, cömert boşluk, sinyal-olarak-durum — sonraki özellik çalışmalarının taban kararları yeniden müzakere etmeden üzerine inşa ettiği çapaya dönüştü. 'Sakin filo aracı' konumlandırması ürüne yüksek sesli rakipler arasında belirgin bir okunabilirlik kazandırdı."
+          },
+          "learnings": [
+            "Yoğunluk ve sakinlik karşıt değil. Renk ve boşluk anlamlı iş yapıyorsa — dekoratif iş değil — yoğun bir ürün hâlâ sessiz hissedebilir.",
+            "Veri yoğun ürünlerde dashboard'ın en önemli işi triyaj — dikkat gerektireni öne çıkarmak. Bu bir tasarım problemidir, bir veri problemi değil.",
+            "Pazarlama ve ürünü erken aşamada tek bir bileşen setinden teslim etmek, geç aşamada ortaya çıkan bir kategori marka tutarlılığı sorununu eler."
+          ]
+        }
       },
       {
         "title": "Logotype Tasarımı",
@@ -374,7 +518,55 @@
         "galleryCaptions": [
           "Logotype seti — kelime markaları",
           "Marka bağlamı ve logo kilitleri"
-        ]
+        ],
+        "caseStudy": {
+          "problem": "Belirli bir marka çalışması için tasarlanmış bir logotype — genel bir kimlik egzersizi değil. Brief, çağdaş markalamanın varsayılan araçlarına yaslanmadan ciddi okunan bir marka istiyordu: dekoratif ikon yok, abartılı gradyan yok, trend sinyali yok. Esas mesele, ölçülülüğün boş değil bilinçli hissetmesini sağlamaktı.",
+          "context": [
+            { "label": "Rol",     "value": "Tasarımcı (solo)" },
+            { "label": "Tarih",   "value": "2021" },
+            { "label": "Kapsam",  "value": "Logotype + lockup'lar" },
+            { "label": "Araçlar", "value": "Illustrator · Photoshop" }
+          ],
+          "process": [
+            {
+              "heading": "Sembol yerine ölçülülüğü seçmek",
+              "body": "2021'in markalama içgüdüsü bir sembol eklemekti — akıllı bir işaret, stilize bir monogram, favicon için bir şey. Ben tersi yönde gittim: yalnızca wordmark, ikon yok, süs yok. Eğer harf formları markayı taşıyamıyorsa hiçbir sembol onları kurtaramazdı. Bu seçim, geri kalan işin kapsamını belirledi."
+            },
+            {
+              "heading": "Tipografiyi tüm kimlik olarak ele almak",
+              "body": "Arkasına saklanılacak bir sembol olmadığı için her tipografik detayın yerini hak etmesi gerekiyordu. Zamanın çoğunu harf formlarının içinde geçirdim — terminalleri ayarlamak, optik denge için x-yüksekliği ince ayarı, çiftleri tek tek elle düzelterek kerning. Tüm 'tasarım', markanın milimetre ölçeğinde yaşıyordu."
+            },
+            {
+              "heading": "Lockup'ları küçük bir sistem olarak tasarlamak",
+              "body": "Tek bir wordmark bile farklı bağlamlarda davranmak zorunda — yatay, üst üste, tek-renk, koyu zeminde, küçük favicon boyutlarında. Lockup varyantlarını paylaşılan oranlarla küçük bir sistem olarak tasarladım, böylece marka nerede görünürse görünsün tanınabilir biçimde kendisi olarak kalıyor."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Sembol yok, dekorasyon yok",
+              "rationale": "Sembol eklemek varsayılan hamledir ve bir logoyu 'tamamlanmış' hissettirmenin en kolay yoludur. Buna direnmek wordmark'ı gerçekten iş yapmaya zorladı. Bu yolda jenerik görünmek kolay; ama tipografi gerçekten ince ayar yapıldığında jenerik görünmek artık zorlaşıyor.",
+              "impact": "Harf formları markayı taşıyor"
+            },
+            {
+              "title": "Milimetre ölçeğinde detay",
+              "rationale": "Kerning, terminal şekli, x-yüksekliği oranı, optik denge — bunlar genellikle kimlik işinin arka planında yaşar. Burada işin ta kendisiydi. Çoğu izleyici bilinçli olarak fark etmez; ayarlanmış bir logotype ile ayarlanmamış bir logotype arasındaki fark görülmez, hissedilir.",
+              "impact": "Zanaat ölçeğinde hassasiyet"
+            },
+            {
+              "title": "Lockup'lar küçük bir sistem olarak",
+              "rationale": "Yalnızca tek boyut ve tek yönde çalışan bir logotype kimlik değil, eskizdir. Lockup varyantlarını baştan tasarlamak markanın gerçekten yaşayacağı bağlamlarda — özellikle çetin olanlarda (küçük favicon, tek renkli baskı) — hayatta kalmasını sağladı.",
+              "impact": "Gerçek bağlamlarda ayakta kalıyor"
+            }
+          ],
+          "outcome": {
+            "narrative": "Son işaret tamamen harf formlarına yaslanıyor — sembol yok, süs yok, trend sinyali yok. Tasarlandığı bağlamlarda sessizce kendinden emin okunuyor ve lockup sistemi, çekirdek oranları kaybetmeden uzanmasına izin veriyor. Doğru biçimde uygulanmış ölçülülük, kimliğin kendisi hâline geldi."
+          },
+          "learnings": [
+            "Sembolü atlamak, tipografiyi gerçekten iyi olmaya zorlayan bir kısıttır. Bir stil değil, bir disiplindir.",
+            "Kimlik işinin çoğu kimsenin bilinçli olarak görmediği ölçeklerde gerçekleşir — ama toplam etkisi anında hissedilir.",
+            "Lockup varyantlarını ana işaretin yanında — sonradan değil — tasarlamak 'case study'de işliyor, gerçek kullanımda çöküyor' sorununu önler."
+          ]
+        }
       }
     ]
   },
