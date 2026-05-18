@@ -148,6 +148,12 @@
     "disciplines": "Disciplines",
     "keyHighlights": "Key Highlights",
     "selectedFrames": "Selected Frames",
+    "problem": "Problem",
+    "context": "Context",
+    "process": "Process",
+    "decisions": "Key Decisions",
+    "outcome": "Outcome",
+    "learnings": "What I learned",
     "viewOnBehance": "View on Behance",
     "viewPrototype": "View Prototype"
   },
@@ -175,8 +181,60 @@
         "galleryCaptions": [
           "Landing page — hero & primary CTA",
           "Features and section system",
-          "Detail views and supporting screens"
-        ]
+          "Detail views and supporting screens",
+          "Onboarding entry — role-based starting point",
+          "Sign in — returning user flow",
+          "Join as a Founder — founder signup path",
+          "Join as an Investor — investor signup path"
+        ],
+        "caseStudy": {
+          "problem": "StandardFlow needed a complete marketing presence — landing, feature deep-dives, pricing, and supporting surfaces — all bound by one cohesive visual system that read as a single product rather than three different sites.",
+          "context": [
+            { "label": "Role",     "value": "Product Designer (solo)" },
+            { "label": "Timeline", "value": "2026" },
+            { "label": "Scope",    "value": "Marketing flow" },
+            { "label": "Tools",    "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Setting the visual ground",
+              "body": "Started with the foundations — a type system anchored on Archivo for display weight and a calmer neutral for body, a single dominant accent against deep neutrals, and a tight spacing scale that could survive both hero density and pricing-table density without breaking."
+            },
+            {
+              "heading": "Composing the marketing arc",
+              "body": "Designed the landing as a narrative sequence: a quiet hero with one focal CTA, then social proof, feature blocks paced for breathing room, pricing as the decisive moment, and a closing CTA. The page is meant to read as a single argument, not a stack of sections."
+            },
+            {
+              "heading": "Lifting into reusable patterns",
+              "body": "Once the landing felt right, the hero structure, feature blocks, and pricing tiles were extracted as reusable patterns — so the rest of the marketing surfaces could ship without re-inventing the visual language."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "One accent, no second voice",
+              "rationale": "The temptation in B2B SaaS marketing is to spice things up with secondary colors. I kept a single dominant accent against neutrals — confidence over energy. Restraint became the system's identity.",
+              "impact": "Tighter visual signature"
+            },
+            {
+              "title": "Hierarchy via weight, not just size",
+              "rationale": "Hero display and supporting copy live closer in size than typical; weight and density carry the hierarchy. Reads sharper on mid-screens and keeps the page calmer overall.",
+              "impact": "Calmer reading pace"
+            },
+            {
+              "title": "Marketing gutters > product gutters",
+              "rationale": "Wider section padding than I'd use inside a product UI. Each block lands before the next begins — especially needed on tall scroll surfaces where pacing matters as much as content.",
+              "impact": "Better scroll pacing"
+            }
+          ],
+          "outcome": {
+            "narrative": "The client team described the result as 'one product, one voice' — exactly the read I was aiming for. The visual system now serves as the ground for future product surfaces, with patterns ready to extend without renegotiating the core decisions."
+          },
+          "learnings": [
+            "Tight type scale + generous spacing reads calmer than the opposite — useful for B2B SaaS where trust beats spectacle.",
+            "Designing the marketing flow as a single arc (not a sequence of independent pages) let me pace visual energy across the whole journey.",
+            "A single accent forces every decision through the same color filter — harder upfront, but produces a noticeably tighter system."
+          ]
+        }
       },
       {
         "title": "Accounting Software UI Design",

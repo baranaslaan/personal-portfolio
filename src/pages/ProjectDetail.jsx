@@ -53,29 +53,32 @@ export default function ProjectDetail() {
           <motion.div variants={item} className="pdetail__header">
             <div className="pdetail__eyebrow">
               <div className="pdetail__dot" />
-              <span>Case Study</span>
+              <span>{t('projectDetail.caseStudy', { defaultValue: 'Case Study' })}</span>
             </div>
             <h1 className="pdetail__title">{project.title}</h1>
             <p className="pdetail__lede">{project.desc}</p>
           </motion.div>
 
-          {/* 1. SHARED LAYOUT: HERO IMAGE */}
-          {/* Ana sayfadaki karttan gelen görsel buraya "akacak" */}
-          <motion.div variants={item} className="pdetail__hero">
-            <motion.img 
-              layoutId={`project-img-${project.id}`} 
-              src={project.image} 
-              alt={project.title}
-              className="pdetail__main-img"
-              transition={{ type: "spring", stiffness: 260, damping: 30 }}
-            />
-          </motion.div>
+          {/* 1. SHARED LAYOUT: HERO IMAGE — only renders if a hero image exists.
+              PROJECTS uses `cover` for the card; `image` is an optional larger
+              dedicated hero. We fall back to `cover` so the rectangle never
+              renders empty. */}
+          {(project.image || project.cover) && (
+            <motion.div variants={item} className="pdetail__cover">
+              <motion.img
+                layoutId={`project-img-${project.id}`}
+                src={project.image || project.cover}
+                alt={project.title}
+                transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              />
+            </motion.div>
+          )}
 
           {/* METADATA */}
           <motion.div variants={item} className="pdetail__meta">
             {[
-              { label: 'Role', value: project.role },
-              { label: 'Year', value: project.year },
+              { label: t('projectDetail.role',    { defaultValue: 'Role' }), value: project.role },
+              { label: t('projectDetail.year',    { defaultValue: 'Year' }), value: project.year },
             ].map(({ label, value }) => (
               <div key={label} className="pdetail__meta-cell">
                 <div className="pdetail__meta-label">{label}</div>
@@ -84,7 +87,7 @@ export default function ProjectDetail() {
             ))}
             {project.metric && (
               <div className="pdetail__meta-cell pdetail__meta-cell--accent">
-                <div className="pdetail__meta-label">Impact</div>
+                <div className="pdetail__meta-label">{t('projectDetail.impact', { defaultValue: 'Impact' })}</div>
                 <div className="pdetail__meta-value pdetail__meta-value--accent">
                   {project.metric.value}
                   <span className="pdetail__meta-sub">{project.metric.label}</span>
@@ -92,9 +95,9 @@ export default function ProjectDetail() {
               </div>
             )}
             <div className="pdetail__meta-cell pdetail__meta-cell--wide">
-              <div className="pdetail__meta-label">Disciplines</div>
+              <div className="pdetail__meta-label">{t('projectDetail.disciplines', { defaultValue: 'Disciplines' })}</div>
               <div className="pdetail__meta-tags">
-                {project.tags?.map(t => <span key={t} className="tag">{t}</span>)}
+                {project.tags?.map(tag => <span key={tag} className="tag">{tag}</span>)}
               </div>
             </div>
           </motion.div>
@@ -102,7 +105,7 @@ export default function ProjectDetail() {
           {/* 2. SCROLL REVEAL: HIGHLIGHTS */}
           <Reveal>
             <div className="pdetail__section">
-              <h2 className="pdetail__h2">Key Highlights</h2>
+              <h2 className="pdetail__h2">{t('projectDetail.keyHighlights', { defaultValue: 'Key Highlights' })}</h2>
               <div className="pdetail__highlights">
                 {project.highlights?.map((h, i) => (
                   <div key={i} className="pdetail__highlight">
@@ -118,11 +121,114 @@ export default function ProjectDetail() {
             </div>
           </Reveal>
 
+          {/* CASE STUDY — Problem */}
+          {project.caseStudy?.problem && (
+            <Reveal>
+              <div className="pdetail__section pdetail__cs">
+                <span className="pdetail__cs-label">{t('projectDetail.problem', { defaultValue: 'Problem' })}</span>
+                <p className="pdetail__cs-lede">{project.caseStudy.problem}</p>
+              </div>
+            </Reveal>
+          )}
+
+          {/* CASE STUDY — Context grid */}
+          {project.caseStudy?.context?.length > 0 && (
+            <Reveal>
+              <div className="pdetail__section">
+                <h2 className="pdetail__h2">{t('projectDetail.context', { defaultValue: 'Context' })}</h2>
+                <div className="pdetail__context">
+                  {project.caseStudy.context.map((c, i) => (
+                    <div key={i} className="pdetail__context-cell">
+                      <div className="pdetail__context-label">{c.label}</div>
+                      <div className="pdetail__context-value">{c.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          )}
+
+          {/* CASE STUDY — Process */}
+          {project.caseStudy?.process?.length > 0 && (
+            <Reveal>
+              <div className="pdetail__section">
+                <h2 className="pdetail__h2">{t('projectDetail.process', { defaultValue: 'Process' })}</h2>
+                <ol className="pdetail__process">
+                  {project.caseStudy.process.map((step, i) => (
+                    <li key={i} className="pdetail__process-step">
+                      <span className="pdetail__process-num" style={{ color: accent }}>
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <div>
+                        <h3 className="pdetail__process-heading">{step.heading}</h3>
+                        <p className="pdetail__process-body">{step.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </Reveal>
+          )}
+
+          {/* CASE STUDY — Decisions */}
+          {project.caseStudy?.decisions?.length > 0 && (
+            <Reveal>
+              <div className="pdetail__section">
+                <h2 className="pdetail__h2">{t('projectDetail.decisions', { defaultValue: 'Key Decisions' })}</h2>
+                <div className="pdetail__decisions">
+                  {project.caseStudy.decisions.map((d, i) => (
+                    <div key={i} className="pdetail__decision">
+                      <h3 className="pdetail__decision-title">{d.title}</h3>
+                      <p className="pdetail__decision-rationale">{d.rationale}</p>
+                      {d.impact && (
+                        <span className="pdetail__decision-impact" style={{ color: accent }}>{d.impact}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          )}
+
+          {/* CASE STUDY — Outcome */}
+          {project.caseStudy?.outcome && (
+            <Reveal>
+              <div className="pdetail__section">
+                <h2 className="pdetail__h2">{t('projectDetail.outcome', { defaultValue: 'Outcome' })}</h2>
+                {project.caseStudy.outcome.metrics?.length > 0 && (
+                  <div className="pdetail__outcome-metrics">
+                    {project.caseStudy.outcome.metrics.map((m, i) => (
+                      <div key={i} className="pdetail__outcome-metric">
+                        <div className="pdetail__outcome-value" style={{ color: accent }}>{m.value}</div>
+                        <div className="pdetail__outcome-label">{m.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {project.caseStudy.outcome.narrative && (
+                  <p className="pdetail__cs-body">{project.caseStudy.outcome.narrative}</p>
+                )}
+              </div>
+            </Reveal>
+          )}
+
+          {/* CASE STUDY — Learnings */}
+          {project.caseStudy?.learnings?.length > 0 && (
+            <Reveal>
+              <div className="pdetail__section">
+                <h2 className="pdetail__h2">{t('projectDetail.learnings', { defaultValue: 'What I learned' })}</h2>
+                <ul className="pdetail__learnings">
+                  {project.caseStudy.learnings.map((l, i) => <li key={i}>{l}</li>)}
+                </ul>
+              </div>
+            </Reveal>
+          )}
+
           {/* 3. SCROLL REVEAL: GALLERY */}
           {project.gallery?.length > 0 && (
             <Reveal>
               <div className="pdetail__section">
-                <h2 className="pdetail__h2">Selected Frames</h2>
+                <h2 className="pdetail__h2">{t('projectDetail.selectedFrames', { defaultValue: 'Selected Frames' })}</h2>
                 <div className="pdetail__gallery">
                   {project.gallery.map((g, i) => {
                     const captionText = project.galleryCaptions?.[i] || g.caption || '';

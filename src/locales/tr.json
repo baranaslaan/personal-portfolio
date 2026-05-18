@@ -148,6 +148,12 @@
     "disciplines": "Disiplinler",
     "keyHighlights": "Ana Noktalar",
     "selectedFrames": "Seçili Çerçeveler",
+    "problem": "Problem",
+    "context": "Bağlam",
+    "process": "Süreç",
+    "decisions": "Kritik Kararlar",
+    "outcome": "Sonuç",
+    "learnings": "Öğrendiklerim",
     "viewOnBehance": "Behance'de İncele",
     "viewPrototype": "Prototip Görüntüle"
   },
@@ -175,8 +181,60 @@
         "galleryCaptions": [
           "Açılış sayfası — hero ve ana CTA",
           "Özellikler ve bölüm sistemi",
-          "Detay görünümleri ve destekleyici ekranlar"
-        ]
+          "Detay görünümleri ve destekleyici ekranlar",
+          "Onboarding girişi — rol bazlı başlangıç noktası",
+          "Giriş yap — geri dönen kullanıcı akışı",
+          "Founder olarak katıl — kurucu kayıt yolu",
+          "Investor olarak katıl — yatırımcı kayıt yolu"
+        ],
+        "caseStudy": {
+          "problem": "StandardFlow'un eksiksiz bir marketing varlığına ihtiyacı vardı — landing, özellik derinleştirme sayfaları, pricing ve destekleyici yüzeyler. Hepsi tek bir görsel sistemde toplanıp 'üç ayrı site' değil 'tek bir ürün' gibi okunmalıydı.",
+          "context": [
+            { "label": "Rol",     "value": "Ürün Tasarımcısı (solo)" },
+            { "label": "Zaman",   "value": "2026" },
+            { "label": "Kapsam",  "value": "Marketing akışı" },
+            { "label": "Araçlar", "value": "Figma" }
+          ],
+          "process": [
+            {
+              "heading": "Görsel zeminin kurulması",
+              "body": "Temellerden başladım — display ağırlığı için Archivo'ya, gövde için sakin bir nötr fonta dayalı tipografi sistemi, koyu nötrlere karşı tek baskın bir aksan rengi, ve hem hero yoğunluğunu hem pricing tablo yoğunluğunu kırılmadan taşıyabilen sıkı bir spacing skalası."
+            },
+            {
+              "heading": "Marketing arc'ının kurgulanması",
+              "body": "Landing'i bir anlatı dizisi olarak tasarladım: tek odaklı bir CTA ile sessiz bir hero, sosyal kanıt, soluk alacak boşluklarla özellik blokları, kararın verildiği an olan pricing ve kapanış CTA'sı. Sayfa, üst üste blok yığını değil tek bir argüman olarak okunmalı."
+            },
+            {
+              "heading": "Yeniden kullanılabilir patternlere indirgeme",
+              "body": "Landing oturduktan sonra hero yapısı, özellik blokları ve pricing tile'ları yeniden kullanılabilir patternler olarak ayrıştırıldı — kalan marketing yüzeyleri görsel dili yeniden icat etmeden ship edilebilsin diye."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Tek aksan, ikinci ses yok",
+              "rationale": "B2B SaaS marketing'inde işin tadını ikincil renklerle açmak cazip gelir. Nötrlere karşı tek baskın bir aksan tuttum — enerji yerine güven. Sınırlama, sistemin kimliği oldu.",
+              "impact": "Daha sıkı görsel imza"
+            },
+            {
+              "title": "Hiyerarşi ağırlıkla, sadece boyutla değil",
+              "rationale": "Hero display ile destekleyici metin tipik olandan birbirine daha yakın boyutta; hiyerarşiyi ağırlık ve yoğunluk taşıyor. Orta ekranlarda daha keskin okunuyor ve sayfayı bütünüyle daha sakin tutuyor.",
+              "impact": "Daha sakin okuma temposu"
+            },
+            {
+              "title": "Marketing gutter'ları > ürün gutter'ları",
+              "rationale": "Ürün UI'sında kullanacağımdan daha geniş section padding. Her blok bir sonraki başlamadan önce yere konuyor — özellikle uzun scroll yüzeylerinde pacing içerik kadar önemli.",
+              "impact": "Daha iyi scroll temposu"
+            }
+          ],
+          "outcome": {
+            "narrative": "Müşteri ekibi sonucu 'tek bir ürün, tek bir ses' olarak tanımladı — hedeflediğim okuma tam buydu. Görsel sistem artık ileride gelecek ürün yüzeylerinin zemini; patternler, temel kararları yeniden müzakere etmeden genişletilebilecek durumda."
+          },
+          "learnings": [
+            "Sıkı tip skalası + cömert boşluk, tersinden daha sakin okunur — özellikle B2B SaaS'ta gösterişten önce güven gelir.",
+            "Marketing akışını bağımsız sayfaların dizisi olarak değil tek bir arc olarak tasarlamak, görsel enerjiyi tüm yolculuğa yaymama izin verdi.",
+            "Tek aksan, her kararı aynı renk filtresinden geçirmeye zorlar — başta daha zor, ama sonuçta belirgin biçimde daha sıkı bir sistem üretir."
+          ]
+        }
       },
       {
         "title": "Muhasebe Yazılımı UI Tasarımı",

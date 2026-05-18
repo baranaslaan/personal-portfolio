@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import {
   motion, AnimatePresence,
-  useMotionValue, useSpring, useTransform, useReducedMotion, useInView,
+  useMotionValue, useSpring, useTransform, useReducedMotion,
 } from 'framer-motion'
 import HeroVisual from './HeroVisual'
 import { useCountUp } from '../hooks/useCountUp'
@@ -136,8 +136,11 @@ export default function Hero() {
 
   const reduced = useReducedMotion()
   const sectionRef = useRef(null)
+  // Stats live above the fold; gating their count-up on an in-view observer
+  // was unreliable on mobile (observer wouldn't always fire, leaving the
+  // numbers stuck at 0). They start counting on mount instead.
   const statsRef = useRef(null)
-  const statsInView = useInView(statsRef, { once: true, margin: '-80px' })
+  const statsInView = true
 
   // cursor-tracked atmosphere
   const mx = useMotionValue(0.5)

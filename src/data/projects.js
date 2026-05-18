@@ -5,9 +5,16 @@ export const PROJECTS = [
     wide: true,
     cover: '/projects/standardflow-cover.png',
     gallery: [
+      // Marketing surfaces — landing → features → details
       { src: '/projects/standardflow-1.webp' },
       { src: '/projects/standardflow-2.webp' },
-      { src: '/projects/standardflow-3.webp' }
+      { src: '/projects/standardflow-3.webp' },
+      // Product entry — onboarding + auth
+      { src: '/projects/standardflow-choose-started.webp' },
+      { src: '/projects/standardflow-log-in.webp' },
+      // Role-based signup flows
+      { src: '/projects/standardflow-join-as-a-founder.webp' },
+      { src: '/projects/standardflow-join-as-a-investor.webp' }
     ],
     links: { behance: 'https://www.behance.net/gallery/244575927/StandardFlow-Website-UI-Design' }
   },
