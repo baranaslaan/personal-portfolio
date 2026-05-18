@@ -111,6 +111,7 @@ export default function Navbar({ scrolled, onHireClick }) {
         <div className="nav-menu">
           <Link to="/#work" className="nav-link" onClick={(e) => handleScroll(e, 'work')}>{t('nav.work')}</Link>
           <Link to="/about" className="nav-link" onClick={closeMenu}>{t('nav.about')}</Link>
+          <Link to="/lab" className="nav-link" onClick={closeMenu}>{t('nav.lab', { defaultValue: 'Lab' })}</Link>
           <Link to="/#contact" className="nav-link" onClick={(e) => handleScroll(e, 'contact')}>{t('nav.contact')}</Link>
         </div>
 
@@ -160,6 +161,7 @@ export default function Navbar({ scrolled, onHireClick }) {
           >
             <Link to="/#work" className="nav-mobile-link" onClick={(e) => handleScroll(e, 'work')}>{t('nav.work')}</Link>
             <Link to="/about" className="nav-mobile-link" onClick={closeMenu}>{t('nav.about')}</Link>
+            <Link to="/lab" className="nav-mobile-link" onClick={closeMenu}>{t('nav.lab', { defaultValue: 'Lab' })}</Link>
             <Link to="/#contact" className="nav-mobile-link" onClick={(e) => handleScroll(e, 'contact')}>{t('nav.contact')}</Link>
 
             <div className="nav-mobile-divider" />

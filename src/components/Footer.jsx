@@ -19,6 +19,7 @@ export default function Footer() {
       <nav className="footer-links" aria-label="Footer">
       <Link to="/about" className="footer-link">{t('footer.about')}</Link>
       <Link to="/#work" className="footer-link">{t('footer.work')}</Link>
+      <Link to="/lab" className="footer-link">{t('footer.lab', { defaultValue: 'Lab' })}</Link>
       <Link to="/#contact" className="footer-link">{t('footer.contact')}</Link>
       <a
           href="/baran-aslan-resume.pdf"

@@ -8,6 +8,13 @@ import HireModal from './components/HireModal'
 import Home from './pages/Home'
 import About from './pages/About'
 import ProjectDetail from './pages/ProjectDetail'
+import Lab from './pages/Lab'
+import CursorSymphony from './pages/lab/CursorSymphony'
+import TokenForge from './pages/lab/TokenForge'
+import DriftPhysics from './pages/lab/DriftPhysics'
+import ScrollCinema from './pages/lab/ScrollCinema'
+import SystemCreator from './pages/lab/SystemCreator'
+import TypeSymphony from './pages/lab/TypeSymphony'
 import Logo from './assets/aslan.svg'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -41,6 +48,13 @@ export default function App() {
           <Route path="/" element={<Home onHireClick={() => setHireOpen(true)} />} />
           <Route path="/about" element={<About onHireClick={() => setHireOpen(true)} />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/lab" element={<Lab />} />
+          <Route path="/lab/cursor-symphony" element={<CursorSymphony />} />
+          <Route path="/lab/token-forge" element={<TokenForge />} />
+          <Route path="/lab/drift-physics" element={<DriftPhysics />} />
+          <Route path="/lab/scroll-cinema" element={<ScrollCinema />} />
+          <Route path="/lab/system-creator" element={<SystemCreator />} />
+          <Route path="/lab/type-symphony" element={<TypeSymphony />} />
         </Routes>
       </AnimatePresence>
       <Footer />

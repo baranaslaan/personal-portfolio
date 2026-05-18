@@ -2,6 +2,7 @@
   "nav": {
     "work": "Work",
     "about": "About",
+    "lab": "Lab",
     "contact": "Contact",
     "hireMe": "Hire Me",
     "lightMode": "Light mode",
@@ -40,6 +41,7 @@
   "footer": {
     "about": "About",
     "work": "Work",
+    "lab": "Lab",
     "contact": "Contact",
     "cv": "CV",
     "copyright": "All rights reserved"
@@ -269,5 +271,182 @@
         ]
       }
     ]
+  },
+  "lab": {
+    "kicker": "Self-initiated · Coded · Experimental",
+    "titleBefore": "The ",
+    "titleAccent": "Lab",
+    "titleAfter": ".",
+    "lede": "A workshop of interactive experiments. Each piece is built in code — no static mockups — to explore a specific motion or interaction principle. Designed and engineered end-to-end as a place to play.",
+    "metaExperiments_one": "{{count}} experiment",
+    "metaExperiments_other": "{{count}} experiments",
+    "metaStack": "React + Framer Motion",
+    "metaOss": "Open-source ideas",
+    "back": "Lab",
+    "next": "Next",
+    "whatThis": "What this demonstrates",
+    "backToLab": "Back to lab",
+    "experiments": {
+      "cursorSymphony": {
+        "title": "Cursor Symphony",
+        "blurb": "A cursor that breathes — state-morphs over text, buttons, and media, with magnetic snapping driven by spring physics."
+      },
+      "tokenForge": {
+        "title": "Token Forge",
+        "blurb": "A live design-token playground. Drag sliders to tune accent hue, radius, and density — watch the system re-flow."
+      },
+      "driftPhysics": {
+        "title": "Drift Physics",
+        "blurb": "Throw a card; it tumbles, settles, and snaps back. Real momentum, constrained drag, spring damping."
+      },
+      "scrollCinema": {
+        "title": "Scroll Cinema",
+        "blurb": "A scroll-linked cinematic sequence. Text reveals, parallax depth layers, and color theme shifts mapped to scroll progress."
+      },
+      "systemCreator": {
+        "title": "System Creator",
+        "blurb": "A full design-system builder. Color, typography, radius, stroke — every choice paints a live UI kit you can copy out as CSS or JSON."
+      },
+      "typeSymphony": {
+        "title": "Type Symphony",
+        "blurb": "A variable-font playground. Drag five axes — weight, width, slant, optical size, grade — or press play and watch the letters dance through an 8-second choreography."
+      }
+    },
+    "cursorSymphony": {
+      "experimentNum": "Experiment 01",
+      "lede": "Move your pointer across the surfaces below. The cursor remembers what it's touching — text gets a caret, links open into a ring, media expands into a viewfinder, and magnetic anchors pull it home.",
+      "textTag": "Text surface",
+      "textBody": "Long-form text invites a precise caret. Notice how the cursor tightens into a slim vertical line so you can still see exactly which letter you're grazing — like an editor caret, not a blob.",
+      "linkTag": "Anchor target",
+      "linkHeading": "A clickable link.",
+      "linkBody": "The cursor opens into a 64px ring and labels its intent.",
+      "linkLabel": "Open →",
+      "mediaTag": "Image / media",
+      "mediaLabel": "View",
+      "magnetsTag": "Magnetic field",
+      "magnetsBody": "Each pellet pulls the cursor toward its center.",
+      "footerNote": "<0>useMotionValue</0> for raw pointer coords, <0>useSpring</0> for two-layer smoothing, <0>useTransform</0> for ambient hue mapping, and a small state machine driving variant-style animation transitions."
+    },
+    "tokenForge": {
+      "experimentNum": "Experiment 02",
+      "lede": "A working design system, miniature. Drag the sliders to retune accent hue, radius, density, and weight — every component you see below is bound to those tokens and re-flows live.",
+      "panelTitle": "Tokens",
+      "accentHue": "Accent · hue",
+      "secondaryHue": "Secondary · hue",
+      "radius": "Radius",
+      "density": "Density",
+      "weight": "Weight",
+      "presets": "Presets",
+      "densityCompact": "compact",
+      "densityCozy": "cozy",
+      "densitySpacious": "spacious",
+      "exportLabel": "Export",
+      "exportCss": "Copy as CSS",
+      "exportJson": "Copy as JSON",
+      "exportCopied": "Copied!",
+      "pillLabel": "Live preview",
+      "hero": "Design that flows.",
+      "body": "Every token is wired. Push a value; watch the system breathe.",
+      "primaryBtn": "Primary action",
+      "secondaryBtn": "Secondary",
+      "card1Title": "Foundations",
+      "card1Body": "Color, type, space, radius.",
+      "card2Title": "Components",
+      "card2Body": "Reusable, accessible, themed.",
+      "card3Title": "Patterns",
+      "card3Body": "Compose without losing flow.",
+      "footerNote": "A reactive token graph: five state values feed every visual property. <0>LayoutGroup</0> + <0>motion.div layout</0> animates dimension changes when radius and density shift, so the system reads as alive rather than jerky."
+    },
+    "driftPhysics": {
+      "experimentNum": "Experiment 03",
+      "lede": "Grab a card and throw it. The drag transition tracks velocity, adds momentum, and lets cards skid against the walls before springing back to rest. Double-click to dismiss.",
+      "addCard": "Add card",
+      "reset": "Reset",
+      "cards": "cards",
+      "throws": "throws",
+      "stageAria": "Physics stage",
+      "hint": "Drag · throw · double-click to remove",
+      "cardHint": "grab + throw",
+      "footerNote": "<0>drag</0> + <0>dragConstraints</0> against a container ref, custom <0>dragTransition</0> for inertia tuning, and <0>useTransform</0> mapping x velocity to rotation for a hand-thrown feel."
+    },
+    "scrollCinema": {
+      "experimentNum": "Experiment 04",
+      "lede": "A scroll-linked cinematic sequence. Text reveals, parallax depth layers, and color theme shifts mapped to scroll progress.",
+      "reducedLede": "Reduced-motion mode is enabled — the cinematic sequence is disabled. Below is a static summary of what this experiment showcases.",
+      "kicker": "Scroll · Cinema",
+      "heroTitle1": "Tell stories",
+      "heroTitle2": "with motion.",
+      "heroSub": "Keep scrolling.",
+      "act1Tag": "Act i",
+      "act1Heading": "A pointer is a promise.",
+      "act1Body": "Every interaction is a small commitment between system and user. Motion is how we deliver on it — confirming, guiding, rewarding.",
+      "act2Tag": "Act ii",
+      "act2Heading": "Speed has weight.",
+      "act2Body": "Easing is gravity. A spring that overshoots feels alive; a linear curve feels like a robot. Choose the physics, choose the feeling.",
+      "act3Tag": "Act iii",
+      "act3Heading": "Context teaches purpose.",
+      "act3Body": "Choreographed reveals scaffold attention. The right element arrives the moment it's asked for — never sooner.",
+      "stampMade": "Made with",
+      "stampMotion": "motion.",
+      "footerNote": "A single <0>useScroll</0> source spring-smoothed, then <0>useTransform</0>ed into a dozen choreographed outputs: color theme, parallax depths, sequential reveals, and a final stamp. One scroll variable, an entire scene."
+    },
+    "systemCreator": {
+      "experimentNum": "Experiment 05",
+      "lede": "A working design system, in full. Tune primary hue, font pairing, radius scale, and stroke width — the preview rebuilds itself live with a 10-step palette, type scale, and components ready to copy out.",
+      "panelTitle": "System",
+      "colorSection": "Color",
+      "typeSection": "Typography",
+      "shapeSection": "Shape",
+      "primaryHue": "Primary · hue",
+      "neutralHue": "Neutral · hue",
+      "fontHeading": "Heading font",
+      "fontBody": "Body font",
+      "typeScale": "Type scale",
+      "radiusScale": "Radius",
+      "strokeWidth": "Stroke",
+      "brandName": "Aurora Studio",
+      "brandTag": "Design + engineering",
+      "paletteLabel": "Palette",
+      "typeLabel": "Type scale",
+      "typeDisplay": "Design with system.",
+      "typeHeading": "Heading — section opener",
+      "typeBody": "Body text carries the meaning. It should read effortlessly, breathe between lines, and let the system fade away.",
+      "typeCaption": "Caption · supporting label",
+      "componentsLabel": "Components",
+      "btnPrimary": "Primary action",
+      "btnSecondary": "Secondary",
+      "inputPlaceholder": "Search your design system…",
+      "cardTitle": "Project Atlas",
+      "cardBody": "A modular dashboard with reusable patterns across surfaces.",
+      "iconsLabel": "Icons · stroke weight",
+      "footerNote": "Every visual choice flows from a small graph of tokens: <0>primary hue</0> generates a 10-step palette, <0>type scale</0> drives every text size, <0>radius</0> and <0>stroke</0> shape every surface and outline. <0>LayoutGroup</0> animates the in-between as you re-tune."
+    },
+    "typeSymphony": {
+      "experimentNum": "Experiment 06",
+      "lede": "Variable fonts let one font file behave like an entire family. Drag the five axes below to bend Roboto Flex through its full design space, or press play to watch the letters dance through a choreographed 8-second symphony.",
+      "stageAria": "Variable font stage",
+      "editAria": "Type to change the sample text",
+      "editHint": "click to edit",
+      "play": "Play symphony",
+      "stop": "Stop",
+      "copyCss": "Copy CSS",
+      "copied": "Copied!",
+      "axes": {
+        "wght": "Weight",
+        "wdth": "Width",
+        "slnt": "Slant",
+        "opsz": "Optical size",
+        "GRAD": "Grade"
+      },
+      "presetsLabel": "Presets",
+      "presets": {
+        "refined": "Refined",
+        "bold": "Bold",
+        "loose": "Loose",
+        "tight": "Tight",
+        "italic": "Italic"
+      },
+      "footerNote": "Roboto Flex carries five active axes (<0>wght</0>, <0>wdth</0>, <0>slnt</0>, <0>opsz</0>, <0>GRAD</0>). Each slider writes directly into <0>font-variation-settings</0>. Press play and <0>animate()</0> from framer-motion drives a single 0→1 timeline that maps to a four-phase choreography across all axes simultaneously."
+    }
   }
 }

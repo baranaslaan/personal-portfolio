@@ -2,6 +2,7 @@
   "nav": {
     "work": "İşler",
     "about": "Hakkımda",
+    "lab": "Lab",
     "contact": "İletişim",
     "hireMe": "Çalışalım",
     "lightMode": "Açık tema",
@@ -40,6 +41,7 @@
   "footer": {
     "about": "Hakkımda",
     "work": "İşler",
+    "lab": "Lab",
     "contact": "İletişim",
     "cv": "CV",
     "copyright": "Tüm hakları saklıdır"
@@ -269,5 +271,182 @@
         ]
       }
     ]
+  },
+  "lab": {
+    "kicker": "Kişisel · Kodlanmış · Deneysel",
+    "titleBefore": "",
+    "titleAccent": "Lab",
+    "titleAfter": ".",
+    "lede": "Etkileşimli deneylerden oluşan bir atölye. Her parça baştan sona kodla yazıldı — sahte ekran tasarımı yok — belirli bir hareket ya da etkileşim prensibini incelemek için. Oynayacak bir alan olarak kuruldu.",
+    "metaExperiments_one": "{{count}} deney",
+    "metaExperiments_other": "{{count}} deney",
+    "metaStack": "React + Framer Motion",
+    "metaOss": "Açık kaynak fikirler",
+    "back": "Lab",
+    "next": "Sonraki",
+    "whatThis": "Bu ne gösteriyor",
+    "backToLab": "Lab'a dön",
+    "experiments": {
+      "cursorSymphony": {
+        "title": "Cursor Symphony",
+        "blurb": "Nefes alan bir imleç — metin, buton ve görsellerin üzerinde şekil değiştirir, yay fiziğiyle mıknatıs gibi yapışır."
+      },
+      "tokenForge": {
+        "title": "Token Forge",
+        "blurb": "Canlı bir tasarım-token oyun alanı. Slider'ları sürükleyerek vurgu rengini, köşe yumuşaklığını ve yoğunluğu ayarla — sistem anında yeniden akar."
+      },
+      "driftPhysics": {
+        "title": "Drift Physics",
+        "blurb": "Bir kart at; takla atar, yerleşir, geri yaylanır. Gerçek momentum, sınırlı sürükleme, yay sönümlemesi."
+      },
+      "scrollCinema": {
+        "title": "Scroll Cinema",
+        "blurb": "Scroll'a bağlı sinematik bir sekans. Metin açılımları, parallax derinlik katmanları ve scroll ilerlemesine bağlanmış renk teması geçişleri."
+      },
+      "systemCreator": {
+        "title": "System Creator",
+        "blurb": "Tam kapsamlı bir tasarım sistemi inşası. Renk, tipografi, yarıçap, çizgi — her seçim canlı bir UI kit'i boyar, CSS veya JSON olarak dışa aktarabilirsin."
+      },
+      "typeSymphony": {
+        "title": "Type Symphony",
+        "blurb": "Bir variable-font oyun alanı. Beş axis'i sürükle — kalınlık, genişlik, eğim, optik boyut, derece — veya play'e bas, harfler 8 saniyelik bir koreografide dans etsin."
+      }
+    },
+    "cursorSymphony": {
+      "experimentNum": "Deney 01",
+      "lede": "İmleci aşağıdaki yüzeylerin üzerinde gezdir. İmleç temas ettiği şeyi hatırlar — metinde caret, link'te bir halka, görselde vizör, mıknatıs noktalarında ise merkeze çekilir.",
+      "textTag": "Metin yüzeyi",
+      "textBody": "Uzun metin, ince bir caret ister. İmleç dikey bir çizgiye incelir — hangi harfin üzerinde olduğunu net görebilirsin, blob değil bir editör caret'i gibi.",
+      "linkTag": "Bağlantı hedefi",
+      "linkHeading": "Tıklanabilir bir bağlantı.",
+      "linkBody": "İmleç 64px'lik bir halkaya açılır ve niyetini etiketler.",
+      "linkLabel": "Aç →",
+      "mediaTag": "Görsel / medya",
+      "mediaLabel": "Gör",
+      "magnetsTag": "Mıknatıs alanı",
+      "magnetsBody": "Her nokta imleci kendi merkezine çeker.",
+      "footerNote": "Ham pointer koordinatları için <0>useMotionValue</0>, iki katmanlı yumuşatma için <0>useSpring</0>, ortam tonu eşlemesi için <0>useTransform</0>, ve variant-stili animasyon geçişlerini süren küçük bir state machine."
+    },
+    "tokenForge": {
+      "experimentNum": "Deney 02",
+      "lede": "Çalışan, minyatür bir tasarım sistemi. Slider'ları sürükleyerek vurgu rengini, köşe yumuşaklığını, yoğunluğu ve harf kalınlığını yeniden ayarla — aşağıdaki tüm bileşenler bu token'lara bağlı ve canlı yeniden akar.",
+      "panelTitle": "Token'lar",
+      "accentHue": "Vurgu · ton",
+      "secondaryHue": "İkincil · ton",
+      "radius": "Yarıçap",
+      "density": "Yoğunluk",
+      "weight": "Kalınlık",
+      "presets": "Hazır setler",
+      "densityCompact": "sıkı",
+      "densityCozy": "rahat",
+      "densitySpacious": "ferah",
+      "exportLabel": "Dışa aktar",
+      "exportCss": "CSS olarak kopyala",
+      "exportJson": "JSON olarak kopyala",
+      "exportCopied": "Kopyalandı!",
+      "pillLabel": "Canlı önizleme",
+      "hero": "Akan tasarım.",
+      "body": "Her token bağlı. Bir değeri itele; sistem nefes alıyor.",
+      "primaryBtn": "Birincil aksiyon",
+      "secondaryBtn": "İkincil",
+      "card1Title": "Temeller",
+      "card1Body": "Renk, tipografi, boşluk, yarıçap.",
+      "card2Title": "Bileşenler",
+      "card2Body": "Tekrar kullanılabilir, erişilebilir, temalı.",
+      "card3Title": "Desenler",
+      "card3Body": "Akışı bozmadan birleştir.",
+      "footerNote": "Reaktif bir token grafiği: beş state değeri her görsel özelliği besler. <0>LayoutGroup</0> + <0>motion.div layout</0> yarıçap ve yoğunluk değişince boyutları animate eder — sistem cansız değil, nefes alıyor gibi okunur."
+    },
+    "driftPhysics": {
+      "experimentNum": "Deney 03",
+      "lede": "Bir kartı tut ve fırlat. Drag transition hızı izler, momentum ekler, kartlar duvarlarda kayar ve yumuşakça yerlerine yaylanır. Çıkarmak için çift tıkla.",
+      "addCard": "Kart ekle",
+      "reset": "Sıfırla",
+      "cards": "kart",
+      "throws": "atış",
+      "stageAria": "Fizik sahnesi",
+      "hint": "Sürükle · fırlat · çıkarmak için çift tıkla",
+      "cardHint": "tut + fırlat",
+      "footerNote": "Bir container ref'ine karşı <0>drag</0> + <0>dragConstraints</0>, atalet ayarı için özel <0>dragTransition</0>, ve elle fırlatılmış hissi için x hızını rotasyona eşleyen <0>useTransform</0>."
+    },
+    "scrollCinema": {
+      "experimentNum": "Deney 04",
+      "lede": "Scroll'a bağlı sinematik bir sekans. Metin açılımları, parallax derinlik katmanları ve scroll ilerlemesine bağlanmış renk teması geçişleri.",
+      "reducedLede": "Reduced-motion modu aktif — sinematik sekans devre dışı. Aşağıda bu deneyin ne gösterdiğine dair statik bir özet var.",
+      "kicker": "Scroll · Cinema",
+      "heroTitle1": "Hareketle",
+      "heroTitle2": "hikaye anlat.",
+      "heroSub": "Aşağı kaydırmaya devam et.",
+      "act1Tag": "Perde i",
+      "act1Heading": "Pointer bir sözdür.",
+      "act1Body": "Her etkileşim sistem ve kullanıcı arasında küçük bir taahhüttür. Hareket, o sözü tuttuğumuz yerdir — onaylar, yönlendirir, ödüllendirir.",
+      "act2Tag": "Perde ii",
+      "act2Heading": "Hızın ağırlığı vardır.",
+      "act2Body": "Easing yerçekimidir. Üstüne çıkan bir yay canlı hisseder; düz bir eğri robot gibi. Fiziği seçerken hissi seçersin.",
+      "act3Tag": "Perde iii",
+      "act3Heading": "Bağlam amacı öğretir.",
+      "act3Body": "Koreografili açılımlar dikkati katmanlar. Doğru eleman, tam istendiği anda gelir — bir saniye önce değil.",
+      "stampMade": "Hareketle",
+      "stampMotion": "yapıldı.",
+      "footerNote": "Yay-yumuşatılmış tek bir <0>useScroll</0> kaynağı, sonra bir düzine koreografili çıktıya <0>useTransform</0>'lanmış: renk teması, parallax derinlikleri, sıralı açılımlar ve final mührü. Tek bir scroll değişkeni, bir bütün sahne."
+    },
+    "systemCreator": {
+      "experimentNum": "Deney 05",
+      "lede": "Çalışan bir tasarım sistemi, eksiksiz. Birincil tonu, font eşleşmesini, yarıçap skalasını ve çizgi kalınlığını ayarla — önizleme 10 basamaklı palette, type scale ve kopyalanabilir bileşenlerle canlı yeniden kurulur.",
+      "panelTitle": "Sistem",
+      "colorSection": "Renk",
+      "typeSection": "Tipografi",
+      "shapeSection": "Şekil",
+      "primaryHue": "Birincil · ton",
+      "neutralHue": "Nötr · ton",
+      "fontHeading": "Başlık fontu",
+      "fontBody": "Gövde fontu",
+      "typeScale": "Tip skalası",
+      "radiusScale": "Yarıçap",
+      "strokeWidth": "Çizgi",
+      "brandName": "Aurora Studio",
+      "brandTag": "Tasarım + mühendislik",
+      "paletteLabel": "Palet",
+      "typeLabel": "Tip skalası",
+      "typeDisplay": "Sistemle tasarla.",
+      "typeHeading": "Başlık — bölüm açılışı",
+      "typeBody": "Gövde metni anlamı taşır. Kolayca okunmalı, satırlar arasında nefes almalı, sistemin görünmez olmasına izin vermeli.",
+      "typeCaption": "Açıklama · destek etiketi",
+      "componentsLabel": "Bileşenler",
+      "btnPrimary": "Birincil aksiyon",
+      "btnSecondary": "İkincil",
+      "inputPlaceholder": "Tasarım sistemini ara…",
+      "cardTitle": "Project Atlas",
+      "cardBody": "Yüzeyler arasında yeniden kullanılabilir desenlere sahip modüler bir dashboard.",
+      "iconsLabel": "İkonlar · çizgi kalınlığı",
+      "footerNote": "Her görsel seçim küçük bir token grafiğinden akar: <0>birincil ton</0> 10 basamaklı paleti üretir, <0>tip skalası</0> tüm metin boyutlarını yönetir, <0>yarıçap</0> ve <0>çizgi</0> her yüzey ve outline'ı şekillendirir. <0>LayoutGroup</0> sen yeniden ayarlarken aradaki geçişleri animate eder."
+    },
+    "typeSymphony": {
+      "experimentNum": "Deney 06",
+      "lede": "Variable font'lar tek bir dosyayı bütün bir aileymiş gibi davrandırır. Aşağıdaki beş axis'i sürükleyerek Roboto Flex'i tüm design space'inde büküm; ya da play'e basıp harfleri 8 saniyelik koreografili bir senfonide dans etmesini izle.",
+      "stageAria": "Variable font sahnesi",
+      "editAria": "Örnek metni değiştirmek için yaz",
+      "editHint": "düzenlemek için tıkla",
+      "play": "Senfoniyi oynat",
+      "stop": "Durdur",
+      "copyCss": "CSS'i kopyala",
+      "copied": "Kopyalandı!",
+      "axes": {
+        "wght": "Kalınlık",
+        "wdth": "Genişlik",
+        "slnt": "Eğim",
+        "opsz": "Optik boyut",
+        "GRAD": "Derece"
+      },
+      "presetsLabel": "Hazır setler",
+      "presets": {
+        "refined": "Zarif",
+        "bold": "Cesur",
+        "loose": "Gevşek",
+        "tight": "Sıkı",
+        "italic": "İtalik"
+      },
+      "footerNote": "Roboto Flex beş aktif axis taşır (<0>wght</0>, <0>wdth</0>, <0>slnt</0>, <0>opsz</0>, <0>GRAD</0>). Her slider doğrudan <0>font-variation-settings</0>'e yazar. Play'e basınca framer-motion'dan <0>animate()</0> tek bir 0→1 zaman çizelgesini sürer; bu çizelge tüm axes'e dört fazlı bir koreografi olarak haritalanır."
+    }
   }
 }
