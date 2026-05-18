@@ -154,6 +154,11 @@
     "decisions": "Kritik Kararlar",
     "outcome": "Sonuç",
     "learnings": "Öğrendiklerim",
+    "openWalkthrough": "Tasarım kararlarını yakından incele",
+    "close": "Kapat (Esc)",
+    "hotspot": "İşaret",
+    "prev": "Önceki",
+    "next": "Sonraki",
     "viewOnBehance": "Behance'de İncele",
     "viewPrototype": "Prototip Görüntüle"
   },
@@ -233,7 +238,46 @@
             "Sıkı tip skalası + cömert boşluk, tersinden daha sakin okunur — özellikle B2B SaaS'ta gösterişten önce güven gelir.",
             "Marketing akışını bağımsız sayfaların dizisi olarak değil tek bir arc olarak tasarlamak, görsel enerjiyi tüm yolculuğa yaymama izin verdi.",
             "Tek aksan, her kararı aynı renk filtresinden geçirmeye zorlar — başta daha zor, ama sonuçta belirgin biçimde daha sıkı bir sistem üretir."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Yakından bakış",
+            "kicker": "Tasarım gerekçesi",
+            "intro": "Onboarding girişinin yakın bir incelemesi — yeni bir kullanıcının ürünü nasıl kullanacağına karar verdiği an. Her işaret, yüzeyin altındaki bir kararı açıklıyor.",
+            "image": "/projects/standardflow-choose-started.webp",
+            "alt": "StandardFlow — onboarding rol seçim ekranı",
+            "hotspots": [
+              {
+                "x": 50, "y": 11,
+                "title": "Uygulama chrome'u değil marka işareti",
+                "body": "Logotype, başlığın hemen üstünde ortalanmış — bir köşeye sıkıştırılmamış. Onboarding ilk karşılaşma anıdır; the fold üstündeki en büyük tekil alanı kazanan navigation değil, marka oluyor."
+              },
+              {
+                "x": 50, "y": 23,
+                "title": "Gradient: chrome'a değil display'e",
+                "body": "'Join StandardFlow' başlığı sayfadaki gradient'in uygulandığı tek öğe — ince bir gümüş geçiş. Butonlara veya kutulara uygulanan gradient süs gibi okunur; display tipografisine uygulandığında bilinçli bir materyal gibi durur. Kullanılacak tek yer varsa, burası."
+              },
+              {
+                "x": 50, "y": 56,
+                "title": "Eşit ağırlık — ve mesele de bu",
+                "body": "Bir pricing sayfasında bir kartı görsel olarak kaçınılmaz yapardım. Burada tam tersi: founder ve investor eşit derecede geçerli kullanıcılar, hiçbiri 'tavsiye edilen' değil. Eşit ağırlık bunun bir huni değil bir çatallanma olduğunu söylüyor."
+              },
+              {
+                "x": 25, "y": 49,
+                "title": "Monokrom ikon — kategori, sinyal değil",
+                "body": "İkonlar koyu zeminde nötr beyaz kalıyor. Renk eklemek hiyerarşi veya durum (aktif/önerilen) ima ederdi. İki seçim de eşit derecede geçerli olduğu için ikonlar yalnızca kategori belirteci işlevi görüyor, sinyal değil."
+              },
+              {
+                "x": 78, "y": 81,
+                "title": "Link tarzı CTA, tüm kart hit-area",
+                "body": "'Sign up as Investor →' affordance'ı düğme değil link olarak okunuyor. Sebep: kartın tamamı tıklanabilir. Bir buton görsel olarak buna ters bir mesaj verirdi — link + ok, kullanıcıya nereye gittiğini söylerken kartın istediği yerine tıklamasına izin veriyor."
+              },
+              {
+                "x": 50, "y": 95,
+                "title": "Secondary path, secondary ağırlık",
+                "body": "Mevcut kullanıcılar sayfanın en altında, en hafif tip ağırlığıyla yaşıyor. Buradaki birincil yol yeni kullanıcılar; o nedenle onların kararı görsel merkezi kaplıyor, dönen kullanıcılar ise login'i bulmak için ihtiyaç duydukları minimum yüzeye sahip."
+              }
+            ]
+          }
         }
       },
       {
@@ -300,7 +344,28 @@
             "Token katmanını önce kurmak yavaş hissettirdi ama tek doğru yoldu — her ekran kararı ayrışmak yerine paylaşılan bir temelde birikti.",
             "İki tasarımcıyla tek bir ürün, tasarım kadar koordinasyon sorunudur. Yüzey sahipliği ve paylaşılan tokenler bu yapıyı işler hâle getiren düzenekti.",
             "Yoğun veriyi iyi tasarlamak kendi başına bir zanaattir — muhasebe arayüzleri açılış sayfaları kadar özen hak eder."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Yakından bakış",
+            "kicker": "Tasarım sistemi gerekçesi",
+            "intro": "Ürünün altına yerleşen renk token sisteminin yakın bir incelemesi. Her işaret bir yapısal kararı açıklıyor — renklerin kendisini değil, onları bir sistem yapan kuralları.",
+            "image": "/projects/accounting-2.webp",
+            "alt": "Akaunting tasarım sistemi — renk token dokümantasyonu",
+            "hotspots": [
+              { "x": 50, "y": 16, "title": "Marka Renkleri — tek baskın ses",
+                "body": "Marka yeşili sistemin en üstünde, satırında yalnız duruyor. 'İkinci bir marka rengi' yok — vurgular, durum sinyalleri ve nötrler işin geri kalanını yapıyor. Tek baskın ses, zamanla muhasebe arayüzlerini bozan gökkuşağı kaymasını engelliyor." },
+              { "x": 50, "y": 26, "title": "Marka rengi başına üç kontrollü varyant",
+                "body": "Darker, Lighter, Subtle — her marka rengi, tasarımcıların ekran başına tint seçmesine izin vermek yerine üç önceden belirlenmiş varyantla geliyor. Token sistemi olmadan biriken 'benzer ama biraz farklı' tonları eler." },
+              { "x": 50, "y": 40, "title": "Contrast Colors — ikinci eksen, aynı yapı",
+                "body": "Contrast rengi (yeşilin uygun olmadığı durumlar için) tam olarak aynı Darker/Lighter/Subtle yapısını takip ediyor. Token sistemi bir sözlüktür; içindeki her kelime aynı biçimde çekimlenir." },
+              { "x": 50, "y": 56, "title": "State Colors — dekorasyon değil durum",
+                "body": "Error, Warning, Info, Success kendi satırında yaşıyor. Durum iletişimi marka rengini ödünç almıyor; marka rengi de durum anlamını üstlenmiyor. İki eksen bağımsız kalıyor." },
+              { "x": 50, "y": 67, "title": "Adlandırılmış token olarak Text Colors",
+                "body": "Dört metin ağırlığı — seçilmiş griler değil. Tasarımcılar #595959 ile #6E6E6E arasında değil, Text 1/2/3/4 arasında seçim yapıyor. Çok kişili bir ürün ekibinde tutarsızlığın en yaygın kaynaklarından birini ortadan kaldırıyor." },
+              { "x": 50, "y": 92, "title": "Etikette HEX — hand-off yapının içinde",
+                "body": "Her swatch'ın yanında HEX değeri var. Dokümantasyon hem tasarımcılar hem mühendisler için tek kaynak — senkronizasyondan çıkacak ayrı bir spec dokümanı yok. Sistem, hand-off'un kendisi." }
+            ]
+          }
         }
       },
       {
@@ -365,7 +430,28 @@
             "PM araçlarına yönelik şikâyetler aslında özellik sayısıyla ilgili değil — tarama yüküyle ilgili. Doğru problemi çözmek, onu doğru adlandırmakla başlıyor.",
             "Renk'i hiyerarşi olarak kullanmak (tek görev, tek sinyal) — dekorasyon olarak değil — yoğun arayüzlerde en etkili hamlelerden biri.",
             "Açılış ve ürünü tek yüzey olarak ele almak — iki ayrı şey olarak değil — bir kategori marka tutarlılığı sorununu daha ortaya çıkmadan eler."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Yakından bakış",
+            "kicker": "Kanban gerekçesi",
+            "intro": "Kullanıcıların çoğunun zamanını geçirdiği Kanban ekranının yakın incelemesi. Her işaret, yoğun bir görev yüzeyini sıkıştırılmış değil taranabilir tutmaya dair bir kararı açıklıyor.",
+            "image": "/projects/pm-2.webp",
+            "alt": "Proje Yönetim Uygulaması — Kanban panel görünümü",
+            "hotspots": [
+              { "x": 9, "y": 33, "title": "Mevcut proje, yüksek sesle",
+                "body": "Project 2 vurgulanmış; Project 1 sönük. Birçok PM aracı 'neredesin'i örtük bırakır. Bunu görsel olarak yüksek sesli yapmak, derin bir sekmeden dönen kullanıcının yeniden konumlanmasına bir saniye bile harcamasını engelliyor." },
+              { "x": 47, "y": 26, "title": "Görünümler mod değil eş düzey",
+                "body": "Kanban aktif ama List, Timeline, Calendar yanında kardeş olarak duruyor. 'İşime şu an nasıl bakıyorum' kullanıcının ilk verdiği karar — daha derin bir menüde saklanmamalı." },
+              { "x": 30, "y": 34, "title": "Durum noktası kolon rengini yansıtıyor",
+                "body": "Her kolon başlığında o duruma bağlı renkli bir nokta var ve aynı renk kolonun görev kartlarının içinde tekrar görünüyor. Tek renk = tek anlam, tüm yüzeyde. Renk asla dekorasyona dönüşmüyor." },
+              { "x": 73, "y": 34, "title": "Sayaç rozetleri — tek bakışta yük",
+                "body": "'Open 3, To-Do 1, Doing 4, Done 0, Close 3' — her başlığın yanındaki sayı, operatörün kartları saymadan kolona göre yükü taramasına izin veriyor. Görsel gürültüsüz hacim sinyali." },
+              { "x": 27, "y": 48, "title": "Görev kartı — üç satırlık hiyerarşi",
+                "body": "Başlık birincil ağırlıkta, tarih destekleyici metadata, avatarlar ve durum ikonları aksan. Kart başına üç bilgi parçası, sabit hiyerarşi. Kart, satır başına altı değer sıkıştırmak yerine nefes alabilir hâlde." },
+              { "x": 72, "y": 43, "title": "Boş durum — yokluk değil davet",
+                "body": "Done kolonu boş ama boş bir alan yerine kullanıcı kesik çizgili bir 'Add Task +' affordance'ı görüyor. Kolonlar arasında görsel ritmi koruyor ve sadece yokluk sinyali vermek yerine eyleme davet ediyor." }
+            ]
+          }
         }
       },
       {
@@ -430,7 +516,28 @@
             "Seçenekler arasında eşit görsel ağırlık, karar yükünü sessizce ziyaretçiye devreden bir varsayılan. Bir öneri seçip görsel olarak ona bağlı kalmak gerçek iş yapmaktır, kayırma değil.",
             "Fiyatlandırma sayfalarının iki işi vardır — karar ve doğrulama — ve farklı tasarım yaklaşımlarına ihtiyaç duyarlar. Karar için kartlar, doğrulama için tablo.",
             "Toggle ve mikro-etkileşimlerde dizginli durmak, fiyatlandırma sayfalarında güven olarak okunur. Buradaki süs satıcılık sinyali verir; sakinlik güven sinyali verir."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Yakından bakış",
+            "kicker": "Dönüşüm gerekçesi",
+            "intro": "Ziyaretçinin ya dönüştüğü ya da ayrıldığı fiyatlandırma sayfasının yakın incelemesi. Her işaret, bir karşılaştırma tablosunu bir karar aracına çevirmek için verilen bir kararı açıklıyor.",
+            "image": "/projects/pricing-2.webp",
+            "alt": "Fiyatlandırma sayfası — tam görünüm",
+            "hotspots": [
+              { "x": 50, "y": 5, "title": "Sayfa bir karar olarak çerçevelendi",
+                "body": "'Pick a plan that is right for you' — başlık, ürünün özelliklerini değil, kullanıcının görevini adlandırıyor. Tüm sayfa kataloğu satmak için değil, tek bir kararın gerçekleşmesine yardım etmek için biçimlendi." },
+              { "x": 50, "y": 9, "title": "Toggle — süs değil fiyat netliği",
+                "body": "Aylık/yıllık toggle bilinçli olarak sakin tutuldu — animasyon süsü yok, sadece temiz bir durum değişikliği ve yıllık seçeneğe sabitlenmiş net bir '2 ay ücretsiz'. Toggle'ın işi bir fiyat sorusunu kaldırmak, bir 'an' olmak değil." },
+              { "x": 60, "y": 16, "title": "Önerilen plan, görsel olarak kaçınılmaz",
+                "body": "Premium Cloud cevap — sarı kart yüzeyi, yeşil 'PREMIUM CLOUD' etiketi, dolar değeri maksimum ağırlıkta. Diğer kartlar nötr kalırken bu göze çekiyor. Sayfa, ziyaretçiden istemek yerine kararı onun adına veriyor." },
+              { "x": 80, "y": 18, "title": "Kartlar — sadece farklılaştırıcılar",
+                "body": "Her kart yalnızca planlar arasında gerçekten farklı olan özellikleri listeliyor (Unlimited Users, Companies, Bank Feeds, Ticket Support). Tam özellik listesi alttaki karşılaştırma tablosunda. Önce karar, sonra doğrulama." },
+              { "x": 50, "y": 31, "title": "Güvence: limit sorusunun cevabı",
+                "body": "Üç büyük 'Unlimited' callout, kartlarla karşılaştırma tablosu arasında oturuyor — 'ama gerçekten kaç tane olabilir' diye sorulan sessiz sorunun bir tıklama engeline dönüşmeden önce cevaplanması. Sürtünmeyi öngörmek tasarımın parçası." },
+              { "x": 50, "y": 50, "title": "Karşılaştırma tablosu — karar değil doğrulama",
+                "body": "Kapsamlı özellik karşılaştırması bilinçli olarak kartların altında. Halihazırda seçimini yapmış ziyaretçi buraya doğrulamak için geliyor; karar vermemiş olan zaten 30 satırlık bir matriste cevabı bulamayacaktı. İki iş, iki yüzey." }
+            ]
+          }
         }
       },
       {
@@ -500,7 +607,28 @@
             "Yoğunluk ve sakinlik karşıt değil. Renk ve boşluk anlamlı iş yapıyorsa — dekoratif iş değil — yoğun bir ürün hâlâ sessiz hissedebilir.",
             "Veri yoğun ürünlerde dashboard'ın en önemli işi triyaj — dikkat gerektireni öne çıkarmak. Bu bir tasarım problemidir, bir veri problemi değil.",
             "Pazarlama ve ürünü erken aşamada tek bir bileşen setinden teslim etmek, geç aşamada ortaya çıkan bir kategori marka tutarlılığı sorununu eler."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Yakından bakış",
+            "kicker": "Dashboard gerekçesi",
+            "intro": "Filo kontrol panelinin yakın incelemesi — operatörün her sabah ilk açtığı ekran. Her işaret, yoğunluk ve sakinliğin aynı yüzeyde nasıl bir arada yaşadığına dair bir kararı açıklıyor.",
+            "image": "/projects/routewise-dashboard.png",
+            "alt": "Routewise — filo kontrol paneli dashboard",
+            "hotspots": [
+              { "x": 8, "y": 14, "title": "Favoriler Dashboards'un üstünde",
+                "body": "Kenar çubuğu 'Favorites / Recently' bölümünü tam Dashboards listesinden ayrı tutuyor. Günlük operatörler her sabah aynı iki üç şeye bakıyor — bunları tam navigasyonun üstüne çıkarmak bilişsel bir adım kazandırıyor ve gerçek kullanım desenini takip ediyor." },
+              { "x": 32, "y": 14, "title": "KPI kartları — tek bakışta üç sinyal",
+                "body": "Her KPI, mevcut değer, bir dairesel ilerleme halkası (hedefe karşı) ve altında trend deltası içeriyor. Üç bilgi tek kartta — sabah kontrolü gerçekten tek bakış oluyor, dört değil." },
+              { "x": 24, "y": 19, "title": "Renk: dekorasyon değil durum",
+                "body": "Yeşil +7.4%, bu satırda grafik dolgu dışındaki tek renk. Trend yönü, anlık görsel doğrulama gerektiren tek bilgi — renk buna ayrılmış, dekorasyona harcanmamış." },
+              { "x": 56, "y": 35, "title": "Harita ve Stats — eşit ağırlıkta çift",
+                "body": "Harita ve istatistik aynı satırda, eşit genişlikte. Filo operatörleri hem coğrafi hem sayısal düşünür — hiçbiri 'birincil' görünüm değil, bu yüzden düzen onları biri diğerinin içinde değil kardeş olarak ele alıyor." },
+              { "x": 25, "y": 55, "title": "Kart chrome'u — bir kez öğrenilir, her yerde kullanılır",
+                "body": "Her kart aynı header'ı kullanıyor: ikon, etiket, opsiyonel edit/menü. Kullanıcı bir kartı öğrendiğinde hepsini öğrenmiş oluyor. Chrome verinin önüne geçmiyor." },
+              { "x": 76, "y": 60, "title": "Alt satır — filoyu tek bakışta",
+                "body": "Batarya, yakıt, yol, cihaz durumu — filonun operasyonel sağlığını gösteren dört metrik. Dashboard'ın işi triyaj; bu dördü, daha derin navigasyondan önceki sabah kontrolü." }
+            ]
+          }
         }
       },
       {
@@ -565,7 +693,24 @@
             "Sembolü atlamak, tipografiyi gerçekten iyi olmaya zorlayan bir kısıttır. Bir stil değil, bir disiplindir.",
             "Kimlik işinin çoğu kimsenin bilinçli olarak görmediği ölçeklerde gerçekleşir — ama toplam etkisi anında hissedilir.",
             "Lockup varyantlarını ana işaretin yanında — sonradan değil — tasarlamak 'case study'de işliyor, gerçek kullanımda çöküyor' sorununu önler."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Yakından bakış",
+            "kicker": "Kimlik gerekçesi",
+            "intro": "Logotype'ın üç bağlamdaki yakın incelemesi. Her işaret, kimliği bir sembole başvurmak yerine harf formlarında tutmaya dair bir kararı açıklıyor.",
+            "image": "/projects/logotype-2.webp",
+            "alt": "ioseo.co logotype — üç bağlam varyantı",
+            "hotspots": [
+              { "x": 20, "y": 70, "title": "Birincil lockup — wordmark + slogan",
+                "body": "Tam wordmark, altında çok daha hafif ağırlıkta 'Progress with data & automation' sloganıyla yer alıyor. Slogan destekliyor, asla yarışmıyor — wordmark okundu anda geriye çekilecek boyutta ve ağırlıkta." },
+              { "x": 50, "y": 65, "title": "Yalnız wordmark — aynı harf formları",
+                "body": "Sadece wordmark'a indirildiğinde bile kimlik ayakta kalıyor. Harf formları — kerning, terminal şekli, 'o' üstündeki nokta detayı — wordmark'ın slogan olmadan da marka olarak okunabilmesi için inceltildi." },
+              { "x": 80, "y": 65, "title": "App icon — harf formları işaret oluyor",
+                "body": "En küçük formatta bile harf formları kullanılıyor — wordmark'tan alınan 'C' ve 'o', dairesel bir kompozisyon olarak yeniden çerçevelenmiş. Ayrı bir ikon tasarlanmadı; wordmark kendi işaretini içeriyor, sadece küçük bağlamlar için yeniden düzenlendi." },
+              { "x": 50, "y": 82, "title": "Üç bağlam, tek kimlik",
+                "body": "Açık mavi, krem, neredeyse siyah — üç farklı yüzey bağlamı. Logo bir arada duruyor çünkü oranlar ve harf formları arka planla değişmiyor; yalnızca tonal katman uyum sağlıyor. Kimlik sabit kalıyor, bağlam etrafında değişiyor." }
+            ]
+          }
         }
       }
     ]

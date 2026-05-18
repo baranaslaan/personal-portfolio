@@ -154,6 +154,11 @@
     "decisions": "Key Decisions",
     "outcome": "Outcome",
     "learnings": "What I learned",
+    "openWalkthrough": "Walk through the design decisions",
+    "close": "Close (Esc)",
+    "hotspot": "Marker",
+    "prev": "Previous",
+    "next": "Next",
     "viewOnBehance": "View on Behance",
     "viewPrototype": "View Prototype"
   },
@@ -233,7 +238,46 @@
             "Tight type scale + generous spacing reads calmer than the opposite — useful for B2B SaaS where trust beats spectacle.",
             "Designing the marketing flow as a single arc (not a sequence of independent pages) let me pace visual energy across the whole journey.",
             "A single accent forces every decision through the same color filter — harder upfront, but produces a noticeably tighter system."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Design rationale",
+            "intro": "A closer look at the onboarding entry — the moment a new user decides how to use the product. Each marker explains one decision behind the surface.",
+            "image": "/projects/standardflow-choose-started.webp",
+            "alt": "StandardFlow — onboarding role selection screen",
+            "hotspots": [
+              {
+                "x": 50, "y": 11,
+                "title": "Brand mark, not application chrome",
+                "body": "The logotype sits centered above the headline rather than tucked into a corner. Onboarding is the moment of first encounter — the brand earns the largest single piece of real estate above the fold, not the navigation."
+              },
+              {
+                "x": 50, "y": 23,
+                "title": "Gradient on display, not on chrome",
+                "body": "The 'Join StandardFlow' headline is the only element with a subtle silver gradient on the page. Gradients applied to buttons or boxes feel like decoration; applied to display type they read as intentional material. One place to use it, and it's here."
+              },
+              {
+                "x": 50, "y": 56,
+                "title": "Equal weight — and that's the point",
+                "body": "On a pricing page I'd make one card visually inevitable. Here the opposite is true: a founder and an investor are equally valid users, neither is a 'recommended' choice. Equal weight communicates that this is a fork, not a funnel."
+              },
+              {
+                "x": 25, "y": 49,
+                "title": "Monochrome icons — category, not status",
+                "body": "Icons stay neutral white-on-dark. Adding color would imply hierarchy or status (active/recommended). Since both choices are equally valid, icons function purely as category markers, not signals."
+              },
+              {
+                "x": 78, "y": 81,
+                "title": "Link-style CTA, full-card hit area",
+                "body": "The 'Sign up as Investor →' affordance reads as a link rather than a button. The reason: the entire card is clickable. A button would have visually contradicted that — the link + arrow tells the user where they're going while letting them tap anywhere."
+              },
+              {
+                "x": 50, "y": 95,
+                "title": "Secondary path, secondary weight",
+                "body": "Existing users live at the bottom with the lightest type weight on the page. New users are the primary path here, so their decision occupies the visual center; returning users get the minimum surface area they need to find login."
+              }
+            ]
+          }
         }
       },
       {
@@ -300,7 +344,28 @@
             "Token layer first felt slow but proved to be the only path — every screen decision compounded on a shared foundation instead of diverging.",
             "Two designers on one product is a coordination problem as much as a design problem. Surface ownership + shared tokens was the structure that made it work.",
             "Dense data handled well is its own form of craft — accounting interfaces deserve as much design attention as landing pages."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Design system rationale",
+            "intro": "A closer look at the color token system that anchored the product. Each marker explains one structural decision — not the swatches themselves, but the rules that made them a system.",
+            "image": "/projects/accounting-2.webp",
+            "alt": "Akaunting design system — color token documentation",
+            "hotspots": [
+              { "x": 50, "y": 16, "title": "Brand Colors — single dominant voice",
+                "body": "The brand green sits at the top of the system, alone in its row. There's no 'second brand color' — accents, state signals, and neutrals do the rest of the work. One dominant voice prevents the rainbow drift that breaks accounting UIs over time." },
+              { "x": 50, "y": 26, "title": "Three controlled variants per brand color",
+                "body": "Darker, Lighter, Subtle — each brand color ships with three pre-decided variants rather than letting designers pick tints per-screen. Eliminates the 'similar but slightly different' shades that accumulate without a token system." },
+              { "x": 50, "y": 40, "title": "Contrast Colors — second axis, same structure",
+                "body": "The contrast color (used when green isn't appropriate) follows the exact same Darker/Lighter/Subtle structure. The token system is a vocabulary, and every word in it conjugates the same way." },
+              { "x": 50, "y": 56, "title": "State Colors — status, never decoration",
+                "body": "Error, Warning, Info, Success live in their own row. Status communication never borrows the brand color, and the brand color never borrows status meaning. The two axes stay independent." },
+              { "x": 50, "y": 67, "title": "Text Colors as named tokens",
+                "body": "Four text weights — not picked grays. Designers reach for Text 1/2/3/4 instead of #595959 vs #6E6E6E. Removes one of the most common sources of inconsistency in a multi-person product team." },
+              { "x": 50, "y": 92, "title": "Hex values inline — handoff built in",
+                "body": "Every swatch carries its hex value beside the label. The documentation is the source for both designers and engineers — no separate spec doc to drift out of sync. The system is the handoff." }
+            ]
+          }
         }
       },
       {
@@ -365,7 +430,28 @@
             "PM tool complaints aren't really about feature count — they're about scanning load. Solving the right problem started with naming it correctly.",
             "Using color as hierarchy (one job, one signal) instead of decoration is one of the highest-leverage moves in dense UI.",
             "Treating landing and product as one surface — not two — eliminates a category of brand-coherence problems before they appear."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Kanban rationale",
+            "intro": "A closer look at the Kanban board — the screen most users live in. Each marker explains one decision behind keeping a dense task surface scannable rather than packed.",
+            "image": "/projects/pm-2.webp",
+            "alt": "Project Management App — Kanban board view",
+            "hotspots": [
+              { "x": 9, "y": 33, "title": "Current project, loud",
+                "body": "Project 2 is highlighted; Project 1 dims. Most PM tools leave 'where you are' implicit. Making it visually loud lets users return from a deep tab without spending a second re-orienting." },
+              { "x": 47, "y": 26, "title": "Views as peers, not modes",
+                "body": "Kanban is active but List, Timeline, Calendar sit beside it as siblings. 'How do I look at my work right now' is the first decision the user makes — it shouldn't be hidden in a deeper menu." },
+              { "x": 30, "y": 34, "title": "Status dot mirrors column state",
+                "body": "Each column header carries a color dot tied to that state, and the same color reappears inside the column's task cards. One color = one meaning across the whole surface. Color never doubles as decoration." },
+              { "x": 73, "y": 34, "title": "Count badges — workload at a glance",
+                "body": "'Open 3, To-Do 1, Doing 4, Done 0, Close 3' — the count next to each header lets an operator scan workload by column without counting cards. Volume signal without visual noise." },
+              { "x": 27, "y": 48, "title": "Task card — three-line hierarchy",
+                "body": "Title at primary weight, date as supporting metadata, avatars and status icons as accent. Three pieces of information per card, fixed hierarchy. The card stays breathable instead of packing six values per row." },
+              { "x": 72, "y": 43, "title": "Empty state — invitation, not absence",
+                "body": "Done column is empty, but instead of a blank space the user sees a dashed 'Add Task +' affordance. Maintains visual rhythm across columns and invites action rather than just signaling absence." }
+            ]
+          }
         }
       },
       {
@@ -430,7 +516,28 @@
             "Equal visual weight across options is a default that quietly transfers decision burden to the visitor. Picking a recommendation and committing to it visually is doing real work, not playing favorites.",
             "Pricing pages have two jobs — decision and verification — and they need different design treatments. Cards for decision, table for verification.",
             "Restraint on toggles and micro-interactions reads as confidence on pricing pages. Decoration here signals salesmanship; calm signals trust."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Conversion rationale",
+            "intro": "A closer look at the pricing page — the screen where a visitor either converts or leaves. Each marker explains one decision behind turning a comparison grid into a decision tool.",
+            "image": "/projects/pricing-2.webp",
+            "alt": "Pricing page — full page view",
+            "hotspots": [
+              { "x": 50, "y": 5, "title": "Page framed as a decision",
+                "body": "'Pick a plan that is right for you' — the headline names the user's task, not the product's features. The whole page is shaped around helping one decision happen, not selling the catalog." },
+              { "x": 50, "y": 9, "title": "Toggle — pricing clarity, not delight",
+                "body": "The monthly/yearly toggle stays deliberately understated — no animation flourish, just a clean state change with an explicit '2 months free' anchored to yearly. The toggle's job is to remove a price question, not to be a moment." },
+              { "x": 60, "y": 16, "title": "Recommended plan, visually inevitable",
+                "body": "Premium Cloud is the answer — yellow card surface, green 'PREMIUM CLOUD' label, dollar value at maximum weight. While other cards stay neutral, this one pulls the eye. The page makes the decision for the visitor instead of asking them to do it." },
+              { "x": 80, "y": 18, "title": "Cards — differentiators only",
+                "body": "Each card lists only the features that actually differ between plans (Unlimited Users, Companies, Bank Feeds, Ticket Support). The full feature list lives below in the comparison table. Decision first, verification second." },
+              { "x": 50, "y": 31, "title": "Reassurance answers the limit question",
+                "body": "Three large 'Unlimited' callouts sit between the cards and the comparison table — addressing the unspoken question 'but how many can I actually have' before it becomes a click-blocker. Anticipating the friction is part of the design." },
+              { "x": 50, "y": 50, "title": "Comparison table — for verification, not decision",
+                "body": "The exhaustive feature comparison lives below the cards, intentionally. Visitors who've already chosen come here to verify; visitors who haven't decided weren't going to find the answer in a 30-row matrix. Two jobs, two surfaces." }
+            ]
+          }
         }
       },
       {
@@ -500,7 +607,28 @@
             "Density and calm aren't opposites. A dense product can still feel quiet if color and spacing are doing meaningful work, not decorative work.",
             "In data-heavy products, the dashboard's most important job is triage — surfacing what needs attention. That's a design problem, not a data problem.",
             "Shipping marketing and product from a single component set early eliminates a category of late-stage brand-coherence problems."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Dashboard rationale",
+            "intro": "A closer look at the fleet control panel — the screen an operator opens first every morning. Each marker explains one decision about how density and calm coexist on the same surface.",
+            "image": "/projects/routewise-dashboard.png",
+            "alt": "Routewise — fleet control panel dashboard",
+            "hotspots": [
+              { "x": 8, "y": 14, "title": "Favorites above Dashboards",
+                "body": "The sidebar splits 'Favorites / Recently' from the full Dashboards list. Daily operators look at the same two or three things every morning — surfacing those above the full nav saves a cognitive hop and respects the actual usage pattern." },
+              { "x": 32, "y": 14, "title": "KPI cards — three signals in one glance",
+                "body": "Each KPI pairs a current value, a circular progress ring (against target), and a trend delta below. Three pieces of information in one card means the morning check is genuinely one glance, not four." },
+              { "x": 24, "y": 19, "title": "Status as color, not decoration",
+                "body": "The green +7.4% is the only color in this row aside from the chart fills. Trend direction is the one piece of information that demanded instant visual confirmation — color is reserved for that, never spent on decoration." },
+              { "x": 56, "y": 35, "title": "Map and Stats — equal-weight pair",
+                "body": "Map and stats sit side-by-side on the same row, equal width. Fleet operators think both geographically and numerically — neither is the 'primary' view, so the layout treats them as siblings rather than nesting one inside the other." },
+              { "x": 25, "y": 55, "title": "Card chrome — learned once, used everywhere",
+                "body": "Every card uses the same header: icon, label, optional edit/menu affordance, white surface. Once a user learns one card, they've learned all of them. The chrome stays out of the way of the data." },
+              { "x": 76, "y": 60, "title": "Bottom row — fleet at a glance",
+                "body": "Battery, fuel, road, device status — four metrics that map to the operational health of the fleet. The dashboard's job is triage; these four are the morning check before any deeper navigation." }
+            ]
+          }
         }
       },
       {
@@ -565,7 +693,24 @@
             "Skipping the symbol is a constraint that forces typography to be genuinely good. It's a discipline more than a style.",
             "Most of identity work happens at scales no one consciously sees — but the cumulative effect is felt immediately.",
             "Designing the lockup variants alongside the primary mark — not afterwards — prevents the 'works in the case study, fails in real use' problem."
-          ]
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Identity rationale",
+            "intro": "A closer look at the logotype in three contexts. Each marker explains one decision behind keeping the identity in the letterforms rather than reaching for a symbol.",
+            "image": "/projects/logotype-2.webp",
+            "alt": "ioseo.co logotype — three context variants",
+            "hotspots": [
+              { "x": 20, "y": 70, "title": "Primary lockup — wordmark + tagline",
+                "body": "The full wordmark sits with the tagline 'Progress with data & automation' beneath it at a much lighter weight. Tagline supports, never competes — sized and weighted to recede the moment the wordmark is read." },
+              { "x": 50, "y": 65, "title": "Wordmark only — the same letterforms",
+                "body": "Stripped to the wordmark alone, the identity still holds. The letterforms — kerning, terminal shape, the dot detail on 'o' — were tuned so that the wordmark could stand without a tagline and still read as the brand." },
+              { "x": 80, "y": 65, "title": "App icon — letterforms become the mark",
+                "body": "Even the smallest format uses letterforms — 'C' and 'o' lifted from the wordmark and reframed as a circular composition. No separate icon was designed; the wordmark contains its own mark, just rearranged for tiny contexts." },
+              { "x": 50, "y": 82, "title": "Three contexts, one identity",
+                "body": "Light blue, peach, near-black — three different surface contexts. The logo holds together because proportions and letterforms don't change with the background; only the tonal layer adapts. Identity stays constant, context changes around it." }
+            ]
+          }
         }
       }
     ]

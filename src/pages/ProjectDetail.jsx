@@ -6,6 +6,7 @@ import { PROJECTS } from '../data/projects'
 import Lightbox from '../components/Lightbox'
 // Animasyon bileşenini ekliyoruz
 import { Reveal } from '../components/Reveal'
+import AnnotatedImage from '../components/AnnotatedImage'
 import { useMeta } from '../hooks/useMeta'
 
 const container = {
@@ -238,6 +239,29 @@ export default function ProjectDetail() {
                 <ul className="pdetail__learnings">
                   {project.caseStudy.learnings.map((l, i) => <li key={i}>{l}</li>)}
                 </ul>
+              </div>
+            </Reveal>
+          )}
+
+          {/* CASE STUDY — Annotated walkthrough */}
+          {project.caseStudy?.walkthrough?.hotspots?.length > 0 && (
+            <Reveal>
+              <div className="pdetail__section">
+                <h2 className="pdetail__h2">{project.caseStudy.walkthrough.title}</h2>
+                <AnnotatedImage
+                  src={project.caseStudy.walkthrough.image}
+                  alt={project.caseStudy.walkthrough.alt}
+                  intro={project.caseStudy.walkthrough.intro}
+                  hotspots={project.caseStudy.walkthrough.hotspots}
+                  labels={{
+                    kicker: project.caseStudy.walkthrough.kicker,
+                    hotspot: t('projectDetail.hotspot', { defaultValue: 'Marker' }),
+                    prev: t('projectDetail.prev', { defaultValue: 'Previous' }),
+                    next: t('projectDetail.next', { defaultValue: 'Next' }),
+                    openWalkthrough: t('projectDetail.openWalkthrough', { defaultValue: 'Walk through the design decisions' }),
+                    close: t('projectDetail.close', { defaultValue: 'Close (Esc)' }),
+                  }}
+                />
               </div>
             </Reveal>
           )}

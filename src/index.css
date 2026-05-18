@@ -4308,3 +4308,440 @@ section[id] { scroll-margin-top: 90px; }
   background: var(--card-accent, var(--accent));
   border-radius: 1px;
 }
+
+/* ==========================================================================
+   AnnotatedImage — inline trigger + fullscreen walkthrough modal
+   ========================================================================== */
+
+/* Inline trigger card */
+.annotated-trigger {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 18px 22px 18px 18px;
+  margin: 24px 0;
+  border-radius: var(--radius-xl);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: background .25s ease, border-color .25s ease, transform .25s cubic-bezier(.16, 1, .3, 1);
+}
+
+.annotated-trigger:hover {
+  background: color-mix(in srgb, var(--card-accent, var(--accent)) 5%, var(--bg-elev));
+  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 35%, var(--border));
+  transform: translateY(-1px);
+}
+
+.annotated-trigger:focus-visible {
+  outline: 2px solid var(--card-accent, var(--accent));
+  outline-offset: 3px;
+}
+
+.annotated-trigger__thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 88px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.annotated-trigger__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.annotated-trigger__count {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--card-accent, var(--accent));
+  color: #001;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.annotated-trigger__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.annotated-trigger__title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+
+.annotated-trigger__intro {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.annotated-trigger__arrow {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  transition: transform .25s cubic-bezier(.16, 1, .3, 1), color .25s ease, border-color .25s ease;
+}
+
+.annotated-trigger:hover .annotated-trigger__arrow {
+  transform: translateX(2px);
+  color: var(--card-accent, var(--accent));
+  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 50%, var(--border));
+}
+
+@media (max-width: 600px) {
+  .annotated-trigger { padding: 14px; gap: 14px; }
+  .annotated-trigger__thumb { width: 64px; height: 56px; }
+  .annotated-trigger__arrow { width: 32px; height: 32px; }
+}
+
+/* Fullscreen modal */
+.annotated-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(4, 8, 16, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  animation: annotated-modal-fade .22s cubic-bezier(.16, 1, .3, 1);
+}
+
+@media (max-width: 960px) {
+  .annotated-modal { padding: 16px; }
+}
+
+@keyframes annotated-modal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.annotated-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.annotated-modal__close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.26);
+  color: #fff;
+}
+
+.annotated-modal__inner {
+  position: relative;
+  width: min(95vw, 1280px);
+  height: min(86vh, 760px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
+  gap: 0;
+  align-items: stretch;
+  background: linear-gradient(180deg, rgba(20, 28, 44, 0.98), rgba(14, 20, 34, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .annotated-modal__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-items: stretch;
+  }
+}
+
+.annotated-modal__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  padding: 32px;
+}
+
+@media (max-width: 960px) {
+  .annotated-modal__stage { padding: 20px; }
+}
+
+/* Frame shrinks to image's displayed size so percentage-positioned hotspots
+   align with the image exactly. As a flex item with max constraints, it
+   sizes to the image but respects modal bounds. */
+.annotated-modal__frame {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  line-height: 0;
+}
+
+.annotated-modal__image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(86vh - 64px);
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 960px) {
+  .annotated-modal__image { max-height: 48vh; }
+  .annotated-modal__frame { max-height: 48vh; }
+}
+
+.annotated-modal__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.annotated__hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-family: inherit;
+  isolation: isolate;
+}
+
+.annotated__hotspot::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--card-accent, var(--accent)) 24%, transparent) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  z-index: -1;
+}
+
+.annotated__hotspot:hover::before,
+.annotated__hotspot:focus-visible::before,
+.annotated__hotspot.is-active::before { opacity: 1; }
+
+.annotated__hotspot:focus-visible { outline: none; }
+
+.annotated__hotspot-dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--card-accent, var(--accent));
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--card-accent, var(--accent)) 25%, transparent),
+    0 0 0 1px rgba(0, 0, 0, 0.35) inset;
+  transition: transform .25s cubic-bezier(.16, 1, .3, 1), box-shadow .25s ease;
+}
+
+.annotated__hotspot.is-active .annotated__hotspot-dot {
+  transform: scale(1.35);
+  box-shadow:
+    0 0 0 8px color-mix(in srgb, var(--card-accent, var(--accent)) 18%, transparent),
+    0 0 0 1px rgba(0, 0, 0, 0.4) inset;
+}
+
+.annotated__hotspot-num {
+  position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+/* Pulse on the active hotspot */
+.annotated__hotspot.is-active::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--card-accent, var(--accent));
+  animation: annotated-pulse 2.2s cubic-bezier(.4, 0, .2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes annotated-pulse {
+  0%   { transform: scale(1);   opacity: .6; }
+  100% { transform: scale(1.7); opacity: 0;  }
+}
+
+/* Modal panel — sits inside the frame as the right column.
+   Top-padding clears the close button (36px + 14px + 14px = ~64px). */
+.annotated-modal__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 68px 28px 28px;
+  background: rgba(255, 255, 255, 0.025);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  min-width: 0;
+  overflow-y: auto;
+}
+
+@media (max-width: 960px) {
+  .annotated-modal__panel {
+    padding: 20px;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+.annotated-modal__panel .annotated__panel-meta {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.annotated-modal__panel .annotated__panel-title {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.annotated-modal__panel .annotated__panel-text {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.annotated-modal__panel .annotated__nav-btn {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.annotated-modal__panel .annotated__nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
+@media (max-width: 960px) {
+  .annotated-modal__panel { min-height: 180px; padding: 20px; }
+}
+
+.annotated__panel-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+}
+
+.annotated__panel-counter { color: var(--card-accent, var(--accent)); font-variant-numeric: tabular-nums; }
+
+.annotated__panel-body { flex: 1; }
+
+.annotated__panel-body--enter {
+  animation: annotated-enter .28s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+@keyframes annotated-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .annotated__panel-body--enter { animation: none; }
+  .annotated__hotspot.is-active::after { animation: none; }
+}
+
+.annotated__panel-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+
+.annotated__panel-text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.annotated__panel-nav {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.annotated__nav-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.annotated__nav-btn:hover {
+  background: color-mix(in srgb, var(--card-accent, var(--accent)) 8%, transparent);
+  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 40%, var(--border));
+  color: var(--text-1);
+}
+
+.annotated__nav-btn:focus-visible {
+  outline: 2px solid var(--card-accent, var(--accent));
+  outline-offset: 2px;
+}
