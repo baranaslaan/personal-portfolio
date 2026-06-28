@@ -1,5 +1,17 @@
 export const PROJECTS = [
   {
+    id: 7,
+    accent: '#3B82F6',
+    wide: true,
+    cover: '/projects/pace-cover.png',
+    gallery: [
+      { src: '/projects/pace-screens.webp' },
+      { src: '/projects/pace-design.webp' },
+      { src: '/projects/pace-casestudy.webp' }
+    ],
+    links: { behance: 'https://www.behance.net/gallery/251855911/Pace-App-UIUX-Design' }
+  },
+  {
     id: 1,
     accent: '#22C55E',
     wide: true,

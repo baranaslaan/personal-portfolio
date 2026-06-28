@@ -712,6 +712,112 @@
             ]
           }
         }
+      },
+      {
+        "title": "Pace Uygulaması UI/UX Tasarımı",
+        "desc": "iOS için günlük harcama temposunu yöneten bir bütçe uygulaması — uçtan uca tasarlandı ve geliştirildi. Geç okuduğun aylık rapor yerine Pace tek bir soruyu yanıtlıyor: bugün ne kadar harcayıp tempomda kalabilirim?",
+        "tags": ["Mobil Uygulama", "iOS", "UI/UX", "Figma"],
+        "year": "2026",
+        "role": "Ürün Tasarımcısı & Geliştirici",
+        "metric": { "value": "Vaka Çalışması", "label": "tasarım + geliştirme" },
+        "highlights": [
+          "Bütçe, aylık otopsi değil günlük bir tempo olarak yeniden kurgulandı",
+          "Renk kodlu halka: bütçe rakamlardan önce renkle konuşuyor",
+          "İki dokunuşla giriş — kahveni ana ekrandan ayrılmadan kaydet",
+          "Outfit üzerine kurulu koyu, tek aksanlı sistem; Figma'da tasarlandı, React Native'de geliştirildi"
+        ],
+        "galleryCaptions": [
+          "Ana ekranlar — onboarding, tempo halkası ve günlük giriş",
+          "Tasarım sistemi — renk, tipografi, boşluk ve bileşenler",
+          "Vaka çalışması panosu — uçtan uca tüm anlatı"
+        ],
+        "caseStudy": {
+          "problem": "Çoğu bütçe uygulaması gerçeği çok geç söyler. Üç hafta boyunca aşarsın, sonra aylık bir rapor bunu — sakin sakin, geriye dönük — nasıl olduğunu açıklar. Pace'in bu sinyali ayın başına taşıması gerekiyordu: 'planı bozmadan bugün ne kadar harcayabilirim?' sorusuna, her harcamada güncellenen, tek bakışta okunan bir cevap.",
+          "context": [
+            { "label": "Rol",      "value": "Ürün Tasarımcısı & Geliştirici (solo)" },
+            { "label": "Süre",     "value": "2026" },
+            { "label": "Kapsam",   "value": "iOS uygulaması — uçtan uca" },
+            { "label": "Araçlar",  "value": "Figma · React Native" }
+          ],
+          "process": [
+            {
+              "heading": "Bütçeyi tempo olarak yeniden kurgulamak",
+              "body": "İşe raporu çöpe atarak başladım. Aylık toplam bir hükümdür; insanların asıl ihtiyacı bir hız göstergesidir. Bu yüzden ana nesne, günlük bir harcama hakkı oldu — kalan bütçenin döngüdeki kalan günlere bölünmesi — ve her işlemden sonra yeniden hesaplanıyor. Arkasındaki tüm matematiği sessizce yutan, bugüne özel tek bir sayı."
+            },
+            {
+              "heading": "Sayıyı renkle konuşturmak",
+              "body": "Tek başına bir rakam yine de kullanıcıdan yorum ister. Tempo halkası ikinci ve daha hızlı bir kanal taşıyor: durumuna göre renk değiştiriyor — önde, yolunda, nötr ya da aşıldı. Rengi rakamlardan önce okuyorsun, böylece durum kilit ekranı widget'ında bile tek bakışta yerine oturuyor. 'Tempo, renkle konuşur' tasarım ilkesi oldu."
+            },
+            {
+              "heading": "Girişi görünmez kılmak",
+              "body": "Bir bütçe uygulaması ancak kayıt zahmetsizse işe yarar; bu yüzden giriş alanı ana ekranda, halkanın hemen altında yaşıyor. Sık ve son harcamalar tek dokunuşluk çipler olarak çıkıyor — Kahve, Market, Ulaşım — yani sık durum iki dokunuşta bitiyor. Kayıt hızlandıkça sayı dürüst kalıyor."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Bugüne özel tek sayı",
+              "rationale": "Ay başından bu yana toplamı, kategori pastalarını ve projeksiyonları aynı anda göstermek varsayılan yoldur — ve felç edicidir. Hepsini ana ekrandaki tek bir günlük rakama indirdim, dökümleri bir katman aşağı ittim. Ana ekran tek soruyu yanıtlıyor; gerisi talep üzerine.",
+              "impact": "Tek bakışta karar"
+            },
+            {
+              "title": "Rakamdan önce renk",
+              "rationale": "Sayılar okumak ister; renk hiçbir şey istemez. Halkanın rengini bütçe durumuna bağlamak, en önemli sinyalin — iyi miyim? — dikkat harcamadan ulaşması demek. Kesin rakam, istediğinde orada; ama hüküm onu beklemiyor.",
+              "impact": "Durum ön-dikkatte okunuyor"
+            },
+            {
+              "title": "Varsayılan koyu, tek aksan",
+              "rationale": "Bir finans uygulaması hızlı, bak-ve-geç anlarda açılır. Koyu yüzey, halkayı ve rengini ekrandaki en parlak şey olarak tutar; tek bir mavi aksana sadık kalmak ise anlamsal renklerin (uyarı, aşım, tehlike) dekoratif renklerle yarışmamasını sağlar.",
+              "impact": "Sinyal en yüksek sesli kalıyor"
+            }
+          ],
+          "outcome": {
+            "narrative": "Pace, ana ekranı tek bir işi iyi yapan odaklı bir iOS uygulaması olarak çıktı: bugünün ne kadar yer açtığını şimdi söylüyor — ve bu cevabı, okumadan önce hissetmen için renklendiriyor. Tasarım sistemi (Outfit, koyu nötr zemin, tek mavi aksan ve sıkı bir anlamsal renk seti) pazarlama panosundan doğrudan React Native build'ine taşındı; yani tasarlanan, çıkan oldu."
+          },
+          "learnings": [
+            "Ana metriği yeniden kurgulamak — rapor yerine tempo — ürünü herhangi bir ekran kararından daha çok değiştirdi. Doğru nesne, geri kalan arayüzü bariz hale getiriyor.",
+            "Renkten birincil kanal olarak (dekorasyon değil) yararlanmak, bir sayıyı anlık hissettirmenin en ucuz yolu. İşi kullanıcı dikkat harcamadan yapıyor.",
+            "Kendim tasarlayıp geliştirdiğim için sistem runtime ile temasta hayatta kaldı — renk token'ları ve boşluk ölçeği React Native'e bozulmadan taşındı, handoff'ta hiçbir şey kaybolmadı."
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Tasarım gerekçesi",
+            "intro": "Ana ekranın yakın incelemesi — kullanıcının günde onlarca kez gördüğü yüzey. Her işaret, bütçeyi tek bakışta okunur kılmaya dair bir kararı açıklıyor.",
+            "image": "/projects/pace-ring.webp",
+            "alt": "Pace — günlük tempo halkası ve hızlı girişle ana ekran",
+            "hotspots": [
+              {
+                "x": 50, "y": 40,
+                "title": "Bugüne özel tek sayı",
+                "body": "Halkanın ortası ne aylık toplamın ne de harcadığın — bugün planda kalarak hâlâ harcayabileceğin tutar. Kalan bütçe, kalan güne bölünmüş, her girişten sonra yeniden hesaplanmış. Tüm matematik yutuluyor ki kullanıcı bir tablo değil, tek bir rakam okusun."
+              },
+              {
+                "x": 66, "y": 30,
+                "title": "Halka renkle konuşuyor",
+                "body": "Yayın uzunluğu değil rengi de durumunu kodluyor — önde, yolunda, nötr, aşıldı. Ekrandaki en hızlı kanal: rakamları çözmeden rengi algılıyorsun ki incelemediğin, göz attığın bir yüzeyde mesele tam olarak bu."
+              },
+              {
+                "x": 50, "y": 50,
+                "title": "Sade dille durum",
+                "body": "'₺ / gün · YOLUNDA' durumu sayının altında kelimeyle adlandırıyor. Renk anında söylüyor, etiket kuşkuya yer bırakmadan doğruluyor — önemli olan tek yargı için çift güvence, kullanıcıyla cevap arasında jargon olmadan."
+              },
+              {
+                "x": 30, "y": 72,
+                "title": "Giriş ana ekranda yaşıyor",
+                "body": "'Bugün ne harcadın?' halkanın hemen altında. Kayıt bir sekmenin ya da artı-menüsünün arkasına gömülü değil; birincil ekranın ikinci öğesi, çünkü güncellemesi sıkıcı olan bir bütçe dürüst olmaktan çıkar."
+              },
+              {
+                "x": 35, "y": 86,
+                "title": "Sık harcamalar tek dokunuşluk çip",
+                "body": "Kahve ₺45, Market ₺320, Ulaşım ₺30 — son ve tekrarlayan tutarlar çip olarak çıkıyor, böylece sık durum tek dokunuş. Dürüst yol hızlandıkça sayı gerçekten daha az sapıyor."
+              },
+              {
+                "x": 82, "y": 80,
+                "title": "Ekrandaki tek yüksek sesli buton",
+                "body": "Mavi ekleme butonu, alt yarının tek doygun öğesi — ekranın aktif olarak davet ettiği tek eylem. Geri kalan her şey koyu zemine çekiliyor ki birincil fiil, 'harcama kaydet', asla belirsiz olmasın."
+              }
+            ]
+          }
+        }
       }
     ]
   },

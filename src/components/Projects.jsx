@@ -121,8 +121,10 @@ export default function Projects() {
       <div className="project-grid">
         <AnimatePresence initial={false}>
           {visibleProjects.map((p, i) => {
-            // Statik görsel verisi ile JSON'dan gelen çeviri verisi burada birleşiyor:
-            const tProject = translatedItems[i] || {}
+            // Statik görsel verisi ile JSON'dan gelen çeviri verisi burada birleşiyor.
+            // Çeviri, dizi sırasına değil id'ye göre eşlenir (ProjectDetail ile tutarlı),
+            // böylece PROJECTS dizisini serbestçe yeniden sıralayabiliriz.
+            const tProject = translatedItems[p.id - 1] || {}
             const mergedProject = { ...p, ...tProject }
 
             return (

@@ -712,6 +712,112 @@
             ]
           }
         }
+      },
+      {
+        "title": "Pace App UI/UX Design",
+        "desc": "A daily-spending budgeting app for iOS — designed and built end-to-end. Instead of a monthly report you read too late, Pace answers one question: how much can I spend today and stay on track?",
+        "tags": ["Mobile App", "iOS", "UI/UX", "Figma"],
+        "year": "2026",
+        "role": "Product Designer & Developer",
+        "metric": { "value": "Case Study", "label": "design + build" },
+        "highlights": [
+          "Budget reframed as a daily pace — not a monthly post-mortem",
+          "A color-coded ring: the budget speaks in color before it speaks in numbers",
+          "Two-tap logging — record a coffee without leaving the home screen",
+          "Dark, single-accent system on Outfit, designed in Figma and built in React Native"
+        ],
+        "galleryCaptions": [
+          "Core screens — onboarding, the pace ring, and daily entry",
+          "Design system — color, type, spacing and components",
+          "Case-study board — the full narrative end to end"
+        ],
+        "caseStudy": {
+          "problem": "Most budgeting apps tell you the truth too late. You overspend across three weeks, then a monthly report explains — calmly, in hindsight — exactly how. Pace had to move that signal to the front of the month: a single, glanceable answer to 'how much can I spend today without breaking the plan?' that updates the moment you spend.",
+          "context": [
+            { "label": "Role",     "value": "Product Designer & Developer (solo)" },
+            { "label": "Timeline", "value": "2026" },
+            { "label": "Scope",    "value": "iOS app — end to end" },
+            { "label": "Tools",    "value": "Figma · React Native" }
+          ],
+          "process": [
+            {
+              "heading": "Reframing budget as pace",
+              "body": "I started by throwing out the report. A monthly total is a verdict; what people actually need is a speedometer. So the core object became a daily allowance — the remaining budget divided across the days left in the cycle — that recalculates after every transaction. One number, scoped to today, that quietly absorbs the math behind it."
+            },
+            {
+              "heading": "Making the number speak in color",
+              "body": "A figure alone still asks the user to interpret it. The pace ring carries a second, faster channel: it shifts color with your standing — ahead, on track, neutral, or over. You read the color before you read the digits, so the state lands in a glance even from a locked-screen widget. 'Tempo, renkle konuşur' — pace speaks in color — became the design principle."
+            },
+            {
+              "heading": "Designing entry to disappear",
+              "body": "A budget app only works if logging is effortless, so the entry field lives on the home screen, right under the ring. Recent and frequent spends surface as one-tap chips — Kahve, Market, Ulaşım — so the common case is two taps and done. The faster logging gets, the more honest the number stays."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "One number, scoped to today",
+              "rationale": "Showing month-to-date totals, category pies, and projections at once is the default — and it's paralysis. I collapsed all of it into a single daily figure on the home screen and pushed the breakdowns one layer down. The home screen answers one question; everything else is on request.",
+              "impact": "Decision in a glance"
+            },
+            {
+              "title": "Color before digits",
+              "rationale": "Numbers require reading; color requires nothing. Binding the ring's color to budget state means the most important signal — am I okay? — arrives pre-attentively. The exact figure is there for when you want it, but the verdict doesn't wait for it.",
+              "impact": "Status read pre-attentively"
+            },
+            {
+              "title": "Dark by default, one accent",
+              "rationale": "A finance app gets opened in quick, glance-and-go moments. A dark surface keeps the ring and its color the brightest thing on screen, and holding to a single blue accent means the semantic colors (warn, over, danger) never have to compete with decorative ones.",
+              "impact": "The signal stays loudest"
+            }
+          ],
+          "outcome": {
+            "narrative": "Pace ships as a focused iOS app where the home screen does one job well: it tells you, right now, how much room today has — and colors that answer so you feel it before you read it. The design system (Outfit, a dark neutral ground, one blue accent plus a tight set of semantic colors) carries from the marketing board straight into the React Native build, so what was designed is what shipped."
+          },
+          "learnings": [
+            "Reframing the core metric — pace instead of report — changed more about the product than any screen-level decision did. The right object makes the rest of the UI obvious.",
+            "Color as a primary channel (not decoration) is the cheapest way to make a number feel instant. It does the work before the user spends attention.",
+            "Designing and building it myself meant the system survived contact with the runtime — the color tokens and spacing scale moved into React Native intact, with nothing lost in handoff."
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Design rationale",
+            "intro": "A closer look at the home screen — the surface a user sees dozens of times a day. Each marker explains one decision behind making the budget readable in a single glance.",
+            "image": "/projects/pace-ring.webp",
+            "alt": "Pace — home screen with the daily pace ring and quick entry",
+            "hotspots": [
+              {
+                "x": 50, "y": 40,
+                "title": "One number, scoped to today",
+                "body": "The center of the ring isn't your monthly total or what you've spent — it's what you can still spend today and stay on plan. The remaining budget, divided by days left, recalculated after every entry. All the math is absorbed so the user reads one figure, not a spreadsheet."
+              },
+              {
+                "x": 66, "y": 30,
+                "title": "The ring speaks in color",
+                "body": "The arc's color, not just its length, encodes your standing — ahead, on track, neutral, over. It's the fastest channel on the screen: you register the color before you parse the digits, which is exactly the point on a surface you glance at, not study."
+              },
+              {
+                "x": 50, "y": 50,
+                "title": "Plain-language status",
+                "body": "'₺ / gün · YOLUNDA' (on track) names the state in words under the number. Color tells you instantly, the label confirms it unambiguously — belt and suspenders for the one judgment that matters, with no jargon between the user and the answer."
+              },
+              {
+                "x": 30, "y": 72,
+                "title": "Entry lives on the home screen",
+                "body": "'Bugün ne harcadın?' — what did you spend today — sits directly under the ring. Logging isn't buried behind a tab or a plus-menu; it's the second thing on the primary screen, because a budget that's annoying to update stops being true."
+              },
+              {
+                "x": 35, "y": 86,
+                "title": "Frequent spends as one-tap chips",
+                "body": "Kahve ₺45, Market ₺320, Ulaşım ₺30 — recent and recurring amounts surface as chips, so the common case is a single tap. The faster the honest path, the less the number drifts from reality."
+              },
+              {
+                "x": 82, "y": 80,
+                "title": "The only loud button on screen",
+                "body": "The blue add button is the single saturated element in the lower half — the one action the screen actively invites. Everything else recedes into the dark ground so the primary verb, 'log a spend,' is never ambiguous."
+              }
+            ]
+          }
+        }
       }
     ]
   },
