@@ -1,5 +1,25 @@
 export const PROJECTS = [
   {
+    id: 8,
+    accent: '#D4B87A',
+    wide: true,
+    cover: '/projects/viola-cover.webp',
+    gallery: [
+      { src: '/projects/viola-overview.webp' },
+      { src: '/projects/viola-color.webp' },
+      { src: '/projects/viola-typography.webp' },
+      { src: '/projects/viola-surface-motion.webp' },
+      { src: '/projects/viola-screens-core.webp' },
+      { src: '/projects/viola-screens-gallery.webp' },
+      { src: '/projects/viola-responsive.webp' },
+      { src: '/projects/viola-key-decisions.webp' }
+    ],
+    links: {
+      behance: 'https://www.behance.net/gallery/252206277/Viola-Resort-Sapanca-UIUX-Design',
+      live: 'https://violaresortsapanca.com'
+    }
+  },
+  {
     id: 7,
     accent: '#3B82F6',
     wide: true,

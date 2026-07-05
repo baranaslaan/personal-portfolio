@@ -160,7 +160,8 @@
     "prev": "Previous",
     "next": "Next",
     "viewOnBehance": "View on Behance",
-    "viewPrototype": "View Prototype"
+    "viewPrototype": "View Prototype",
+    "viewLiveSite": "Visit live site"
   },
   "projects": {
     "kicker": "Selected Work",
@@ -814,6 +815,117 @@
                 "x": 82, "y": 80,
                 "title": "The only loud button on screen",
                 "body": "The blue add button is the single saturated element in the lower half — the one action the screen actively invites. Everything else recedes into the dark ground so the primary verb, 'log a spend,' is never ambiguous."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "Viola Resort Sapanca UI/UX Design",
+        "desc": "An end-to-end design system and product interface for a boutique tiny-house resort with private heated pools in Sapanca — designed and built. A premium stay experience on a cinematic night palette, champagne-gold accents and glassmorphism surfaces.",
+        "tags": ["Web Design", "Design System", "React", "Framer Motion"],
+        "year": "2026",
+        "role": "Design & Front-end",
+        "metric": { "value": "Live Site", "label": "design + build" },
+        "highlights": [
+          "End-to-end: design system, marketing site and booking flow — designed and built in Next.js",
+          "A 12-step warm-neutral ink scale with champagne-gold and olive accents, all from CSS variables",
+          "One token source, two themes — dark by default, a warm-cream light variant of the same system",
+          "Glassmorphism that stays WCAG-legible, and Safari-friendly GPU motion"
+        ],
+        "galleryCaptions": [
+          "Overview — the approach: a premium feel without losing accessibility",
+          "Color system — warm-neutral ink scale, champagne gold and olive",
+          "Typography — Manrope display over Inter body, fluid scale",
+          "Surface, shadow and motion — glass, elevation and easing tokens",
+          "Core screens — homepage hero and room detail",
+          "Gallery & social proof — nature, comfort, privacy",
+          "Responsive — the system carried onto mobile",
+          "Key decisions and the dark / light theme variants"
+        ],
+        "caseStudy": {
+          "problem": "A boutique property's digital storefront usually gets trapped in one of two places: a generic booking-engine template, or a moody dark theme that looks premium but reads poorly. Viola Resort — fifteen private-pool tiny houses on Sapanca lake — needed a storefront that felt genuinely luxurious without ever sacrificing accessibility or the practical job of getting a guest to a reservation.",
+          "context": [
+            { "label": "Role",     "value": "Design & Front-end (solo)" },
+            { "label": "Timeline", "value": "2026" },
+            { "label": "Scope",    "value": "Design system · site · booking flow" },
+            { "label": "Tools",    "value": "Figma · Next.js · Framer Motion" }
+          ],
+          "process": [
+            {
+              "heading": "A warm, cinematic ground",
+              "body": "The palette started from the logo, not from a theme preset. I built a 12-step warm-neutral ink scale and a champagne-gold plus olive/sage accent family, all flowing from a single source of CSS variables. A dark surface keeps the night photography and the gold accent the brightest things on screen — the mood the property actually sells."
+            },
+            {
+              "heading": "Legibility as a hard constraint",
+              "body": "'Premium dark' fails the moment text drops below contrast. Body and small text sit on gold-400, which holds AA, while the lighter champagne tone is reserved for large decorative headings only. Glassmorphism panels use a sufficiently dark backing and strong blur so they stay readable in every condition — and gracefully raise their opacity where backdrop-filter isn't supported."
+            },
+            {
+              "heading": "Design that survived the build",
+              "body": "I designed and built it, so the system had to survive contact with the runtime. Type scale, a 4pt spacing rhythm, radius, shadow and motion easings all moved into the Next.js build as tokens — the palettes on the case-study board are read from the same CSS variables the live site uses. What was designed is literally what shipped."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Two-tier gold",
+              "rationale": "The champagne display tone is beautiful but too light for body copy. I split it: gold-400 for anything text-sized (AA, 4.5:1 holds), and the lighter signature tone strictly for large decorative headings. The brand color and the contrast requirement stop fighting each other.",
+              "impact": "Signature color, AA-safe"
+            },
+            {
+              "title": "Legible glass",
+              "rationale": "Glassmorphism usually trades readability for style. These panels sit on a dark backing at 0.55–0.72 alpha with 24–32px blur, and opacity auto-increases where backdrop-filter isn't available — so the effect degrades to a solid, readable surface instead of unreadable haze.",
+              "impact": "Style without illegibility"
+            },
+            {
+              "title": "Safari-friendly motion",
+              "rationale": "The ambient orb drift originally animated scale on blurred layers, which forced a re-raster every frame and janked badly in Safari. Switching to translate3d only kept it on pure GPU compositing — the same motion, none of the jank.",
+              "impact": "Smooth across browsers"
+            },
+            {
+              "title": "One source, two themes",
+              "rationale": "Dark is the default, but light isn't a separate design — it's a warm-cream variant of the exact same token set. Every color is read from CSS variables, so the two themes can never drift apart and adding the light mode cost almost nothing.",
+              "impact": "Two themes, one system"
+            }
+          ],
+          "outcome": {
+            "narrative": "Viola Resort ships as a live, dark-luxury site that reads as calm, warm and premium without ever slipping below accessibility. The design system — a warm ink scale, champagne-gold and olive accents, glass surfaces and a 4pt rhythm — carries from the Figma board straight into the Next.js build, with dark and light as two faces of one token source. Quiet luxury, legible interface."
+          },
+          "learnings": [
+            "'Premium' and 'accessible' are usually framed as a trade-off — but the constraints (two-tier gold, dark-backed glass) are exactly what gave the system its identity. Restraint read as luxury.",
+            "Sourcing every color from CSS variables meant the light theme, the case-study board and the live product could never disagree. One source of truth pays off the moment you need a second theme.",
+            "Building what I designed exposed the details a static mockup hides — the Safari re-raster, the backdrop-filter fallback. The system got tougher because it had to run, not just render."
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Design rationale",
+            "intro": "A closer look at the homepage hero — the first surface a guest sees. Each marker explains one decision behind making a dark, cinematic screen feel both premium and effortless to act on.",
+            "image": "/projects/viola-hero.webp",
+            "alt": "Viola Resort — homepage hero with an aerial night view of the resort",
+            "hotspots": [
+              {
+                "x": 50, "y": 11,
+                "title": "Booking is always one tap away",
+                "body": "'Check Availability' sits pinned top-right in a light pill — the single brightest control in the header. However far a guest scrolls into browsing mode, the primary action stays visible and unambiguous."
+              },
+              {
+                "x": 27, "y": 52,
+                "title": "Gold reserved for one phrase",
+                "body": "The headline is near-white except for 'heart of nature' in the champagne tone. Applying the signature gold to a decorative display line — never to body text — is what keeps it both on-brand and above the contrast line."
+              },
+              {
+                "x": 65, "y": 58,
+                "title": "The photograph carries the mood",
+                "body": "An aerial dusk shot of the lit tiny houses does the selling that copy can't. The dark UI ground exists to make this image — and the warm lights inside it — the loudest thing on the screen."
+              },
+              {
+                "x": 17, "y": 82,
+                "title": "Two CTAs, clear hierarchy",
+                "body": "'Check Availability' is a solid pill; 'Discover Rooms' is a quiet outline. Guests ready to book and guests still browsing each get a path, but only one of them looks like the primary verb."
+              },
+              {
+                "x": 84, "y": 11,
+                "title": "Theme and language, out of the way",
+                "body": "The light/dark toggle and the TR/EN switch live as small marks at the top-right — present for the guest who needs them, weightless for the one who doesn't. The default (dark, local language) is already right for most."
               }
             ]
           }

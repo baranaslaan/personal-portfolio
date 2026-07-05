@@ -8,6 +8,7 @@ import Lightbox from '../components/Lightbox'
 import { Reveal } from '../components/Reveal'
 import AnnotatedImage from '../components/AnnotatedImage'
 import { useMeta } from '../hooks/useMeta'
+import { useMasonry } from '../hooks/useMasonry'
 
 const container = {
   hidden: {},
@@ -25,6 +26,7 @@ export default function ProjectDetail() {
   
   const staticProject = PROJECTS.find(p => p.id === Number(id))
   const [activeFrame, setActiveFrame] = useState(null)
+  const galleryRef = useMasonry(16, [staticProject?.id])
 
   const translatedProjects = t('projects.items', { returnObjects: true })
   const tProject = staticProject ? translatedProjects[staticProject.id - 1] || {} : {}
@@ -271,22 +273,24 @@ export default function ProjectDetail() {
             <Reveal>
               <div className="pdetail__section">
                 <h2 className="pdetail__h2">{t('projectDetail.selectedFrames', { defaultValue: 'Selected Frames' })}</h2>
-                <div className="pdetail__gallery">
+                <div className="pdetail__gallery" ref={galleryRef}>
                   {project.gallery.map((g, i) => {
                     const captionText = project.galleryCaptions?.[i] || g.caption || '';
                     return (
                       <figure key={i} className="pdetail__gallery-item">
-                        <button
-                          type="button"
-                          className="pdetail__gallery-trigger"
-                          onClick={() => setActiveFrame({ ...g, caption: captionText })}
-                        >
-                          <img src={g.src} alt={captionText} loading="lazy" decoding="async" />
-                          <span className="pdetail__gallery-zoom">
-                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                          </span>
-                        </button>
-                        {captionText && <figcaption className="pdetail__caption">{captionText}</figcaption>}
+                        <div className="pdetail__gallery-inner">
+                          <button
+                            type="button"
+                            className="pdetail__gallery-trigger"
+                            onClick={() => setActiveFrame({ ...g, caption: captionText })}
+                          >
+                            <img src={g.src} alt={captionText} loading="lazy" decoding="async" />
+                            <span className="pdetail__gallery-zoom">
+                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </span>
+                          </button>
+                          {captionText && <figcaption className="pdetail__caption">{captionText}</figcaption>}
+                        </div>
                       </figure>
                     );
                   })}
@@ -320,6 +324,18 @@ export default function ProjectDetail() {
                     className="btn btn-secondary"
                   >
                     {t('projects.viewPrototype')}
+                  </motion.a>
+                )}
+
+                {project.links.live && (
+                  <motion.a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -2 }}
+                    className="btn btn-secondary"
+                  >
+                    {t('projectDetail.viewLiveSite')}
                   </motion.a>
                 )}
               </div>

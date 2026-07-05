@@ -1765,9 +1765,18 @@ section[id] { scroll-margin-top: 90px; }
 .pdetail__gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  /* Masonry: 1px row tracks + JS-computed spans pack mixed aspect ratios
+     tightly with no dead space (see useMasonry). Column gap stays; row gap
+     is folded into each item's span so the math holds. */
+  grid-auto-rows: 1px;
+  column-gap: 16px;
+  row-gap: 0;
+  align-items: start;
 }
 .pdetail__gallery-item {
+  min-width: 0;
+}
+.pdetail__gallery-inner {
   display: flex;
   flex-direction: column;
   gap: 10px;

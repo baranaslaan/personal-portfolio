@@ -160,7 +160,8 @@
     "prev": "Önceki",
     "next": "Sonraki",
     "viewOnBehance": "Behance'de İncele",
-    "viewPrototype": "Prototip Görüntüle"
+    "viewPrototype": "Prototip Görüntüle",
+    "viewLiveSite": "Canlı Siteyi Ziyaret Et"
   },
   "projects": {
     "kicker": "Seçili İşler",
@@ -814,6 +815,117 @@
                 "x": 82, "y": 80,
                 "title": "Ekrandaki tek yüksek sesli buton",
                 "body": "Mavi ekleme butonu, alt yarının tek doygun öğesi — ekranın aktif olarak davet ettiği tek eylem. Geri kalan her şey koyu zemine çekiliyor ki birincil fiil, 'harcama kaydet', asla belirsiz olmasın."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "Viola Resort Sapanca UI/UX Tasarımı",
+        "desc": "Sapanca'da özel ısıtmalı havuzlu, butik bir tiny-house resort için uçtan uca tasarım sistemi ve ürün arayüzü — tasarlandı ve geliştirildi. Sinematik bir gece paleti, şampanya-altını aksanlar ve glassmorphism yüzeyler üzerine kurulu premium bir konaklama deneyimi.",
+        "tags": ["Web Tasarımı", "Tasarım Sistemi", "React", "Framer Motion"],
+        "year": "2026",
+        "role": "Tasarım & Front-end",
+        "metric": { "value": "Canlı Site", "label": "tasarım + geliştirme" },
+        "highlights": [
+          "Uçtan uca: tasarım sistemi, tanıtım sitesi ve rezervasyon akışı — Next.js ile tasarlandı ve geliştirildi",
+          "Şampanya-altını ve zeytin aksanlı 12 adımlı sıcak-nötr mürekkep skalası, tamamı CSS değişkenlerinden",
+          "Tek token kaynağı, iki tema — varsayılan koyu, aynı sistemin sıcak-krem açık varyantı",
+          "WCAG'e uygun okunur kalan glassmorphism ve Safari dostu GPU hareketi"
+        ],
+        "galleryCaptions": [
+          "Genel bakış — yaklaşım: erişilebilirlikten ödün vermeden premium his",
+          "Renk sistemi — sıcak-nötr mürekkep skalası, şampanya altını ve zeytin",
+          "Tipografi — Inter gövde üzerine Manrope display, akışkan skala",
+          "Yüzey, gölge ve hareket — cam, yükselti ve easing token'ları",
+          "Ana ekranlar — ana sayfa hero'su ve oda detayı",
+          "Galeri & sosyal kanıt — doğa, konfor, mahremiyet",
+          "Responsive — sistemin mobile taşınmış hâli",
+          "Kilit kararlar ve koyu / açık tema varyantları"
+        ],
+        "caseStudy": {
+          "problem": "Butik bir tesisin dijital vitrini genellikle iki yerden birine sıkışır: jenerik bir rezervasyon-motoru şablonu ya da premium görünen ama zor okunan 'moody' bir koyu tema. Viola Resort — Sapanca gölü kıyısında on beş özel havuzlu tiny-house — erişilebilirlikten ya da bir misafiri rezervasyona götürme işinden ödün vermeden gerçekten lüks hissettiren bir vitrine ihtiyaç duyuyordu.",
+          "context": [
+            { "label": "Rol",      "value": "Tasarım & Front-end (solo)" },
+            { "label": "Zaman",    "value": "2026" },
+            { "label": "Kapsam",   "value": "Tasarım sistemi · site · rezervasyon" },
+            { "label": "Araçlar",  "value": "Figma · Next.js · Framer Motion" }
+          ],
+          "process": [
+            {
+              "heading": "Sıcak, sinematik bir zemin",
+              "body": "Palet bir tema hazır ayarından değil, logodan başladı. 12 adımlı sıcak-nötr bir mürekkep skalası ile şampanya-altını artı zeytin/adaçayı bir aksan ailesi kurdum; hepsi tek bir CSS değişken kaynağından akıyor. Koyu bir yüzey, gece fotoğraflarını ve altın aksanı ekrandaki en parlak öğeler olarak tutuyor — tesisin asıl sattığı atmosferi."
+            },
+            {
+              "heading": "Kesin bir kısıt olarak okunabilirlik",
+              "body": "'Premium koyu', metin kontrastın altına düştüğü an çöker. Gövde ve küçük metinler AA'yı tutan gold-400 üzerinde otururken, daha açık şampanya tonu yalnızca büyük dekoratif başlıklara ayrıldı. Glassmorphism panelleri yeterince koyu bir zemin ve güçlü bulanıklık kullanıyor; böylece her koşulda okunur kalıyor — ve backdrop-filter desteklenmediğinde opaklığını zarifçe artırıyor."
+            },
+            {
+              "heading": "Build'den sağ çıkan tasarım",
+              "body": "Hem tasarladım hem geliştirdim, yani sistemin çalışma zamanıyla temasa dayanması gerekiyordu. Tip skalası, 4pt aralık ritmi, radius, gölge ve hareket easing'leri Next.js build'ine token olarak taşındı — case-study panosundaki paletler bile canlı sitenin kullandığı aynı CSS değişkenlerinden okunuyor. Tasarlanan, birebir çıkan oldu."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "İki kademeli altın",
+              "rationale": "Şampanya display tonu güzel ama gövde metni için fazla açık. Ayırdım: metin boyutundaki her şey için gold-400 (AA, 4.5:1 tutuyor) ve daha açık imza tonu yalnızca büyük dekoratif başlıklar için. Marka rengi ile kontrast gereksinimi artık birbiriyle çatışmıyor.",
+              "impact": "İmza renk, AA-güvenli"
+            },
+            {
+              "title": "Okunur cam",
+              "rationale": "Glassmorphism genelde okunabilirliği stile feda eder. Bu paneller 0.55–0.72 alfa koyu zemin üzerinde 24–32px bulanıklıkla oturuyor ve backdrop-filter yoksa opaklık otomatik artıyor — böylece efekt okunmaz bir pusa değil, düz ve okunur bir yüzeye iniyor.",
+              "impact": "Okunurluktan ödünsüz stil"
+            },
+            {
+              "title": "Safari dostu hareket",
+              "rationale": "Ortam ışık kürelerinin sürüklenmesi başta bulanık katmanlarda scale animasyonu yapıyordu; bu her karede yeniden raster'a zorluyor ve Safari'de kötü takılıyordu. Yalnızca translate3d'ye geçmek onu saf GPU kompozisyonunda tuttu — aynı hareket, sıfır takılma.",
+              "impact": "Tarayıcılar arası akıcı"
+            },
+            {
+              "title": "Tek kaynak, iki tema",
+              "rationale": "Varsayılan koyu, ama açık ayrı bir tasarım değil — tam olarak aynı token setinin sıcak-krem bir varyantı. Her renk CSS değişkenlerinden okunuyor, dolayısıyla iki tema asla birbirinden sapamıyor ve açık modu eklemek neredeyse hiçbir maliyet çıkarmadı.",
+              "impact": "İki tema, tek sistem"
+            }
+          ],
+          "outcome": {
+            "narrative": "Viola Resort, erişilebilirliğin altına hiç düşmeden sakin, sıcak ve premium okunan canlı, koyu-lüks bir site olarak çıktı. Tasarım sistemi — sıcak mürekkep skalası, şampanya-altını ve zeytin aksanlar, cam yüzeyler ve 4pt ritim — Figma panosundan doğrudan Next.js build'ine taşınıyor; koyu ve açık, tek token kaynağının iki yüzü. Sessiz lüks, okunur arayüz."
+          },
+          "learnings": [
+            "'Premium' ile 'erişilebilir' genelde bir ödünleşme gibi kurgulanır — ama sisteme kimliğini veren tam da kısıtlar oldu (iki kademeli altın, koyu zeminli cam). Kısıtlılık, lüks olarak okundu.",
+            "Her rengi CSS değişkenlerinden almak, açık temanın, case-study panosunun ve canlı ürünün asla anlaşmazlığa düşememesi demekti. Tek doğruluk kaynağı, ikinci bir temaya ihtiyaç duyduğun an kendini ödüyor.",
+            "Tasarladığımı geliştirmek, statik bir mockup'ın gizlediği detayları açığa çıkardı — Safari re-raster'ı, backdrop-filter fallback'i. Sistem, sadece render edilmek değil çalışmak zorunda olduğu için sağlamlaştı."
+          ],
+          "walkthrough": {
+            "title": "İnceleme",
+            "kicker": "Tasarım gerekçesi",
+            "intro": "Ana sayfa hero'suna yakından bir bakış — bir misafirin gördüğü ilk yüzey. Her işaret, koyu ve sinematik bir ekranı hem premium hem de eyleme geçmesi zahmetsiz hissettirmenin arkasındaki bir kararı açıklıyor.",
+            "image": "/projects/viola-hero.webp",
+            "alt": "Viola Resort — resort'un havadan gece görünümüyle ana sayfa hero'su",
+            "hotspots": [
+              {
+                "x": 50, "y": 11,
+                "title": "Rezervasyon hep bir dokunuş uzakta",
+                "body": "'Check Availability' sağ üstte açık bir pill içinde sabit duruyor — başlıktaki tek en parlak kontrol. Misafir gezinme moduna ne kadar kayarsa kaysın, birincil eylem görünür ve net kalıyor."
+              },
+              {
+                "x": 27, "y": 52,
+                "title": "Altın tek bir ifadeye ayrıldı",
+                "body": "Başlık, şampanya tonundaki 'heart of nature' dışında neredeyse beyaz. İmza altınını dekoratif bir display satırına uygulamak — asla gövde metnine değil — onu hem markaya uygun hem de kontrast sınırının üstünde tutan şey."
+              },
+              {
+                "x": 65, "y": 58,
+                "title": "Atmosferi fotoğraf taşıyor",
+                "body": "Işıklı tiny-house'ların havadan alacakaranlık görüntüsü, metnin yapamayacağı satışı yapıyor. Koyu arayüz zemini, bu görüntüyü — ve içindeki sıcak ışıkları — ekrandaki en yüksek sesli şey yapmak için var."
+              },
+              {
+                "x": 17, "y": 82,
+                "title": "İki CTA, net hiyerarşi",
+                "body": "'Check Availability' dolu bir pill; 'Discover Rooms' sessiz bir çerçeve. Rezervasyona hazır misafir de hâlâ gezinen misafir de bir yol buluyor, ama yalnızca biri birincil fiil gibi görünüyor."
+              },
+              {
+                "x": 84, "y": 11,
+                "title": "Tema ve dil, yolun dışında",
+                "body": "Açık/koyu geçişi ve TR/EN anahtarı sağ üstte küçük işaretler olarak duruyor — ihtiyacı olan misafir için mevcut, olmayan için ağırlıksız. Varsayılan (koyu, yerel dil) çoğu için zaten doğru olan."
               }
             ]
           }
