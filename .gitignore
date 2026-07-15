@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .env
 .claude/
+
+# Behance export — raw screenshots and generated boards.
+# Regenerate with scripts/behance-boards.mjs, then behance-thumbs.mjs.
+behance-export/
