@@ -930,6 +930,116 @@
             ]
           }
         }
+      },
+      {
+        "title": "Eşref Karot Website UI/UX Design",
+        "desc": "A single-page site for a core drilling and concrete cutting firm in Bodrum. A design system that merges Swiss typography with the language of an engineering document — colour, type, grid, components and motion — shipped live in Next.js.",
+        "tags": ["Web Design", "Design System", "Next.js", "Figma"],
+        "year": "2026",
+        "role": "Design & Front-end",
+        "metric": { "value": "Live", "label": "single page · TR/EN" },
+        "highlights": [
+          "A visual direction drawn from the firm's own technical drawings, not the category's generic SaaS language",
+          "Six-part design system document covering colour, type, grid, components and motion",
+          "One primary action: a single orange block per screen — place the call",
+          "Designed in Figma, shipped as a Next.js static export in TR/EN"
+        ],
+        "galleryCaptions": [
+          "Technical file — direction, ground, accent and geometry",
+          "Colour — concrete-paper ground, ink scale and one orange",
+          "Typography — Archivo narrates, IBM Plex Mono measures",
+          "Grid and measure — 1240px, 12 columns, hairline structure",
+          "Components — four buttons, one primary action",
+          "Motion — one easing, one duration",
+          "Principles — the four rules holding the system up"
+        ],
+        "caseStudy": {
+          "problem": "A core drilling and concrete cutting firm in Bodrum had no site at all; work arrived by word of mouth. Every site in this category looks identical: stock construction photography, shadowed cards, \"15+ years of experience\" badges and a contact form nobody fills in. The real problem wasn't building a page — it was establishing trust without reaching for the industry's own inflated language.",
+          "context": [
+            { "label": "Role",  "value": "Design & Front-end (solo)" },
+            { "label": "Time",  "value": "2026" },
+            { "label": "Scope", "value": "Design system · single-page site" },
+            { "label": "Tools", "value": "Figma · Next.js" }
+          ],
+          "process": [
+            {
+              "heading": "Finding the right reference",
+              "body": "I looked at the firm's own work rather than at competitor sites: technical drawings, dimension marks, bore diameter tables. Core drilling is millimetric work, and that precision already has a visual language. I decided to build the site as a technical file rather than a marketing brochure — the only way to separate from every site in the category and stay honest at the same time."
+            },
+            {
+              "heading": "Writing the system before drawing it",
+              "body": "Before touching screens I built the system as a document: a concrete-paper ground and ink scale, type split between the one that narrates (Archivo) and the one that measures (IBM Plex Mono), a 1240px twelve-column grid, 0px radius and hairline rules with no shadow. Because the decisions were settled in the rules rather than on the screens, the screens came out fast and consistent."
+            },
+            {
+              "heading": "Reducing to one action",
+              "body": "For this client the conversion is unambiguous: the phone rings. No forms, no accounts, no quote wizard. I reserved the orange block for exactly one job across the whole system — the call. Everything else (WhatsApp, equipment, services) stays at hairline-drawn secondary weight, and on mobile the primary button dials directly."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Only real data",
+              "rationale": "I left out the invented \"15+ years\" and \"500+ projects\" statistics — no number I couldn't verify made it onto the page. Instead I put the one verified technical fact I had, the Ø18–400mm bore range, at the centre of the page.",
+              "impact": "Trust built on a measurement, not a boast"
+            },
+            {
+              "title": "Lines, not boxes",
+              "rationale": "No shadows, no rounding; structure is carried by hairline rules. It pulls the result toward the construction industry's own drafting language — it reads like a file rather than a generic grid of SaaS cards.",
+              "impact": "Clean separation from the category"
+            },
+            {
+              "title": "Orange is a mark, not decoration",
+              "rationale": "The accent never fills a surface, never becomes a gradient, never glows. It marks the number to call, the section order and the dimension line — nothing else. It works because it's rare; everywhere at once, it would point at nothing.",
+              "impact": "Where the eye goes when it sees accent is never in doubt"
+            }
+          ],
+          "outcome": {
+            "narrative": "The site is live at esrefkarot.com in TR/EN — the technical-file board in Figma and the shipped Next.js build share the same rules. The result inverts what's normal in the construction category: trust built from measurement and typography instead of stock photos and badges. The firm has one callable number, and I have a system I won't be renegotiating on the next client."
+          },
+          "learnings": [
+            "Copying a category's visual clichés feels like the safe option but is the expensive one — looking like everyone else lands in the same place as not being seen at all.",
+            "The \"only real data\" rule started as a constraint and ended up the strongest thing on the page: one verifiable number persuades more than five invented ones.",
+            "Writing the design system as a document before the screens looks like overkill for a single page — but because every decision was settled in the rules, the page itself became almost an act of execution."
+          ],
+          "walkthrough": {
+            "title": "Walkthrough",
+            "kicker": "Design rationale",
+            "intro": "The component section of the system — where the rule for every touchable part of the site is defined. Each mark explains a decision underneath the surface.",
+            "image": "/projects/esrefkarot-components.webp",
+            "alt": "Eşref Karot design system — component section",
+            "hotspots": [
+              {
+                "x": 14, "y": 29,
+                "title": "The only filled block on the page",
+                "body": "The solid orange button is reserved for exactly one job across the system: placing the call. This firm's conversion isn't a signup flow, it's a ringing phone. Locking the accent to a single action removes the question of where to press entirely."
+              },
+              {
+                "x": 37, "y": 29,
+                "title": "A third weight — not even a button",
+                "body": "\"Hizmetlerimiz ↓\" is neither solid nor outline — just underlined text and a down arrow. An action that scrolls within the same page has no business dressing up as a button; the arrow says the destination never leaves the page. Three weights, three levels of commitment."
+              },
+              {
+                "x": 63, "y": 29,
+                "title": "The rule doesn't bend on dark",
+                "body": "The outline button flipping to white on the contrast section is expected — the real decision is that orange stays orange here too. Shifting the accent when the ground changes would have been easy, but it would break the \"orange = phone\" equation. The panel changes; the contract doesn't."
+              },
+              {
+                "x": 13, "y": 47,
+                "title": "Section mark — position, not heading",
+                "body": "Number in orange, name in ink, remaining width filled with a hairline rule. This isn't a heading, it's a tab in a technical file: it tells you where in the document you are, not what to read."
+              },
+              {
+                "x": 62, "y": 50,
+                "title": "The one statistic, and it's true",
+                "body": "Ø18–400mm is the firm's single verified technical capacity — and the only number on the page. Leaving out \"500+ projects\" and \"15+ years\" was deliberate: a figure I can't verify quietly erodes trust instead of building it. One real measurement outweighs five invented badges."
+              },
+              {
+                "x": 15, "y": 75,
+                "title": "File rows, not cards",
+                "body": "Five services laid out as numbered rows instead of a grid of shadowed cards. A card grid scatters the eye and makes five options equally vague; a numbered row imposes a single reading order — like the contents list of a technical file."
+              }
+            ]
+          }
+        }
       }
     ]
   },

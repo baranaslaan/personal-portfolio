@@ -930,6 +930,116 @@
             ]
           }
         }
+      },
+      {
+        "title": "Eşref Karot Kurumsal Web Sitesi UI/UX Tasarımı",
+        "desc": "Bodrum'da karot ve beton kesme yapan bir firma için tek sayfalık kurumsal site. İsviçre tipografisini mühendislik dokümanı diliyle birleştiren bir tasarım sistemi — renk, tipografi, ızgara, bileşen ve hareket kuralları — ve bunun Next.js ile yayına alınmış hali.",
+        "tags": ["Web Tasarım", "Tasarım Sistemi", "Next.js", "Figma"],
+        "year": "2026",
+        "role": "Tasarım & Front-end",
+        "metric": { "value": "Yayında", "label": "tek sayfa · TR/EN" },
+        "highlights": [
+          "Sektörün jenerik SaaS diline değil, firmanın kendi teknik çizim diline yaslanan görsel yön",
+          "Renk, tipografi, ızgara, bileşen ve hareketi kapsayan altı bölümlük tasarım sistemi dokümanı",
+          "Tek birincil aksiyon: her ekranda yalnızca bir turuncu blok — telefonla arama",
+          "Figma'da tasarlandı, Next.js statik export olarak TR/EN yayına alındı"
+        ],
+        "galleryCaptions": [
+          "Teknik dosya — yön, zemin, aksan ve geometri",
+          "Renk — beton-kâğıt zemin, mürekkep skalası ve tek turuncu",
+          "Tipografi — Archivo anlatır, IBM Plex Mono ölçer",
+          "Izgara ve ölçü — 1240px, 12 kolon, kılcal yapı",
+          "Bileşenler — dört buton, bir birincil aksiyon",
+          "Hareket — tek easing, tek süre",
+          "İlkeler — sistemi ayakta tutan dört kural"
+        ],
+        "caseStudy": {
+          "problem": "Bodrum'da karot ve beton kesme yapan bir firmanın sitesi yoktu; işler kulaktan kulağa geliyordu. Bu kategorideki siteler birbirinin aynısı: stok inşaat fotoğrafları, gölgeli kartlar, \"15+ yıl tecrübe\" rozetleri ve doldurulmayan iletişim formları. Asıl problem bir sayfa yapmak değildi — güveni, sektörün kendi şişirme diline başvurmadan kurmaktı.",
+          "context": [
+            { "label": "Rol",     "value": "Tasarım & Front-end (solo)" },
+            { "label": "Zaman",   "value": "2026" },
+            { "label": "Kapsam",  "value": "Tasarım sistemi · tek sayfa site" },
+            { "label": "Araçlar", "value": "Figma · Next.js" }
+          ],
+          "process": [
+            {
+              "heading": "Doğru referansı bulmak",
+              "body": "Rakip sitelere değil, firmanın kendi işine baktım: teknik çizimler, ölçü işaretleri, delik çapı tabloları. Karot işi milimetrik bir iştir ve o hassasiyetin görsel bir dili zaten var. Siteyi bir pazarlama broşürü gibi değil, bir teknik dosya gibi kurmaya karar verdim — bu, kategorideki her siteden ayrışmanın ve aynı anda dürüst olmanın tek yoluydu."
+            },
+            {
+              "heading": "Sistemi önce yazmak, sonra çizmek",
+              "body": "Ekranlara geçmeden önce sistemi bir doküman olarak kurdum: beton-kâğıt zemin ve mürekkep skalası, anlatan (Archivo) ile ölçen (IBM Plex Mono) arasında ikiye ayrılmış tipografi, 1240px'lik 12 kolonluk ızgara, 0px yarıçap ve gölgesiz kılcal çizgiler. Kararlar ekranlarda değil kuralda alındığı için ekranlar hızlı ve tutarlı çıktı."
+            },
+            {
+              "heading": "Tek bir aksiyona indirgemek",
+              "body": "Bu müşteri için dönüşüm bellidir: telefon çalar. Form yok, hesap yok, teklif sihirbazı yok. Turuncu bloğu tüm sistemde tek bir işe ayırdım — arama. Diğer her şey (WhatsApp, ekipman, hizmetler) kılcal çizgiyle çizilen ikincil ağırlıkta kaldı; mobilde birincil buton doğrudan aramayı başlatıyor."
+            }
+          ],
+          "decisions": [
+            {
+              "title": "Yalnızca gerçek veri",
+              "rationale": "Uydurma \"15+ yıl tecrübe\" ya da \"500+ proje\" istatistiği koymadım — doğrulayamadığım hiçbir rakam sayfaya girmedi. Bunun yerine elimdeki tek doğrulanmış teknik gerçeği, Ø18–400mm delim çapı aralığını, sayfanın merkezine koydum.",
+              "impact": "Şişirme yerine ölçüyle kurulan güven"
+            },
+            {
+              "title": "Kutu değil, çizgi",
+              "rationale": "Gölge ve yuvarlatma yok; yapı kılcal çizgilerle kuruluyor. Bu, sonucu inşaat sektörünün kendi teknik çizim diline yaklaştırıyor — jenerik bir SaaS kartı grid'i yerine bir dosya gibi okunuyor.",
+              "impact": "Kategoriden net ayrışma"
+            },
+            {
+              "title": "Turuncu bir işarettir, dekorasyon değil",
+              "rationale": "Aksan rengi hiçbir zaman yüzey doldurmaz, gradyana girmez, parlamaz. Yalnızca aranacak numarayı, bölüm sırasını ve ölçü çizgisini gösterir. Nadir olduğu için işe yarıyor — her yerde olsaydı hiçbir yeri işaret etmezdi.",
+              "impact": "Aksan gördüğünde gözün gideceği yer belli"
+            }
+          ],
+          "outcome": {
+            "narrative": "Site esrefkarot.com'da TR/EN olarak yayında — Figma'daki teknik dosya panosu ile yayındaki Next.js build'i aynı kuralları paylaşıyor. Sonuç, inşaat kategorisinde alışılmış olanın tersi: stok fotoğraf ve rozet yerine ölçü ve tipografiyle kurulan bir güven. Firma tek bir aranabilir numaraya sahip, ben de bir sonraki müşteride yeniden müzakere etmeyeceğim bir sisteme."
+          },
+          "learnings": [
+            "Bir kategorinin görsel klişelerini kopyalamak en güvenli seçenek gibi görünür ama en pahalısıdır — herkesle aynı görünmek, hiç görünmemekle aynı kapıya çıkıyor.",
+            "\"Yalnızca gerçek veri\" kuralı bir kısıt gibi başladı, sayfanın en güçlü tarafı olarak bitti: doğrulanabilir tek bir rakam, uydurulmuş beş rakamdan daha ikna edici.",
+            "Tasarım sistemini ekranlardan önce doküman olarak yazmak, tek sayfalık bir iş için fazla gelebilir — ama kararların hepsi kuralda alındığı için sayfanın kendisi neredeyse bir uygulama işine dönüştü."
+          ],
+          "walkthrough": {
+            "title": "Yakından bakış",
+            "kicker": "Tasarım gerekçesi",
+            "intro": "Sistemin bileşen bölümü — sitenin dokunulabilir her parçasının kuralı burada tanımlanıyor. Her işaret, yüzeyin altındaki bir kararı açıklıyor.",
+            "image": "/projects/esrefkarot-components.webp",
+            "alt": "Eşref Karot tasarım sistemi — bileşen bölümü",
+            "hotspots": [
+              {
+                "x": 14, "y": 29,
+                "title": "Sayfadaki tek dolu blok",
+                "body": "Turuncu solid buton tüm sistemde tek bir işe ayrılmış: telefonla arama. Bu firmanın dönüşümü bir kayıt akışı değil, çalan bir telefon. Aksanı tek aksiyona kilitlemek, sayfada nereye basılacağı sorusunu tamamen ortadan kaldırıyor."
+              },
+              {
+                "x": 37, "y": 29,
+                "title": "Üçüncü ağırlık: buton bile değil",
+                "body": "\"Hizmetlerimiz ↓\" ne dolu ne outline — sadece altı çizili bir metin ve aşağı ok. Aynı sayfa içinde kaydıran bir eylemin buton kılığına girmesi gereksiz; ok, hedefin sayfadan çıkmadığını söylüyor. Üç farklı ağırlık, üç farklı taahhüt seviyesi."
+              },
+              {
+                "x": 63, "y": 29,
+                "title": "Koyu panelde kural değişmez",
+                "body": "Kontrast bölümde outline butonun beyaza dönmesi bekleniyor — asıl karar turuncunun burada da turuncu kalması. Zemin değişince aksan rengini değiştirmek kolay olurdu, ama o zaman \"turuncu = telefon\" denklemi bozulurdu. Panel değişir, sözleşme değişmez."
+              },
+              {
+                "x": 13, "y": 47,
+                "title": "Bölüm işareti — okuma değil konum",
+                "body": "Numara turuncu, ad mürekkep, kalan genişlik kılcal çizgiyle doldurulur. Bu bir başlık değil, teknik dosyadaki bir sekme: kullanıcıya ne okuyacağını değil, dosyanın neresinde olduğunu söylüyor."
+              },
+              {
+                "x": 62, "y": 50,
+                "title": "Sayfadaki tek istatistik, ve gerçek",
+                "body": "Ø18–400mm, firmanın doğrulanmış tek teknik kapasitesi — ve sayfadaki tek rakam. \"500+ proje\" ya da \"15+ yıl\" koymamak bilinçliydi: doğrulayamadığım bir rakam, güveni kurmak yerine sessizce aşındırır. Bir gerçek ölçü, beş uydurma rozetten ağır basıyor."
+              },
+              {
+                "x": 15, "y": 75,
+                "title": "Kart değil, dosya satırı",
+                "body": "Beş hizmet, gölgeli kart grid'i yerine numaralı satırlar olarak dizildi. Kart grid'i gözü sayfada dolaştırır ve beş seçeneği eşit derecede belirsiz yapar; numaralı satır tek bir okuma sırası dayatıyor — tıpkı bir teknik dosyanın içindekiler listesi gibi."
+              }
+            ]
+          }
+        }
       }
     ]
   },

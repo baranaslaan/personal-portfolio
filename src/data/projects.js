@@ -1,5 +1,24 @@
 export const PROJECTS = [
   {
+    id: 9,
+    accent: '#B03F10',
+    wide: true,
+    cover: '/projects/esrefkarot-cover.webp',
+    gallery: [
+      { src: '/projects/esrefkarot-overview.webp' },
+      { src: '/projects/esrefkarot-color.webp' },
+      { src: '/projects/esrefkarot-typography.webp' },
+      { src: '/projects/esrefkarot-grid.webp' },
+      { src: '/projects/esrefkarot-components.webp' },
+      { src: '/projects/esrefkarot-motion.webp' },
+      { src: '/projects/esrefkarot-principles.webp' }
+    ],
+    links: {
+      behance: 'https://www.behance.net/gallery/252784727/Esref-Karot-Live-Website-UIUX-Design',
+      live: 'https://esrefkarot.com/tr'
+    }
+  },
+  {
     id: 8,
     accent: '#D4B87A',
     wide: true,
