@@ -4,7 +4,7 @@ import path from 'node:path'
 
 const RAW = '/Users/baranaslan/portfolio/behance-export/raw'
 const OUT = '/Users/baranaslan/portfolio/behance-export'
-const AVATAR = '/Users/baranaslan/portfolio/public/avatar-baran.png'
+const AVATAR = '/Users/baranaslan/portfolio/public/avatar-baran.webp'
 
 // ---- palette (matches site tokens) ----
 const C = {

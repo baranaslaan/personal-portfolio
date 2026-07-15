@@ -10,7 +10,7 @@ import { motion, useReducedMotion } from 'framer-motion'
  * To set the real avatar: drop a square photo at /public/avatar.jpg
  * (or .png — update AVATAR_SRC accordingly).
  */
-const AVATAR_SRC = '/avatar-baran.png'
+const AVATAR_SRC = '/avatar-baran.webp'
 
 export default function HeroVisual() {
   const reduced = useReducedMotion()

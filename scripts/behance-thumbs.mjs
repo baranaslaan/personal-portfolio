@@ -3,7 +3,7 @@ import path from 'node:path'
 
 const RAW = '/Users/baranaslan/portfolio/behance-export/raw'
 const OUT = '/Users/baranaslan/portfolio/behance-export'
-const AVATAR = '/Users/baranaslan/portfolio/public/avatar-baran.png'
+const AVATAR = '/Users/baranaslan/portfolio/public/avatar-baran.webp'
 const C = {
   t1: '#F0F4FF', t2: '#8899B4', t3: '#6B7C99',
   accent: '#22C55E', accent2: '#4ADE80', card: '#0C1424', border: '#1A2538',
