@@ -613,7 +613,7 @@
             "title": "Yakından bakış",
             "kicker": "Dashboard gerekçesi",
             "intro": "Filo kontrol panelinin yakın incelemesi — operatörün her sabah ilk açtığı ekran. Her işaret, yoğunluk ve sakinliğin aynı yüzeyde nasıl bir arada yaşadığına dair bir kararı açıklıyor.",
-            "image": "/projects/routewise-dashboard.png",
+            "image": "/projects/routewise-dashboard.webp",
             "alt": "Routewise — filo kontrol paneli dashboard",
             "hotspots": [
               { "x": 8, "y": 14, "title": "Favoriler Dashboards'un üstünde",

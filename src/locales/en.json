@@ -613,7 +613,7 @@
             "title": "Walkthrough",
             "kicker": "Dashboard rationale",
             "intro": "A closer look at the fleet control panel — the screen an operator opens first every morning. Each marker explains one decision about how density and calm coexist on the same surface.",
-            "image": "/projects/routewise-dashboard.png",
+            "image": "/projects/routewise-dashboard.webp",
             "alt": "Routewise — fleet control panel dashboard",
             "hotspots": [
               { "x": 8, "y": 14, "title": "Favorites above Dashboards",

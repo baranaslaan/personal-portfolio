@@ -104,15 +104,15 @@ export const PROJECTS = [
   {
     id: 5,
     accent: '#06B6D4',
-    cover: '/projects/routewise-cover.png',
+    cover: '/projects/routewise-cover.webp',
     gallery: [
-      { src: '/projects/routewise-1.png' },
-      { src: '/projects/routewise-login.png' },
-      { src: '/projects/routewise-register.png' },
-      { src: '/projects/routewise-dashboard.png' },
-      { src: '/projects/routewise-cars.png' },
-      { src: '/projects/routewise-cars-map.png' },
-      { src: '/projects/routewise-new-car.png' }
+      { src: '/projects/routewise-1.webp' },
+      { src: '/projects/routewise-login.webp' },
+      { src: '/projects/routewise-register.webp' },
+      { src: '/projects/routewise-dashboard.webp' },
+      { src: '/projects/routewise-cars.webp' },
+      { src: '/projects/routewise-cars-map.webp' },
+      { src: '/projects/routewise-new-car.webp' }
     ],
     links: { behance: 'https://www.behance.net/gallery/131648297/Routewise-UI-Design' }
   },
